@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import Login from "./Login/Login";
 
-export default class Navbar extends Component {
+class ApplicationViews extends Component {
     render() {
         return (
             <React.Fragment>
@@ -9,4 +10,4 @@ export default class Navbar extends Component {
     }
 }
 
-// exports to index.js
+// exports to NUT.js
