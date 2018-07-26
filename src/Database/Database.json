@@ -1,11 +1,4 @@
 {
-    "users": [
-        {
-            "name": "Sathvik Reddy",
-            "username": "sathvikreddy",
-            "password": "123",
-            "id": 1
-        }
-    ],
-    "players": []
+  "users": [],
+  "players": []
 }

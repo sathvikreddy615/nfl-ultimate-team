@@ -19,17 +19,16 @@ export default class Register extends Component {
 
     let registerData = {
       name: this.state.name,
-      email: this.state.email,
+      username: this.state.username,
       password: this.state.password
     };
 
-    // need to add paramaters below
-
-    APIManager.addData(registerData)
+    APIManager.addData("users", registerData)
     .then(() => {
       this.props.history.push("/login");
     });
   };
+
   render() {
     return (
       <React.Fragment>
@@ -44,6 +43,7 @@ export default class Register extends Component {
             type="text"
             id="name"
             name="name"
+            placeholder="Marcus Mariota"
           />
 
           {/* register field for username */}
@@ -53,19 +53,20 @@ export default class Register extends Component {
             type="text"
             id="username"
             name="username"
+            placeholder="marcusmariota8"
           />
 
           {/* register field for password */}
           <label htmlFor="password">Password:</label>
           <input
             onChange={this.handleFieldChange}
-            type="text"
+            type="password"
             id="password"
             name="password"
           />
 
           {/* register button */}
-          <button type="button" id="registerBtn">
+          <button type="submit" id="registerBtn">
             Register
           </button>
         </form>

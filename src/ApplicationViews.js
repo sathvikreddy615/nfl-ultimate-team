@@ -1,13 +1,23 @@
 import React, { Component } from "react";
+import { Route } from "react-router-dom";
+
+import Register from "./Register/Register";
 import Login from "./Login/Login";
 
-class ApplicationViews extends Component {
+export default class ApplicationViews extends Component {
+    isAuthenticated = () => {
+        localStorage.getItem("credentials") !== null || sessionStorage.getItem("credentials") !== null;
+    };
+
+
     render() {
         return (
             <React.Fragment>
+                <Route path="/Register" component={Register} />
+                <Route path="/login" component={Login} />
             </React.Fragment>
         );
     }
 }
 
-// exports to NUT.js
+// exports to App.js
