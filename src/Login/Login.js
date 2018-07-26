@@ -14,7 +14,9 @@ export default class Login extends Component {
     this.setState(stateToChange);
   };
 
-  handleLogin = () => {
+  handleLogin = (e) => {
+    e.preventDefault();
+
     APIManager.getData(`users?username=${this.state.username}`)
       .then(user => {
         if (user.length > 0 && this.state.password == user[0].password) {
@@ -30,7 +32,7 @@ export default class Login extends Component {
             localStorage.setItem(
               "credentials",
               JSON.stringify({
-                email: this.state.email,
+                email: this.state.username,
                 password: this.state.password,
                 userId: this.state.userId
               })
@@ -41,7 +43,7 @@ export default class Login extends Component {
             sessionStorage.setItem(
               "credentials",
               JSON.stringify({
-                email: this.state.email,
+                email: this.state.username,
                 password: this.state.password,
                 userId: this.state.userId
               })
@@ -59,19 +61,20 @@ export default class Login extends Component {
             id="loginForm"
         >
           {/* login field for username */}
-          <label htmlFor="username" />
+          <label htmlFor="username">Username:</label>
           <input
             onChange={this.handleFieldChange}
             type="text"
             id="username"
             name="username"
+            placeholder="marcusmariota8"
           />
 
           {/* login field for password */}
-          <label htmlFor="password" />
+          <label htmlFor="password">Password:</label>
           <input
             onChange={this.handleFieldChange}
-            type="text"
+            type="password"
             id="password"
             name="password"
           />
@@ -85,15 +88,15 @@ export default class Login extends Component {
           />
 
           {/* login button */}
-          <button type="button" id="loginBtn">
-            Log in
+          <button type="submit" id="loginBtn">
+            Log In
           </button>
         </form>
 
         <div id="signUpBtnContainer">
-          <button id="signUpBtn">
+          <button type="button" id="signUpBtn">
             <Link to={{ pathname: "/register" }}>
-                Sign up
+                Sign Up
             </Link>
           </button>
         </div>
