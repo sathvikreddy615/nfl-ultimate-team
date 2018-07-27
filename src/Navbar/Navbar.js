@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import 'bulma/css/bulma.css';
 
 export default class Navbar extends Component {
   handleLogout = () => {
@@ -21,11 +22,28 @@ export default class Navbar extends Component {
   render() {
     return (
       <React.Fragment>
-        <nav>
-            <Link to="/buildteam">Build a Team</Link>
-            <Link to="/standings">Standings</Link>
-            <Link to="/instructions">How to Play</Link>
-            <button onClick={this.handleLogout}>Log Out</button>
+        <nav id="navbar" className="navbar is-info">
+          <div className="navbar-brand">
+            <a className="navbar-item" href="https://bulma.io">
+              <img src="http://content.sportslogos.net/logos/7/1007/full/dwuw5lojnwsj12vfe0hfa6z47.gif" alt="NFL Logo" width="30" height="25" />
+            </a>
+          </div>
+
+          <div id="navbarExampleTransparentExample" className="navbar-menu">
+            <div className="navbar-start">
+              <Link className="navbar-item" to="/buildteam">Build a Team</Link>
+              <Link className="navbar-item" to="/standings">Standings</Link>
+              <Link className="navbar-item" to="/instructions">How to Play</Link>
+            </div>
+          </div>
+
+            <div className="navbar-end">
+              <div className="navbar-item">
+                <div className="field is-grouped">
+                    <a className="bd-tw-button button is-danger" onClick={this.handleLogout} href="#">Logout</a>
+                </div>
+              </div>
+            </div>
         </nav>
       </React.Fragment>
     );
