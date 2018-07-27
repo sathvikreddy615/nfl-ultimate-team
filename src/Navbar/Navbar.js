@@ -40,7 +40,7 @@ export default class Navbar extends Component {
             <div className="navbar-end">
               <div className="navbar-item">
                 <div className="field is-grouped">
-                    <button className="bd-tw-button button is-danger is-small" onClick={this.handleLogout} href="#">Log Out</button>
+                    <button className="bd-tw-button button is-danger is-small is-focused is-rounded" onClick={this.handleLogout} href="#">Log Out</button>
                 </div>
               </div>
             </div>
