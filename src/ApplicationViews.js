@@ -29,7 +29,6 @@ export default class ApplicationViews extends Component {
         />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
-        {/* <Route path="/buildteam" component={BuildTeam} /> */}
         <Route exact path="/buildteam" render={props => {
           if (this.isAuthenticated()) {
             return <BuildTeam />;
@@ -38,7 +37,6 @@ export default class ApplicationViews extends Component {
           }
         }}
         />
-        {/* <Route path="/standings" component={Standings} /> */}
         <Route
           exact
           path="/standings"
@@ -50,7 +48,6 @@ export default class ApplicationViews extends Component {
             }
           }}
         />
-        {/* <Route path="/instructions" component={Instructions} /> */}
         <Route
           exact
           path="/instructions"

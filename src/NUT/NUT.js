@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class MainView extends Component {
+export default class NUT extends Component {
     render() {
         return (
             <React.Fragment>
