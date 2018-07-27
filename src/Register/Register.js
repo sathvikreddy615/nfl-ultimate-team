@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import APIManager from "../APIManager";
 
 export default class Register extends Component {
@@ -70,6 +71,14 @@ export default class Register extends Component {
             Register
           </button>
         </form>
+
+        <div id="backToLoginBtn">
+          <button type="button" id="signUpBtn">
+            <Link to={{ pathname: "/" }}>
+                Back to Login
+            </Link>
+          </button>
+        </div>
       </React.Fragment>
     );
   }
