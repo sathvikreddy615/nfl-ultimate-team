@@ -50,7 +50,10 @@ export default class Login extends Component {
             );
           }
         }
-      });
+      })
+      .then(() => {
+        this.props.history.push("/");
+      })
   };
 
   render() {

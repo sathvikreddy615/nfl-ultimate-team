@@ -24,9 +24,9 @@ export default class Navbar extends Component {
       <React.Fragment>
         <nav id="navbar" className="navbar is-info">
           <div className="navbar-brand">
-            <a className="navbar-item" href="https://bulma.io">
-              <img src="http://content.sportslogos.net/logos/7/1007/full/dwuw5lojnwsj12vfe0hfa6z47.gif" alt="NFL Logo" width="30" height="25" />
-            </a>
+               <Link className="navbar-item" to="/">
+                  <img src="http://content.sportslogos.net/logos/7/1007/full/dwuw5lojnwsj12vfe0hfa6z47.gif" alt="NFL Logo" width="25" height="23" />
+               </Link>
           </div>
 
           <div id="navbarExampleTransparentExample" className="navbar-menu">
@@ -40,7 +40,7 @@ export default class Navbar extends Component {
             <div className="navbar-end">
               <div className="navbar-item">
                 <div className="field is-grouped">
-                    <a className="bd-tw-button button is-danger" onClick={this.handleLogout} href="#">Logout</a>
+                    <button className="bd-tw-button button is-danger is-small" onClick={this.handleLogout} href="#">Log Out</button>
                 </div>
               </div>
             </div>
