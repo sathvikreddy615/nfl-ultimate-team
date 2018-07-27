@@ -11,4 +11,4 @@ export default props => {
         );
 }
 
-// exports to TeamSelection.js
+// exports to BuildTeam.js

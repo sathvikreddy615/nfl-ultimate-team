@@ -74,7 +74,7 @@ export default class Register extends Component {
 
         <div id="backToLoginBtn">
           <button type="button" id="signUpBtn">
-            <Link to={{ pathname: "/" }}>
+            <Link to={{ pathname: "/login" }}>
                 Back to Login
             </Link>
           </button>
