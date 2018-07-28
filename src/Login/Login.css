@@ -1,0 +1,22 @@
+#loginVideo {
+    z-index: -1;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.content {
+    position: fixed;
+    bottom: 300px;
+    left: 640px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+#loginBtn {
+    margin-bottom: 15px;
+}

@@ -11,6 +11,18 @@
       "username": "jordanfinley95",
       "password": "123",
       "id": 2
+    },
+    {
+      "name": "Sreyas Reddy",
+      "username": "sreyasreddy93",
+      "password": "123",
+      "id": 3
+    },
+    {
+      "name": "",
+      "username": "",
+      "password": "",
+      "id": 4
     }
   ],
   "players": []
