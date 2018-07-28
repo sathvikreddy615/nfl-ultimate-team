@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import APIManager from "../APIManager";
+import "./Login.css";
+import 'bulma/css/bulma.css';
 
 export default class Login extends Component {
   state = {
@@ -60,49 +62,68 @@ export default class Login extends Component {
   render() {
     return (
       <React.Fragment>
-        <form
-            onSubmit={this.handleLogin}
-            id="loginForm"
-        >
-          {/* login field for username */}
-          <label htmlFor="username">Username:</label>
-          <input
-            onChange={this.handleFieldChange}
-            type="text"
-            id="username"
-            name="username"
-            placeholder="marcusmariota8"
-          />
+        <video preload="auto" loop="true" autoplay="autoplay" muted id="loginVideo">
+          <source src="https://s3.amazonaws.com/nfl-api-images/videos/Madden+19+Tennessee+Titans+Uniforms.mp4" type="video/mp4" />
+        </video>
 
-          {/* login field for password */}
-          <label htmlFor="password">Password:</label>
-          <input
-            onChange={this.handleFieldChange}
-            type="password"
-            id="password"
-            name="password"
-          />
+        <div className="content">
+          <form
+              onSubmit={this.handleLogin}
+              id="loginForm"
+          >
+            {/* login field for username */}
+            <label htmlFor="username">Username:</label>
+            <br/>
+            <input
+              onChange={this.handleFieldChange}
+              type="text"
+              id="username"
+              name="username"
+              placeholder="marcusmariota8"
+            />
 
-          {/* checkbox - if checked, user login data stored in local storage */}
-          <label htmlFor="checkBox">Remember Me</label>
-          <input
-            type="checkbox"
-            id="checkBox"
-            name="checkBox"
-          />
+            <br/>
 
-          {/* login button */}
-          <button type="submit" id="loginBtn">
-            Log In
-          </button>
-        </form>
+            {/* login field for password */}
+            <label htmlFor="password">Password:</label>
+            <br/>
+            <input
+              onChange={this.handleFieldChange}
+              type="password"
+              id="password"
+              name="password"
+            />
 
-        <div id="signUpBtnContainer">
-          <button type="button" id="signUpBtn">
-            <Link to={{ pathname: "/register" }}>
-                Sign Up
-            </Link>
-          </button>
+            <br/>
+
+            {/* checkbox - if checked, user login data stored in local storage */}
+            <label htmlFor="checkBox">Remember Me:</label>
+
+            <br/>
+
+            <input
+              type="checkbox"
+              id="checkBox"
+              name="checkBox"
+            />
+
+            <br/>
+
+            <br/>
+
+            {/* login button */}
+            <button className="bd-tw-button button is-info is-small is-focused is-rounded is-fullwidth" type="submit" id="loginBtn">
+              Log In
+            </button>
+          </form>
+
+          <div id="signUpBtnContainer">
+            <button className="bd-tw-button button is-danger is-small is-focused is-rounded" type="button" id="signUpBtn">
+              <Link to={{ pathname: "/register" }}>
+                  Sign Up
+              </Link>
+            </button>
+          </div>
         </div>
       </React.Fragment>
     );
