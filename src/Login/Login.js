@@ -62,8 +62,8 @@ export default class Login extends Component {
   render() {
     return (
       <React.Fragment>
-        <video preload="auto" loop="true" autoplay="autoplay" muted id="loginVideo">
-          <source src="https://s3.amazonaws.com/nfl-api-images/videos/Madden+19+Tennessee+Titans+Uniforms.mp4" type="video/mp4" />
+        <video preload="auto" loop="true" autoPlay="autoplay" muted id="loginVideo">
+          <source src="https://s3.amazonaws.com/nfl-api-images/videos/Titans+Login.mp4" type="video/mp4" />
         </video>
 
         <div className="content">
@@ -79,7 +79,7 @@ export default class Login extends Component {
               type="text"
               id="username"
               name="username"
-              placeholder="marcusmariota8"
+              // placeholder="marcusmariota8"
             />
 
             <br/>
@@ -118,7 +118,7 @@ export default class Login extends Component {
           </form>
 
           <div id="signUpBtnContainer">
-            <button className="bd-tw-button button is-danger is-small is-focused is-rounded" type="button" id="signUpBtn">
+            <button className="bd-tw-button button is-danger is-small is-focused is-rounded is-fullwidth" type="button" id="signUpBtn">
               <Link to={{ pathname: "/register" }}>
                   Sign Up
               </Link>

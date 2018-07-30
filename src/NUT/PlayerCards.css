@@ -1,0 +1,34 @@
+/* User */
+
+#userCardsContainer {
+  margin: 20px 3px;
+  /*   border: 1px solid black; */
+}
+
+/* Cards for Players */
+
+.player-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  width: 130px;
+  height: auto;
+  margin: 0 5px;
+}
+
+img {
+  border-radius: 5px;
+  width: auto;
+  height: 160px;
+}
+
+/* Positions */
+
+#positionsContainer {
+  margin: 0 3px;
+}
+
+.position {
+  text-align: center;
+}
