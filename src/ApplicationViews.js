@@ -10,7 +10,6 @@ import Standings from "./Standings/Standings";
 import Instructions from "./Instructions/Instructions";
 
 export default class ApplicationViews extends Component {
-
   isAuthenticated = () =>
     localStorage.getItem("credentials") !== null ||
       sessionStorage.getItem("credentials") !== null;

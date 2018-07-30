@@ -36,8 +36,8 @@ export default class Register extends Component {
     return (
       <React.Fragment>
 
-        <video preload="auto" loop="true" autoplay="autoplay" muted id="registerVideo">
-          <source src="https://s3.amazonaws.com/nfl-api-images/videos/Madden+19+Tennessee+Titans+Uniforms.mp4" type="video/mp4" />
+        <video preload="auto" loop="true" autoPlay="autoplay" muted id="registerVideo">
+          <source src="https://s3.amazonaws.com/nfl-api-images/videos/Titans+Register.mp4" type="video/mp4" />
         </video>
 
         <div className="content">
@@ -55,7 +55,7 @@ export default class Register extends Component {
               type="text"
               id="name"
               name="name"
-              placeholder="Marcus Mariota"
+              // placeholder="Marcus Mariota"
             />
 
             <br/>
@@ -70,7 +70,7 @@ export default class Register extends Component {
               type="text"
               id="username"
               name="username"
-              placeholder="marcusmariota8"
+              // placeholder="marcusmariota8"
             />
 
             <br/>
@@ -98,7 +98,7 @@ export default class Register extends Component {
           </form>
 
           <div id="backToLoginBtn">
-            <button className="bd-tw-button button is-danger is-small is-focused is-rounded" type="button" id="signUpBtn">
+            <button className="bd-tw-button button is-danger is-small is-focused is-rounded is-fullwidth" type="button" id="signUpBtn">
               <Link to={{ pathname: "/login" }}>
                   Back to Login
               </Link>

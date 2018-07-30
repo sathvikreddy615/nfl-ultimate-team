@@ -1,21 +1,69 @@
 import React, { Component } from "react";
+import APIManager from "../APIManager";
+import PlayerCards from "./PlayerCards";
 
 export default class NUT extends Component {
-    render() {
-        return (
-            <React.Fragment>
-                <div id="userContainer"></div>
-                <div id="userPointsContainer"></div>
-                <div id="userCardsContainer"></div>
+    state = {
+        players: [],
+    };
 
-                <div id="positionsContainer">Quarterback</div>
+    getPlayers = () => {
+        APIManager.getData("players")
+        .then(players => {
+            this.setState({
+                players: players
+            })
+            console.log(players);
+            players.forEach(player => {
+                console.log(`${player.Name}`);
+            });
+        })
+    };
 
-                <div id="computerCardsContainer"></div>
-                <div id="computerPointsContainer"></div>
-                <div id="computerContainer"></div>
-            </React.Fragment>
-        );
-    }
+    componentDidMount = () => {
+        return this.getPlayers();
+    };
+
+    positionsArray = ["QB", "RB", "WR", "TE", "DL", "LB", "DB", "K"];
+
+  render() {
+    return (
+      <React.Fragment>
+
+        {/* Containers for the User */}
+
+        <div id="userContainer"></div>
+        <div id="userPointsContainer" />
+        <div id="userCardsContainer" className="columns">
+        {this.state.players.map(player => (
+            <PlayerCards
+                key={player.id}
+                player={player}
+            ></PlayerCards>
+        ))}
+        </div>
+
+        {/* Lists all Position Names */}
+
+        <div id="positionsContainer" className="columns">
+          {this.positionsArray.map(position => (
+            <div
+                key={position}
+                className="column position">
+                {position}
+            </div>
+          ))}
+        </div>
+
+        {/* Containers for the Computer */}
+
+        <div id="computerCardsContainer" />
+        <div id="computerPointsContainer" />
+        <div id="computerContainer" />
+
+      </React.Fragment>
+    );
+  }
 }
 
 // exports to ApplicationViews.js

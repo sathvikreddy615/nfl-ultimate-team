@@ -1,0 +1,33 @@
+/* Main Container */
+
+#buildTeamContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/* Sub-Container 1 */
+
+#selectPositionsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    border: 1px solid black;
+}
+
+.selectPositions {
+    margin: 50px 10px;
+}
+
+/* Sub-Container 2 */
+
+#playerPictureContainer {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    border: 1px solid black;
+}
+
+.playerPicture {
+    margin: 50px 10px;
+}

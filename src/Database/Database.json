@@ -23,7 +23,142 @@
       "username": "",
       "password": "",
       "id": 4
+    },
+    {
+      "name": "Delanie Walker",
+      "username": "delaniewalker82",
+      "password": "123",
+      "id": 5
     }
   ],
-  "players": []
+  "players": [
+    {
+      "id": 1,
+      "Name": "Russell Wilson",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/russell_wilson.jpg",
+      "Team": "SEA",
+      "Position": "QB",
+      "ppgRounded": 22
+    },
+    {
+      "id": 2,
+      "Name": "Marcus Mariota",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/marcus_mariota.jpg",
+      "Team": "TEN",
+      "Position": "QB",
+      "ppgRounded": 14
+    },
+    {
+      "id": 3,
+      "Name": "Ryan Succop",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/ryan_succop.jpg",
+      "Team": "TEN",
+      "Position": "K",
+      "ppgRounded": 9
+    },
+    {
+      "id": 4,
+      "Name": "Adam Vinatieri",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/adam_vinatieri.jpg",
+      "Team": "IND",
+      "Position": "K",
+      "ppgRounded": 8
+    },
+    {
+      "id": 5,
+      "Name": "Kevin Byard",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/kevin_byard.jpg",
+      "Team": "TEN",
+      "Position": "DB",
+      "ppgRounded": 8
+    },
+    {
+      "id": 6,
+      "Name": "Jalen Ramsey",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/jalen_ramsey.jpg",
+      "Team": "JAX",
+      "Position": "DB",
+      "ppgRounded": 5.5
+    },
+    {
+      "id": 7,
+      "Name": "Travis Kelce",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/travis_kelce.jpg",
+      "Team": "KC",
+      "Position": "TE",
+      "ppgRounded": 15.5
+    },
+    {
+      "id": 8,
+      "Name": "Delanie Walker",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/delanie_walker.jpg",
+      "Team": "TEN",
+      "Position": "TE",
+      "ppgRounded": 11
+    },
+    {
+      "id": 9,
+      "Name": "Khalil Mack",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/khalil_mack.jpg",
+      "Team": "OAK",
+      "Position": "DL",
+      "ppgRounded": 8.5
+    },
+    {
+      "id": 10,
+      "Name": "Jurrell Casey",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/jurrell_casey.jpg",
+      "Team": "TEN",
+      "Position": "DL",
+      "ppgRounded": 6
+    },
+    {
+      "id": 11,
+      "Name": "Le'Veon Bell",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/leveon_bell.jpg",
+      "Team": "PIT",
+      "Position": "RB",
+      "ppgRounded": 17
+    },
+    {
+      "id": 12,
+      "Name": "Derrick Henry",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/derrick_henry.jpg",
+      "Team": "TEN",
+      "Position": "RB",
+      "ppgRounded": 8
+    },
+    {
+      "id": 13,
+      "Name": "Antonio Brown",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/antonio_brown.jpg",
+      "Team": "PIT",
+      "Position": "WR",
+      "ppgRounded": 22
+    },
+    {
+      "id": 14,
+      "Name": "Rishard Matthews",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/rishard_matthews.jpg",
+      "Team": "TEN",
+      "Position": "WR",
+      "ppgRounded": 11
+    },
+    {
+      "id": 15,
+      "Name": "CJ Mosley",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/cj_mosley.jpg",
+      "Team": "BAL",
+      "Position": "LB",
+      "ppgRounded": 10.5
+    },
+    {
+      "id": 16,
+      "Name": "Wesley Woodyard",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/wesley_woodyard.jpg",
+      "Team": "TEN",
+      "Position": "LB",
+      "ppgRounded": 9.5
+    }
+  ]
 }
