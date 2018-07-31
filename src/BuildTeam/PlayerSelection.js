@@ -1,33 +1,18 @@
 import React, { Component } from "react";
 
 export default class PlayerSelection extends Component {
-  state = {
-    selectedPlayer: {}
-  }
-
-  handleSelectionChange = e => {
-    const stateToChange = {};
-    stateToChange[e.target.id] = e.target.value;
-    this.setState(stateToChange);
-    console.log(stateToChange);
-
-
-  }
-
   render() {
     return (
       <React.Fragment>
         <img
           className="playerPicture"
-          src="#"
+          src={this.props.selectedPlayer.image}
           alt="#"
         />
 
         {/* ----- */}
 
         <select
-          name={this.props.position}
-          id={this.props.position}
           required
           className="selectPositions"
           onChange={this.handleSelectionChange}
