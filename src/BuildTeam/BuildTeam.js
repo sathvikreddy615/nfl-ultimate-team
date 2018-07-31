@@ -8,35 +8,45 @@ export default class BuildTeam extends Component {
   state = {
     players: [],
     selectPositions: {
-      qb: [],
-      rb: [],
-      wr: [],
-      te: [],
-      dl: [],
-      lb: [],
-      db: [],
-      k: []
+      qb: {selectedPlayer: {}, playerList: []},
+      rb: {selectedPlayer: {}, playerList: []},
+      wr: {selectedPlayer: {}, playerList: []},
+      te: {selectedPlayer: {}, playerList: []},
+      dl: {selectedPlayer: {}, playerList: []},
+      lb: {selectedPlayer: {}, playerList: []},
+      db: {selectedPlayer: {}, playerList: []},
+      k: {selectedPlayer: {}, playerList: []}
     }
   };
 
   componentDidMount = () => {
     APIManager.getData("players").then(players => {
+      let newObject = {
+        qb: {selectedPlayer: {}, playerList: []},
+        rb: {selectedPlayer: {}, playerList: []},
+        wr: {selectedPlayer: {}, playerList: []},
+        te: {selectedPlayer: {}, playerList: []},
+        dl: {selectedPlayer: {}, playerList: []},
+        lb: {selectedPlayer: {}, playerList: []},
+        db: {selectedPlayer: {}, playerList: []},
+        k: {selectedPlayer: {}, playerList: []}
+      }
       players.forEach(player => {
         switch (player.Position) {
           case "QB":
-            this.setState(
-              function (prevState) {
-                console.log(prevState.selectPositions.qb)
-                let newQb = prevState.selectPositions.qb.slice()
-                newQb.push(player)
-                return {selectPositions: {qb: newQb}}
-              }
-            )
+            newObject.qb.playerList.push(player)
             break;
-          // case "RB":
-          //   this.createOptions("selectRB", player.Name);
-          //   this.addPicture("imageRB", player.image, player.Name);
-          //   break;
+          case "RB":
+            // this.setState(
+            //   function (prevState) {
+            //     console.log(prevState)
+            //     console.log(prevState.selectPositions.rb)
+            //     let newRb = prevState.selectPositions.rb.slice();
+            //     newRb.push(player)
+            //     return {selectPositions: {rb: newRb}}
+            //   }
+            // )
+            break;
           // case "WR":
           //   this.createOptions("selectWR", player.Name);
           //   this.addPicture("imageWR", player.image, player.Name);
@@ -65,8 +75,26 @@ export default class BuildTeam extends Component {
           //   console.log("No position returned");
         }
       });
+      Object.keys(newObject).map(i =>
+        {
+          newObject.selectedPlayer = newObject.playerList[0]
+        })
+      this.setState(
+        {selectPositions: newObject}
+      )
     });
   };
+
+  handleSelectionChange = e => {
+    const stateToChange = {};
+    stateToChange[e.target.id] = e.target.value;
+    this.setState(stateToChange);
+    console.log(stateToChange);
+  }
+
+  createTeam = () => {
+    console.log("this btn works")
+  }
 
   render() {
     return (
@@ -74,7 +102,8 @@ export default class BuildTeam extends Component {
         {Object.keys(this.state.selectPositions).map((position, index) => (
           <PlayerSelection
           key={index}
-          position={this.state.selectPositions[position]}
+          position={this.state.selectPositions[position].playerList}
+          selectedPlayer={this.state.selectPositions[position].selectedPlayer}
           />
         ))}
 
@@ -85,6 +114,7 @@ export default class BuildTeam extends Component {
         id="createTeamBtn"
         className="bd-tw-button button is-danger is-focused is-rounded"
         type="button"
+
         >
         Create Ultimate Team
         </button>
