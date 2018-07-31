@@ -6,7 +6,7 @@ export default props => {
         <div className="playerCard column">
             <img src={props.player.image} alt={props.player.Name} />
             <div className="nameContainer">
-                <h4><b>{props.player.Name}</b></h4>
+                <h6><b>{props.player.Name}</b></h6>
             </div>
         </div>
     )
