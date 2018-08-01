@@ -32,11 +32,17 @@ img {
 
 /* Positions */
 
-#positionsContainer {
-  margin: 0 3px;
-}
-
 .position {
   text-align: center;
   font-weight: bold;
+}
+
+/* Points */
+
+#userPlayerPointsContainer, #computerPlayerPointsContainer {
+  text-align: center;
+}
+
+.points {
+  font-size: 14px;
 }

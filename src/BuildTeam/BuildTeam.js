@@ -31,7 +31,7 @@ export default class BuildTeam extends Component {
 
   componentDidMount = () => {
     APIManager.getData("players").then(players => {
-      let newObject = this.state.selectPositions
+      let newObject = this.state.selectPositions;
 
       players.forEach(player => {
         switch (player.position) {
