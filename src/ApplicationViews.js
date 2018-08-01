@@ -10,6 +10,14 @@ import Standings from "./Standings/Standings";
 import Instructions from "./Instructions/Instructions";
 
 export default class ApplicationViews extends Component {
+  state = {
+    players: []
+  }
+
+  userSelectedPlayers = positions => {
+    this.setState({players: positions})
+  }
+
   isAuthenticated = () =>
     localStorage.getItem("credentials") !== null ||
       sessionStorage.getItem("credentials") !== null;
@@ -20,7 +28,7 @@ export default class ApplicationViews extends Component {
         <React.Fragment>
           <Route path="/" component={Navbar} />
           <Route exact path="/" component={NUT} />
-          <Route exact path="/buildteam" component={BuildTeam} />
+          <Route exact path="/buildteam" render={props =>  <BuildTeam userSelectedPlayers={this.userSelectedPlayers} />} />
           <Route exact path="/standings" component={Standings} />
           <Route exact path="/instructions" component={Instructions} />
         </React.Fragment>

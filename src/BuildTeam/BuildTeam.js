@@ -6,7 +6,7 @@ import "bulma/css/bulma.css";
 
 export default class BuildTeam extends Component {
   state = {
-    players: [],
+    chosenTeam: [],
     selectPositions: {
       qb: [],
       rb: [],
@@ -34,7 +34,7 @@ export default class BuildTeam extends Component {
       let newObject = this.state.selectPositions
 
       players.forEach(player => {
-        switch (player.Position) {
+        switch (player.position) {
           case "QB":
             newObject.qb.push(player);
             break;
@@ -105,36 +105,49 @@ export default class BuildTeam extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state.selectPlayer);
-    this.state.selectPlayer
+
     for (let i in this.state.selectPlayer) {
-      console.log(this.state.selectPlayer[i]);
+      APIManager.getPlayersByName(this.state.selectPlayer[i])
+      .then(arrayOfOnePlayer => {
+        console.log(arrayOfOnePlayer);
+        arrayOfOnePlayer.forEach(playerData => {
+          console.log(playerData);
+          console.log(playerData.image);
+          let newArray = this.state.chosenTeam;
+          newArray.push(playerData);
+          console.log(newArray);
+          this.setState({chosenTeam: newArray})
+        })
+      })
+      // window.location = 'http://localhost:3000/';
     }
+    this.props.userSelectedPlayers(this.state.chosenTeam);
   };
 
   render() {
     return (
       <React.Fragment>
-        <form onSubmit={this.handleSubmit}>
-          {Object.keys(this.state.selectPositions).map((position, index) => (
-            <PlayerSelection
-              key={index}
-              unique={index}
-              position={this.state.selectPositions[position]}
-              selectNames={this.selectNames}
-              handleSelectionChange={this.handleSelectionChange}
+        <div id="buildTeamContainer">
+          <form onSubmit={this.handleSubmit}>
+            {Object.keys(this.state.selectPositions).map((position, index) => (
+              <PlayerSelection
+                key={index}
+                unique={index}
+                position={this.state.selectPositions[position]}
+                selectNames={this.selectNames}
+                handleSelectionChange={this.handleSelectionChange}
+              />
+            ))}
+
+            <input
+              id="createTeamBtn"
+              className="bd-tw-button button is-danger is-focused is-rounded"
+              type="submit"
+              value="Create Team"
             />
-          ))}
+          </form>
 
-          <input
-            id="createTeamBtn"
-            className="bd-tw-button button is-danger is-focused is-rounded"
-            type="submit"
-            value="Create Team"
-          />
-        </form>
-
-         <div id="buildTeamContainer" />
+        </div>
       </React.Fragment>
     );
   }

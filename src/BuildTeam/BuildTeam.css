@@ -2,8 +2,8 @@ Main Container
 
 #buildTeamContainer {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    /* justify-content: center; */
 }
 
 /* Sub-Container 1 */

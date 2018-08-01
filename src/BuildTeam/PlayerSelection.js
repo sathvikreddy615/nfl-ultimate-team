@@ -23,8 +23,8 @@ export default class PlayerSelection extends Component {
           onChange={this.props.handleSelectionChange}
         >
         {
-          this.props.position.map(player => (
-          <option id={player.id} value={player.Name}>{player.Name}</option>
+          this.props.position.map((player, index) => (
+          <option key={index} id={player.id} value={player.name}>{player.name}</option>
         ))
         }
         </select>
