@@ -1,25 +1,30 @@
 import React, { Component } from "react";
 
 export default class PlayerSelection extends Component {
+  state = {
+    selectedPlayer: {}
+  }
+
   render() {
     return (
       <React.Fragment>
-        <img
+        {/* <img
           className="playerPicture"
-          src={this.props.selectedPlayer.image}
+          src="#"
           alt="#"
-        />
+        /> */}
 
         {/* ----- */}
 
         <select
+          id={this.props.unique}
           required
           className="selectPositions"
-          onChange={this.handleSelectionChange}
+          onChange={this.props.handleSelectionChange}
         >
         {
-          this.props.position.map(player => (
-          <option value={player.id}>{player.Name}</option>
+          this.props.position.map((player, index) => (
+          <option key={index} id={player.id} value={player.name}>{player.name}</option>
         ))
         }
         </select>

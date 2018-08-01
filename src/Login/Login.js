@@ -21,7 +21,7 @@ export default class Login extends Component {
 
     APIManager.getData(`users?username=${this.state.username}`)
       .then(user => {
-        if (user.length > 0 && this.state.password == user[0].password) {
+        if (user.length > 0 && this.state.password === user[0].password) {
           this.setState({ userId: user[0].id });
         } else {
           alert("Uh oh, looks like you mistyped your username or password");

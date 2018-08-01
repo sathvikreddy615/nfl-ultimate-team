@@ -11,9 +11,9 @@ export default class APIManager {
             body: JSON.stringify(data)
         });
     };
-    static getPlayersByPosition = positionName => {
+    static getPlayersByName = playerName => {
         return fetch(
-            `http://localhost:5002/players?Position=${positionName}`
+            `http://localhost:5002/players?name=${playerName}`
           ).then(e => e.json());
     };
 }

@@ -5,24 +5,7 @@ import 'bulma/css/bulma.css';
 
 export default class NUT extends Component {
     state = {
-        players: [],
-    };
-
-    getPlayers = () => {
-        APIManager.getData("players")
-        .then(players => {
-            this.setState({
-                players: players
-            })
-            console.log(players);
-            players.forEach(player => {
-                // console.log(player);
-            });
-        })
-    };
-
-    componentDidMount = () => {
-        return this.getPlayers();
+        players: this.props.players
     };
 
     positionsArray = ["QB", "RB", "WR", "TE", "DL", "LB", "DB", "K"];
@@ -49,9 +32,9 @@ export default class NUT extends Component {
         {/* Lists all Position Names */}
 
         <div id="positionsContainer" className="columns">
-          {this.positionsArray.map(position => (
+          {this.positionsArray.map((position, index) => (
             <div
-                key={position}
+                key={index}
                 className="column position">
                 {position}
             </div>
