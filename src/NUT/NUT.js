@@ -5,29 +5,7 @@ import 'bulma/css/bulma.css';
 
 export default class NUT extends Component {
     state = {
-        players: this.props.userSelectedPlayers
-    };
-
-    // getPlayers = () => {
-    //     APIManager.getData("players")
-    //     .then(players => {
-    //         this.setState({
-    //             players: players
-    //         })
-    //         // console.log(players);
-    //         players.forEach(player => {
-    //             // console.log(player);
-    //         });
-    //     })
-    // };
-
-    // getPlayers = () => {
-    //     // console.log;
-    // }
-
-    componentDidMount = () => {
-        // return this.getPlayers();
-        console.log(this.state.players);
+        players: this.props.players
     };
 
     positionsArray = ["QB", "RB", "WR", "TE", "DL", "LB", "DB", "K"];
@@ -35,7 +13,6 @@ export default class NUT extends Component {
   render() {
     return (
       <React.Fragment>
-
 
         {/* Containers for the User */}
 

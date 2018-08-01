@@ -109,19 +109,19 @@ export default class BuildTeam extends Component {
     for (let i in this.state.selectPlayer) {
       APIManager.getPlayersByName(this.state.selectPlayer[i])
       .then(arrayOfOnePlayer => {
-        console.log(arrayOfOnePlayer);
+        // console.log(arrayOfOnePlayer);
         arrayOfOnePlayer.forEach(playerData => {
-          console.log(playerData);
-          console.log(playerData.image);
+          // console.log(playerData.name);
+          // console.log(playerData.image);
           let newArray = this.state.chosenTeam;
           newArray.push(playerData);
           console.log(newArray);
           this.setState({chosenTeam: newArray})
         })
       })
-      // window.location = 'http://localhost:3000/';
     }
     this.props.userSelectedPlayers(this.state.chosenTeam);
+    // window.location = 'http://localhost:3000/';
   };
 
   render() {

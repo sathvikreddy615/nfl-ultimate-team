@@ -27,8 +27,12 @@ export default class ApplicationViews extends Component {
       return (
         <React.Fragment>
           <Route path="/" component={Navbar} />
-          <Route exact path="/" component={NUT} />
-          <Route exact path="/buildteam" render={props =>  <BuildTeam userSelectedPlayers={this.userSelectedPlayers} />} />
+          <Route exact path="/" render={props => <NUT players={this.state.players} />}
+          />
+          {/* <Route exact path="/" component={NUT} /> */}
+
+          <Route exact path="/buildteam" render={props =>  <BuildTeam userSelectedPlayers={this.userSelectedPlayers} />}
+          />
           <Route exact path="/standings" component={Standings} />
           <Route exact path="/instructions" component={Instructions} />
         </React.Fragment>
