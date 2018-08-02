@@ -1,15 +1,20 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import APIManager from "../APIManager";
 import PlayerCards from "./PlayerCards";
-import ResultsModal from "./ResultsModal";
+import Modal from "react-responsive-modal";
+// import ResultsModal from "./ResultsModal";
+import "./ResultsModal.css";
 import 'bulma/css/bulma.css';
 
 export default class NUT extends Component {
     state = {
         players: this.props.players,
         computerTeam: [],
-        playerSum: [],
-        computerSum: []
+        userSum: 0,
+        computerSum: 0,
+        gameResult: "",
+        open: false
     };
 
     positionsArray = ["QB", "RB", "WR", "TE", "DL", "LB", "DB", "K"];
@@ -35,36 +40,56 @@ export default class NUT extends Component {
         return a + b;
     }
 
+    onOpenModal = () => {
+        this.setState({ open: true });
+      };
+
+    onCloseModal = () => {
+        this.setState({ open: false });
+    };
+
     simulation = () => {
         // calculates total user points
-        let userArray = this.state.playerSum;
+        let userArray = [];
         this.props.players.forEach(playerObjects => {
             userArray.push(playerObjects.points);
         })
         let sumOfUserArray = userArray.reduce(this.sum);
         console.log(sumOfUserArray);
-        this.setState({playerSum: userArray});
+        this.setState({userSum: sumOfUserArray});
 
         // calculates total computer points
-        let computerArray = this.state.computerSum;
+        let computerArray = [];
         this.state.computerTeam.forEach(playerObjects => {
             computerArray.push(playerObjects.points);
         })
         let sumOfComputerArray = computerArray.reduce(this.sum);
         console.log(sumOfComputerArray);
         this.setState({computerSum: sumOfComputerArray})
-        // console.log(this.state.computerSum);
+
+
+        if (sumOfUserArray > sumOfComputerArray) {
+            this.setState({gameResult: "You Won!"});
+            console.log("You Won!")
+        } else if (sumOfUserArray < sumOfComputerArray) {
+            this.setState({gameResult: "You Lost!"});
+            console.log("You Lost!");
+        } else if (sumOfUserArray === sumOfComputerArray) {
+            this.setState({gameResult: "You Tied!"});
+            console.log("You Tied!");
+        } else {
+            console.log("This did not work");
+        }
+
+        this.onOpenModal();
     }
 
   render() {
+    const { open } = this.state;
     return (
       <React.Fragment>
 
-        {/* Containers for the User */}
-
-        <div id="userContainer">
-            <div id="userName">Sathvik Reddy</div>
-            <div id="simulateBtnContainer">
+          <div id="simulateBtnContainer">
                     <button
                         onClick={this.simulation}
                         id="simulateBtn"
@@ -73,6 +98,12 @@ export default class NUT extends Component {
                         Run Simulation
                     </button>
             </div>
+
+        {/* Containers for the User */}
+
+        <div id="userContainer">
+            <div id="userName">Sathvik Reddy</div>
+            <div id="userPoints">{this.state.userSum}</div>
         </div>
         <div id="userCardsContainer" className="columns">
         {this.state.players.map(player => (
@@ -119,12 +150,31 @@ export default class NUT extends Component {
         </div>
         <div id="computerContainer">
             <div id="computerName">Computer</div>
-            <div id="computerPoints">78</div>
+            <div id="computerPoints">{this.state.computerSum}</div>
         </div>
 
         {/* ------------------ */}
 
-        <ResultsModal  />
+        {/* <ResultsModal
+        userSum={this.state.userSum}
+        computerSum={this.state.computerSum} /> */}
+
+        <div id="gary">
+            <Modal open={open} onClose={this.onCloseModal} center>
+                <h1>{this.state.gameResult}</h1>
+                <br/>
+                <h2>{this.state.userSum}</h2>
+                <h2>{this.state.computerSum}</h2>
+                <div id="modalBtnContainer">
+                   <Link to="/buildteam">
+                    <button className="button is-success is-rounded is-fullwidth">Play Again</button>
+                   </Link>
+                   <Link to="/standings">
+                        <button className="button is-danger is-rounded is-fullwidth">View Standings</button>
+                    </Link>
+                </div>
+            </Modal>
+      </div>
 
       </React.Fragment>
     );
