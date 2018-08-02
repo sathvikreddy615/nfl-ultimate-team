@@ -1,0 +1,9 @@
+#standingsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+/* #rowOne, #rowTwo {
+    display: flex;
+    flex-direction: row;
+} */
