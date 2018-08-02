@@ -121,7 +121,7 @@ export default class BuildTeam extends Component {
       })
     }
     this.props.userSelectedPlayers(this.state.chosenTeam);
-    // window.location = 'http://localhost:3000/';
+    // window.location = 'http://localhost:3000/nfl-ultimate-team';
   };
 
   render() {
