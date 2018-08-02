@@ -1,95 +1,59 @@
 import React, { Component } from "react";
 import APIManager from "../APIManager";
 import PlayerCards from "./PlayerCards";
+import ResultsModal from "./ResultsModal";
 import 'bulma/css/bulma.css';
 
 export default class NUT extends Component {
     state = {
         players: this.props.players,
-        computerPlayers: []
+        computerTeam: [],
+        playerSum: [],
+        computerSum: []
     };
 
     positionsArray = ["QB", "RB", "WR", "TE", "DL", "LB", "DB", "K"];
 
     generateComputerPlayers = () => {
-        this.positionsArray.forEach(name => {
-            APIManager.getPlayersByPosition(name)
+        this.positionsArray.forEach(position => {
+            APIManager.getPlayersByPosition(position)
             .then(playerArray => {
                 let random = playerArray[Math.floor(Math.random() * playerArray.length)];
-                let newArray = this.state.computerPlayers;
+                let newArray = this.state.computerTeam;
                 newArray.push(random);
                 console.log(newArray);
-                this.setState({chosenTeam: newArray})
+                this.setState({computerTeam: newArray})
             })
-        })
-    }
-
-    getAllPlayers = () => {
-        APIManager.getData("players")
-        .then(allPlayers => {
-            // let newObject = this.state.computerPlayers;
-
-            // let random = allPlayers[Math.floor(Math.random() * allPlayers.length)];
-            // console.log(random);
-
-            allPlayers.forEach(player => {
-                switch (player.position) {
-                    case "QB":
-                        // return this.getPlayersByPosition("QB");
-                        // let newArray = [];
-                        // newArray.push(player);
-                        // console.log(newArray)
-
-                        // let random = newArray[Math.floor(Math.random() * newArray.length)];
-                        // console.log(random);
-
-                        // newObject.qb.push(random);
-                        // break;
-
-                        // let qbArray = [];
-                        // qbArray.push(player)
-                        // console.log(qbArray);
-                        // let random = qbArray[Math.floor(Math.random() * qbArray.length)];
-                        // newObject.qb.push(random)
-                        break;
-                    // case "RB":
-                    //     // console.log(random);
-                    //     newObject.rb.push(random)
-                    //     break;
-                    // case "WR":
-                    //     // console.log(random);
-                    //     newObject.wr.push(random)
-                    //     break;
-                    // case "TE":
-                    //     // console.log(random);
-                    //     newObject.te.push(random)
-                    //     break;
-                    // case "DL":
-                    //     // console.log(random);
-                    //     newObject.dl.push(random)
-                    //     break;
-                    // case "LB":
-                    //     // console.log(random);
-                    //     newObject.lb.push(random)
-                    //     break;
-                    // case "DB":
-                    //     // console.log(random);
-                    //     newObject.db.push(random)
-                    //     break;
-                    // case "DB":
-                    //     // console.log(random);
-                    //     newObject.db.push(random)
-                    //     break;
-                    default:
-                        console.log("nothing returned")
-                }
-            })
-            // console.log(newObject);
         })
     }
 
     componentDidMount = () => {
         return this.generateComputerPlayers();
+    }
+
+    sum = (a, b) => {
+        return a + b;
+    }
+
+    simulation = () => {
+        // calculates total user points
+        let userArray = this.state.playerSum;
+        this.props.players.forEach(playerObjects => {
+            userArray.push(playerObjects.points);
+        })
+        let sumOfUserArray = userArray.reduce(this.sum);
+        console.log(sumOfUserArray);
+        this.setState({playerSum: userArray});
+
+        // calculates total computer points
+        let computerArray = this.state.computerSum;
+        this.state.computerTeam.forEach(playerObjects => {
+            computerArray.push(playerObjects.points);
+        })
+        let sumOfComputerArray = computerArray.reduce(this.sum);
+        console.log(sumOfComputerArray);
+        this.setState({computerSum: sumOfComputerArray})
+        // console.log(this.state.computerSum);
     }
 
   render() {
@@ -100,7 +64,15 @@ export default class NUT extends Component {
 
         <div id="userContainer">
             <div id="userName">Sathvik Reddy</div>
-            <div id="userPoints">79</div>
+            <div id="simulateBtnContainer">
+                    <button
+                        onClick={this.simulation}
+                        id="simulateBtn"
+                        className="bd-tw-button button is-danger is-small is-focused is-rounded"
+                        type="button">
+                        Run Simulation
+                    </button>
+            </div>
         </div>
         <div id="userCardsContainer" className="columns">
         {this.state.players.map(player => (
@@ -132,13 +104,13 @@ export default class NUT extends Component {
         {/* Containers for the Computer */}
 
          <div id="computerPlayerPointsContainer" className="columns">
-        {this.state.computerPlayers.map((player, index) => (
+        {this.state.computerTeam.map((player, index) => (
             <div key={index} className="column points">{player.points}</div>
         ))}
         </div>
 
         <div id="computerCardsContainer" className="columns">
-          {this.state.computerPlayers.map(player => (
+          {this.state.computerTeam.map(player => (
               <PlayerCards
               key={player.id}
               player={player}
@@ -149,6 +121,10 @@ export default class NUT extends Component {
             <div id="computerName">Computer</div>
             <div id="computerPoints">78</div>
         </div>
+
+        {/* ------------------ */}
+
+        <ResultsModal  />
 
       </React.Fragment>
     );

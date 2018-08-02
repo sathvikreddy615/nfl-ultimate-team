@@ -11,11 +11,16 @@ import Instructions from "./Instructions/Instructions";
 
 export default class ApplicationViews extends Component {
   state = {
-    players: []
+    players: [],
+    computerPlayers: []
   }
 
-  userSelectedPlayers = positions => {
-    this.setState({players: positions})
+  userSelectedPlayers = team => {
+    this.setState({players: team})
+  }
+
+  computerSelectedPlayers = team => {
+    this.setState({computerPlayers: team})
   }
 
   isAuthenticated = () =>
