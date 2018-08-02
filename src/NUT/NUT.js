@@ -9,7 +9,7 @@ import 'bulma/css/bulma.css';
 
 export default class NUT extends Component {
     state = {
-        players: this.props.players,
+        userTeam: this.props.userPlayers,
         computerTeam: [],
         userSum: 0,
         computerSum: 0,
@@ -51,7 +51,7 @@ export default class NUT extends Component {
     simulation = () => {
         // calculates total user points
         let userArray = [];
-        this.props.players.forEach(playerObjects => {
+        this.state.userTeam.forEach(playerObjects => {
             userArray.push(playerObjects.points);
         })
         let sumOfUserArray = userArray.reduce(this.sum);
@@ -106,7 +106,7 @@ export default class NUT extends Component {
             <div id="userPoints">{this.state.userSum}</div>
         </div>
         <div id="userCardsContainer" className="columns">
-        {this.state.players.map(player => (
+        {this.state.userTeam.map(player => (
             <PlayerCards
                 key={player.id}
                 player={player}
@@ -115,7 +115,7 @@ export default class NUT extends Component {
         </div>
 
         <div id="userPlayerPointsContainer" className="columns">
-        {this.state.players.map((player, index) => (
+        {this.state.userTeam.map((player, index) => (
             <div key={index} className="column points">{player.points}</div>
         ))}
         </div>
