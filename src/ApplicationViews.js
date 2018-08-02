@@ -11,12 +11,12 @@ import Instructions from "./Instructions/Instructions";
 
 export default class ApplicationViews extends Component {
   state = {
-    players: [],
+    userPlayers: [],
     computerPlayers: []
   }
 
   userSelectedPlayers = team => {
-    this.setState({players: team})
+    this.setState({userPlayers: team})
   }
 
   computerSelectedPlayers = team => {
@@ -32,7 +32,7 @@ export default class ApplicationViews extends Component {
       return (
         <React.Fragment>
           <Route path="/" component={Navbar} />
-          <Route exact path="/nfl-ultimate-team" render={props => <NUT players={this.state.players} />}
+          <Route exact path="/nfl-ultimate-team" render={props => <NUT userPlayers={this.state.userPlayers} />}
           />
 
           <Route exact path="/buildteam" render={props =>  <BuildTeam userSelectedPlayers={this.userSelectedPlayers} />}
