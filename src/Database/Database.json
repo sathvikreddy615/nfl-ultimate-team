@@ -34,131 +34,1731 @@
   "players": [
     {
       "id": 1,
-      "name": "Russell Wilson",
-      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/russell_wilson.jpg",
-      "Team": "SEA",
+      "name": "Deshaun Watson",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/deshaun_watson.jpg",
+      "team": "HOU",
       "position": "QB",
-      "points": 22
+      "points": 24,
+      "drafted": false
     },
     {
       "id": 2,
-      "name": "Marcus Mariota",
-      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/marcus_mariota.jpg",
-      "Team": "TEN",
+      "name": "Russell Wilson",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/russell_wilson.jpg",
+      "team": "SEA",
       "position": "QB",
-      "points": 14
+      "points": 22,
+      "drafted": false
     },
     {
       "id": 3,
-      "name": "Ryan Succop",
-      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/ryan_succop.jpg",
-      "Team": "TEN",
-      "position": "K",
-      "points": 9
+      "name": "Carson Wentz",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/carson_wentz.jpg",
+      "team": "PHI",
+      "position": "QB",
+      "points": 22,
+      "drafted": false
     },
     {
       "id": 4,
-      "name": "Adam Vinatieri",
-      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/adam_vinatieri.jpg",
-      "Team": "IND",
-      "position": "K",
-      "points": 8
+      "name": "Alex Smith",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/alex_smith.jpg",
+      "team": "KC",
+      "position": "QB",
+      "points": 20,
+      "drafted": false
     },
     {
       "id": 5,
-      "name": "Kevin Byard",
-      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/kevin_byard.jpg",
-      "Team": "TEN",
-      "position": "DB",
-      "points": 8
+      "name": "Cam Newton",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/cam_newton.jpg",
+      "team": "CAR",
+      "position": "QB",
+      "points": 19,
+      "drafted": false
     },
     {
       "id": 6,
-      "name": "Jalen Ramsey",
-      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/jalen_ramsey.jpg",
-      "Team": "JAX",
-      "position": "DB",
-      "points": 5.5
+      "name": "Tom Brady",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/tom_brady.jpg",
+      "team": "NE",
+      "position": "QB",
+      "points": 18.5,
+      "drafted": false
     },
     {
       "id": 7,
-      "name": "Travis Kelce",
-      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/travis_kelce.jpg",
-      "Team": "KC",
-      "position": "TE",
-      "points": 15.5
+      "name": "Aaron Rodgers",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/aaron_rodgers.jpg",
+      "team": "GB",
+      "position": "QB",
+      "points": 18.5,
+      "drafted": false
     },
     {
       "id": 8,
-      "name": "Delanie Walker",
-      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/delanie_walker.jpg",
-      "Team": "TEN",
-      "position": "TE",
-      "points": 11
+      "name": "Kirk Cousins",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/kirk_cousins.jpg",
+      "team": "WAS",
+      "position": "QB",
+      "points": 17.5,
+      "drafted": false
     },
     {
       "id": 9,
-      "name": "Khalil Mack",
-      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/khalil_mack.jpg",
-      "Team": "OAK",
-      "position": "DL",
-      "points": 8.5
+      "name": "Ben Roethlisberger",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/ben_roethlisberger.jpg",
+      "team": "PIT",
+      "position": "QB",
+      "points": 17.5,
+      "drafted": false
     },
     {
       "id": 10,
-      "name": "Jurrell Casey",
-      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/jurrell_casey.jpg",
-      "Team": "TEN",
-      "position": "DL",
-      "points": 6
+      "name": "Philip Rivers",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/philip_rivers.jpg",
+      "team": "LAC",
+      "position": "QB",
+      "points": 17,
+      "drafted": false
     },
     {
       "id": 11,
-      "name": "Le'Veon Bell",
-      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/leveon_bell.jpg",
-      "Team": "PIT",
-      "position": "RB",
-      "points": 17
+      "name": "Jared Goff",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/jared_goff.jpg",
+      "team": "LAR",
+      "position": "QB",
+      "points": 17,
+      "drafted": false
     },
     {
       "id": 12,
-      "name": "Derrick Henry",
-      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/derrick_henry.jpg",
-      "Team": "TEN",
-      "position": "RB",
-      "points": 8
+      "name": "Drew Brees",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/drew_brees.jpg",
+      "team": "NO",
+      "position": "QB",
+      "points": 16.5,
+      "drafted": false
     },
     {
       "id": 13,
-      "name": "Antonio Brown",
-      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/antonio_brown.jpg",
-      "Team": "PIT",
-      "position": "WR",
-      "points": 22
+      "name": "Dak Prescott",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/dak_prescott.jpg",
+      "team": "DAL",
+      "position": "QB",
+      "points": 16.5,
+      "drafted": false
     },
     {
       "id": 14,
-      "name": "Rishard Matthews",
-      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/rishard_matthews.jpg",
-      "Team": "TEN",
-      "position": "WR",
-      "points": 11
+      "name": "Case Keenum",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/case_keenum.jpg",
+      "team": "MIN",
+      "position": "QB",
+      "points": 16,
+      "drafted": false
     },
     {
       "id": 15,
-      "name": "CJ Mosley",
-      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/cj_mosley.jpg",
-      "Team": "BAL",
-      "position": "LB",
-      "points": 10.5
+      "name": "Josh McCown",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/josh_mccown.jpg",
+      "team": "NYJ",
+      "position": "QB",
+      "points": 16,
+      "drafted": false
     },
     {
       "id": 16,
+      "name": "Blake Bortles",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/blake_bortles.jpg",
+      "team": "JAX",
+      "position": "QB",
+      "points": 15.5,
+      "drafted": false
+    },
+    {
+      "id": 17,
+      "name": "Jameis Winston",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/jameis_winston.jpg",
+      "team": "TB",
+      "position": "QB",
+      "points": 15.5,
+      "drafted": false
+    },
+    {
+      "id": 18,
+      "name": "Tyrod Taylor",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/tyrod_taylor.jpg",
+      "team": "BUF",
+      "position": "QB",
+      "points": 15,
+      "drafted": false
+    },
+    {
+      "id": 19,
+      "name": "Matt Ryan",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/matt_ryan.jpg",
+      "team": "ATL",
+      "position": "QB",
+      "points": 14.5,
+      "drafted": false
+    },
+    {
+      "id": 20,
+      "name": "Carson Palmer",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/carson_palmer.jpg",
+      "team": "ARI",
+      "position": "QB",
+      "points": 14.5,
+      "drafted": false
+    },
+    {
+      "id": 21,
+      "name": "Marcus Mariota",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/marcus_mariota.jpg",
+      "team": "TEN",
+      "position": "QB",
+      "points": 14,
+      "drafted": false
+    },
+    {
+      "id": 22,
+      "name": "Derek Carr",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/derek_carr.jpg",
+      "team": "OAK",
+      "position": "QB",
+      "points": 14,
+      "drafted": false
+    },
+    {
+      "id": 23,
+      "name": "Andy Dalton",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/andy_dalton.jpg",
+      "team": "CIN",
+      "position": "QB",
+      "points": 13,
+      "drafted": false
+    },
+    {
+      "id": 24,
+      "name": "Eli Manning",
+      "image": "https://s3.amazonaws.com/nfl-api-images/QBs/eli_manning.jpg",
+      "team": "NYG",
+      "position": "QB",
+      "points": 12.5,
+      "drafted": false
+    },
+    {
+      "id": 25,
+      "name": "Todd Gurley",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/todd_gurley.jpg",
+      "team": "LAR",
+      "position": "RB",
+      "points": 21.5,
+      "drafted": false
+    },
+    {
+      "id": 26,
+      "name": "Ezekiel Elliott",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/ezekiel_elliot.jpg",
+      "team": "DAL",
+      "position": "RB",
+      "points": 18,
+      "drafted": false
+    },
+    {
+      "id": 27,
+      "name": "Le'Veon Bell",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/leveon_bell.jpg",
+      "team": "PIT",
+      "position": "RB",
+      "points": 17,
+      "drafted": false
+    },
+    {
+      "id": 28,
+      "name": "Kareem Hunt",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/kareem_hunt.jpg",
+      "team": "KC",
+      "position": "RB",
+      "points": 15,
+      "drafted": false
+    },
+    {
+      "id": 29,
+      "name": "Leonard Fournette",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/leonard_fournette.jpg",
+      "team": "JAX",
+      "position": "RB",
+      "points": 15,
+      "drafted": false
+    },
+    {
+      "id": 30,
+      "name": "Alvin Kamara",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/alvin_kamara.jpeg",
+      "team": "NO",
+      "position": "RB",
+      "points": 14.5,
+      "drafted": false
+    },
+    {
+      "id": 31,
+      "name": "Melvin Gordon",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/melvin_gordon.jpg",
+      "team": "LAC",
+      "position": "RB",
+      "points": 14.5,
+      "drafted": false
+    },
+    {
+      "id": 32,
+      "name": "Mark Ingram",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/mark_ingram.jpg",
+      "team": "NO",
+      "position": "RB",
+      "points": 14,
+      "drafted": false
+    },
+    {
+      "id": 33,
+      "name": "LeSean McCoy",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/lesean_mccoy.jpg",
+      "team": "BUF",
+      "position": "RB",
+      "points": 13,
+      "drafted": false
+    },
+    {
+      "id": 34,
+      "name": "Devonta Freeman",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/devonta_freeman.jpg",
+      "team": "ATL",
+      "position": "RB",
+      "points": 12,
+      "drafted": false
+    },
+    {
+      "id": 35,
+      "name": "Jordan Howard",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/jordan_howard.jpg",
+      "team": "CHI",
+      "position": "RB",
+      "points": 11,
+      "drafted": false
+    },
+    {
+      "id": 36,
+      "name": "Carlos Hyde",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/carlos_hyde.jpg",
+      "team": "SF",
+      "position": "RB",
+      "points": 11,
+      "drafted": false
+    },
+    {
+      "id": 37,
+      "name": "Dion Lewis",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/dion_lewis.jpg",
+      "team": "NE",
+      "position": "RB",
+      "points": 10.5,
+      "drafted": false
+    },
+    {
+      "id": 38,
+      "name": "Lamar Miller",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/lamar_miller.jpg",
+      "team": "HOU",
+      "position": "RB",
+      "points": 10,
+      "drafted": false
+    },
+    {
+      "id": 39,
+      "name": "Alex Collins",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/alex_collins.jpg",
+      "team": "BAL",
+      "position": "RB",
+      "points": 10,
+      "drafted": false
+    },
+    {
+      "id": 40,
+      "name": "Christian McCaffrey",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/christian_mccaffrey.jpg",
+      "team": "CAR",
+      "position": "RB",
+      "points": 9.5,
+      "drafted": false
+    },
+    {
+      "id": 41,
+      "name": "Marshawn Lynch",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/marshawn_lynch.jpg",
+      "team": "OAK",
+      "position": "RB",
+      "points": 9.5,
+      "drafted": false
+    },
+    {
+      "id": 42,
+      "name": "Latavius Murray",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/latavius_murray.jpg",
+      "team": "MIN",
+      "position": "RB",
+      "points": 9,
+      "drafted": false
+    },
+    {
+      "id": 43,
+      "name": "DeMarco Murray",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/demarco_murray.jpg",
+      "team": "TEN",
+      "position": "RB",
+      "points": 9,
+      "drafted": false
+    },
+    {
+      "id": 44,
+      "name": "Derrick Henry",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/derrick_henry.jpg",
+      "team": "TEN",
+      "position": "RB",
+      "points": 8,
+      "drafted": false
+    },
+    {
+      "id": 45,
+      "name": "Jay Ajayi",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/jay_ajayi.jpg",
+      "team": "PHI",
+      "position": "RB",
+      "points": 8,
+      "drafted": false
+    },
+    {
+      "id": 46,
+      "name": "Javorius Allen",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/javorious_allen.jpg",
+      "team": "BAL",
+      "position": "RB",
+      "points": 7.5,
+      "drafted": false
+    },
+    {
+      "id": 47,
+      "name": "Isaiah Crowell",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/isiah_crowell.jpg",
+      "team": "CLE",
+      "position": "RB",
+      "points": 7,
+      "drafted": false
+    },
+    {
+      "id": 48,
+      "name": "Theo Riddick",
+      "image": "https://s3.amazonaws.com/nfl-api-images/RBs/theo_riddick.jpg",
+      "team": "DET",
+      "position": "RB",
+      "points": 6.5,
+      "drafted": false
+    },
+    {
+      "id": 49,
+      "name": "Antonio Brown",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/antonio_brown.jpg",
+      "team": "PIT",
+      "position": "WR",
+      "points": 22,
+      "drafted": false
+    },
+    {
+      "id": 50,
+      "name": "DeAndre Hopkins",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/deandre_hopkins.jpg",
+      "team": "HOU",
+      "position": "WR",
+      "points": 21,
+      "drafted": false
+    },
+    {
+      "id": 51,
+      "name": "Keenan Allen",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/keenan_allen.jpg",
+      "team": "LAC",
+      "position": "WR",
+      "points": 18,
+      "drafted": false
+    },
+    {
+      "id": 52,
+      "name": "Larry Fitzgerald",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/larry_fitzgerald.jpg",
+      "team": "ARI",
+      "position": "WR",
+      "points": 16.5,
+      "drafted": false
+    },
+    {
+      "id": 53,
+      "name": "Julio Jones",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/julio_jones.jpg",
+      "team": "ATL",
+      "position": "WR",
+      "points": 16,
+      "drafted": false
+    },
+    {
+      "id": 54,
+      "name": "Tyreek Hill",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/tyreek_hill.jpg",
+      "team": "KC",
+      "position": "WR",
+      "points": 16,
+      "drafted": false
+    },
+    {
+      "id": 55,
+      "name": "Adam Thielen",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/adam_thielen.jpg",
+      "team": "MIN",
+      "position": "WR",
+      "points": 15,
+      "drafted": false
+    },
+    {
+      "id": 56,
+      "name": "AJ Green",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/aj_green.jpg",
+      "team": "CIN",
+      "position": "WR",
+      "points": 14,
+      "drafted": false
+    },
+    {
+      "id": 57,
+      "name": "Doug Baldwin",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/doug_baldwin.jpg",
+      "team": "SEA",
+      "position": "WR",
+      "points": 14,
+      "drafted": false
+    },
+    {
+      "id": 58,
+      "name": "Mike Evans",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/mike_evans.jpg",
+      "team": "TB",
+      "position": "WR",
+      "points": 13.5,
+      "drafted": false
+    },
+    {
+      "id": 59,
+      "name": "Robert Woods",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/robert_woods.jpg",
+      "team": "LAR",
+      "position": "WR",
+      "points": 13.5,
+      "drafted": false
+    },
+    {
+      "id": 60,
+      "name": "Demaryius Thomas",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/damaryius_thomas.jpg",
+      "team": "DEN",
+      "position": "WR",
+      "points": 13,
+      "drafted": false
+    },
+    {
+      "id": 61,
+      "name": "Sterling Shepard",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/sterling_shepard.jpg",
+      "team": "NYG",
+      "position": "WR",
+      "points": 13,
+      "drafted": false
+    },
+    {
+      "id": 62,
+      "name": "Robby Anderson",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/robby_anderson.jpg",
+      "team": "NYJ",
+      "position": "WR",
+      "points": 12.5,
+      "drafted": false
+    },
+    {
+      "id": 63,
+      "name": "Michael Crabtree",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/michael_crabtree.jpg",
+      "team": "OAK",
+      "position": "WR",
+      "points": 12.5,
+      "drafted": false
+    },
+    {
+      "id": 64,
+      "name": "Alshon Jeffery",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/alshon_jeffery.jpg",
+      "team": "PHI",
+      "position": "WR",
+      "points": 12,
+      "drafted": false
+    },
+    {
+      "id": 65,
+      "name": "Cooper Kupp",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/cooper_kupp.jpg",
+      "team": "LAR",
+      "position": "WR",
+      "points": 12,
+      "drafted": false
+    },
+    {
+      "id": 66,
+      "name": "Dez Bryant",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/dez_bryant.jpg",
+      "team": "DAL",
+      "position": "WR",
+      "points": 11.5,
+      "drafted": false
+    },
+    {
+      "id": 67,
+      "name": "Amari Cooper",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/amari_cooper.jpg",
+      "team": "OAK",
+      "position": "WR",
+      "points": 11.5,
+      "drafted": false
+    },
+    {
+      "id": 68,
+      "name": "T.Y. Hilton",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/ty_hilton.jpg",
+      "team": "IND",
+      "position": "WR",
+      "points": 11,
+      "drafted": false
+    },
+    {
+      "id": 69,
+      "name": "Rishard Matthews",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/rishard_matthews.jpg",
+      "team": "TEN",
+      "position": "WR",
+      "points": 11,
+      "drafted": false
+    },
+    {
+      "id": 70,
+      "name": "Randall Cobb",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/randall_cobbs.jpg",
+      "team": "GB",
+      "position": "WR",
+      "points": 10.5,
+      "drafted": false
+    },
+    {
+      "id": 71,
+      "name": "DeSean Jackson",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/desean_jackson.jpg",
+      "team": "TB",
+      "position": "WR",
+      "points": 10,
+      "drafted": false
+    },
+    {
+      "id": 72,
+      "name": "Danny Amendola",
+      "image": "https://s3.amazonaws.com/nfl-api-images/WRs/danny_amendola.jpg",
+      "team": "NE",
+      "position": "WR",
+      "points": 9.5,
+      "drafted": false
+    },
+    {
+      "id": 73,
+      "name": "Rob Gronkowski",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/rob_gronkowski.jpg",
+      "team": "NE",
+      "position": "TE",
+      "points": 16,
+      "drafted": false
+    },
+    {
+      "id": 74,
+      "name": "Travis Kelce",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/travis_kelce.jpg",
+      "team": "KC",
+      "position": "TE",
+      "points": 15.5,
+      "drafted": false
+    },
+    {
+      "id": 75,
+      "name": "Zach Ertz",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/zach_ertz.jpg",
+      "team": "PHI",
+      "position": "TE",
+      "points": 14.5,
+      "drafted": false
+    },
+    {
+      "id": 76,
+      "name": "Evan Engram",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/evan_engram.jpg",
+      "team": "NYG",
+      "position": "TE",
+      "points": 11.5,
+      "drafted": false
+    },
+    {
+      "id": 77,
+      "name": "Jack Doyle",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/jack_doyle.jpg",
+      "team": "IND",
+      "position": "TE",
+      "points": 11.5,
+      "drafted": false
+    },
+    {
+      "id": 78,
+      "name": "Delanie Walker",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/delanie_walker.jpg",
+      "team": "TEN",
+      "position": "TE",
+      "points": 11,
+      "drafted": false
+    },
+    {
+      "id": 79,
+      "name": "Jimmy Graham",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/jimmy_graham.jpg",
+      "team": "SEA",
+      "position": "TE",
+      "points": 11,
+      "drafted": false
+    },
+    {
+      "id": 80,
+      "name": "Kyle Rudolph",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/kyle_rudolph.jpg",
+      "team": "MIN",
+      "position": "TE",
+      "points": 10,
+      "drafted": false
+    },
+    {
+      "id": 81,
+      "name": "Jordan Reed",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/jordan_reed.webp",
+      "team": "WAS",
+      "position": "TE",
+      "points": 10,
+      "drafted": false
+    },
+    {
+      "id": 82,
+      "name": "Jason Witten",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/jason_witten.jpg",
+      "team": "DAL",
+      "position": "TE",
+      "points": 9,
+      "drafted": false
+    },
+    {
+      "id": 83,
+      "name": "Hunter Henry",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/hunter_henry.jpg",
+      "team": "LAC",
+      "position": "TE",
+      "points": 9,
+      "drafted": false
+    },
+    {
+      "id": 84,
+      "name": "Jared Cook",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/jared_cook.jpg",
+      "team": "OAK",
+      "position": "TE",
+      "points": 8.5,
+      "drafted": false
+    },
+    {
+      "id": 85,
+      "name": "Eric Ebron",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/eric_ebron.jpg",
+      "team": "DET",
+      "position": "TE",
+      "points": 8.5,
+      "drafted": false
+    },
+    {
+      "id": 86,
+      "name": "Tyler Kroft",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/tyler_kroft.jpg",
+      "team": "CIN",
+      "position": "TE",
+      "points": 8,
+      "drafted": false
+    },
+    {
+      "id": 87,
+      "name": "Austin Seferian-Jenkins",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/austin_seferian_jenkins.jpg",
+      "team": "NYJ",
+      "position": "TE",
+      "points": 8,
+      "drafted": false
+    },
+    {
+      "id": 88,
+      "name": "Vernon Davis",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/vernon_davis.jpg",
+      "team": "WAS",
+      "position": "TE",
+      "points": 7.5,
+      "drafted": false
+    },
+    {
+      "id": 89,
+      "name": "Austin Hooper",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/austin_hooper.jpg",
+      "team": "ATL",
+      "position": "TE",
+      "points": 7.5,
+      "drafted": false
+    },
+    {
+      "id": 90,
+      "name": "Julius Thomas",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/julius_thomas.jpg",
+      "team": "MIA",
+      "position": "TE",
+      "points": 7,
+      "drafted": false
+    },
+    {
+      "id": 91,
+      "name": "Zach Miller",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/zach_miller.jpg",
+      "team": "CHI",
+      "position": "TE",
+      "points": 7,
+      "drafted": false
+    },
+    {
+      "id": 92,
+      "name": "Martellus Bennett",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/martellus_bennett.jpg",
+      "team": "NE",
+      "position": "TE",
+      "points": 6.5,
+      "drafted": false
+    },
+    {
+      "id": 93,
+      "name": "Jesse James",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/jesse_james.jpg",
+      "team": "PIT",
+      "position": "TE",
+      "points": 6,
+      "drafted": false
+    },
+    {
+      "id": 94,
+      "name": "Greg Olsen",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/greg_olsen.jpg",
+      "team": "CAR",
+      "position": "TE",
+      "points": 6,
+      "drafted": false
+    },
+    {
+      "id": 95,
+      "name": "Marcedes Lewis",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/marcedes_lewis.jpg",
+      "team": "JAX",
+      "position": "TE",
+      "points": 5.5,
+      "drafted": false
+    },
+    {
+      "id": 96,
+      "name": "Antonio Gates",
+      "image": "https://s3.amazonaws.com/nfl-api-images/TEs/antonio_gates.jpg",
+      "team": "LAC",
+      "position": "TE",
+      "points": 5,
+      "drafted": false
+    },
+    {
+      "id": 97,
+      "name": "Chandler Jones",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/chandler_jones.jpg",
+      "team": "ARI",
+      "position": "DL",
+      "points": 10,
+      "drafted": false
+    },
+    {
+      "id": 98,
+      "name": "Calais Campbell",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/calais_campbell.jpg",
+      "team": "JAX",
+      "position": "DL",
+      "points": 9.5,
+      "drafted": false
+    },
+    {
+      "id": 99,
+      "name": "Cameron Jordan",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/cameron_jordan.jpg",
+      "team": "NO",
+      "position": "DL",
+      "points": 9.5,
+      "drafted": false
+    },
+    {
+      "id": 100,
+      "name": "Aaron Donald",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/aaron_donald.jpg",
+      "team": "LAR",
+      "position": "DL",
+      "points": 9,
+      "drafted": false
+    },
+    {
+      "id": 101,
+      "name": "Joey Bosa",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/joey_bosa.jpg",
+      "team": "LAC",
+      "position": "DL",
+      "points": 8.5,
+      "drafted": false
+    },
+    {
+      "id": 102,
+      "name": "Khalil Mack",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/khalil_mack.jpg",
+      "team": "OAK",
+      "position": "DL",
+      "points": 8.5,
+      "drafted": false
+    },
+    {
+      "id": 103,
+      "name": "Yannick Ngakoue",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/yannick_ngakoue.jpg",
+      "team": "JAX",
+      "position": "DL",
+      "points": 8,
+      "drafted": false
+    },
+    {
+      "id": 104,
+      "name": "Melvin Ingram",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/melvin_ingram.jpg",
+      "team": "LAC",
+      "position": "DL",
+      "points": 8,
+      "drafted": false
+    },
+    {
+      "id": 105,
+      "name": "Trey Flowers",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/trey_flowers.jpg",
+      "team": "NE",
+      "position": "DL",
+      "points": 8,
+      "drafted": false
+    },
+    {
+      "id": 106,
+      "name": "Everson Griffen",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/everson_griffin.jpg",
+      "team": "MIN",
+      "position": "DL",
+      "points": 7.5,
+      "drafted": false
+    },
+    {
+      "id": 107,
+      "name": "Ezekiel Ansah",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/ezekiel_ansah.jpg",
+      "team": "DET",
+      "position": "DL",
+      "points": 7.5,
+      "drafted": false
+    },
+    {
+      "id": 108,
+      "name": "Terrell Suggs",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/terrell_suggs.jpg",
+      "team": "BAL",
+      "position": "DL",
+      "points": 7,
+      "drafted": false
+    },
+    {
+      "id": 109,
+      "name": "Jason Pierre-Paul",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/jason_pierre-paul.jpg",
+      "team": "NYG",
+      "position": "DL",
+      "points": 7,
+      "drafted": false
+    },
+    {
+      "id": 110,
+      "name": "Carlos Dunlap",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/carlos_dunlap.jpg",
+      "team": "CIN",
+      "position": "DL",
+      "points": 6.5,
+      "drafted": false
+    },
+    {
+      "id": 111,
+      "name": "Akiem Hicks",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/akiem_hicks.jpg",
+      "team": "CHI",
+      "position": "DL",
+      "points": 6.5,
+      "drafted": false
+    },
+    {
+      "id": 112,
+      "name": "Jurrell Casey",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/jurrell_casey.jpg",
+      "team": "TEN",
+      "position": "DL",
+      "points": 6,
+      "drafted": false
+    },
+    {
+      "id": 113,
+      "name": "Mario Addison",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/mario_addison.jpeg",
+      "team": "CAR",
+      "position": "DL",
+      "points": 6,
+      "drafted": false
+    },
+    {
+      "id": 114,
+      "name": "Julius Peppers",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/julius_peppers.jpg",
+      "team": "CAR",
+      "position": "DL",
+      "points": 5.5,
+      "drafted": false
+    },
+    {
+      "id": 115,
+      "name": "Geno Atkins",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/geno_atkins.jpg",
+      "team": "CIN",
+      "position": "DL",
+      "points": 5.5,
+      "drafted": false
+    },
+    {
+      "id": 116,
+      "name": "Adrian Clayborn",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/adrian_clayborn.jpg",
+      "team": "ATL",
+      "position": "DL",
+      "points": 5,
+      "drafted": false
+    },
+    {
+      "id": 117,
+      "name": "Frank Clark",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/frank_clark.jpg",
+      "team": "SEA",
+      "position": "DL",
+      "points": 5,
+      "drafted": false
+    },
+    {
+      "id": 118,
+      "name": "Jerry Hughes",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/jerry_hughes.jpg",
+      "team": "BUF",
+      "position": "DL",
+      "points": 4.5,
+      "drafted": false
+    },
+    {
+      "id": 119,
+      "name": "Vinny Curry",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/vinny_curry.jpg",
+      "team": "PHI",
+      "position": "DL",
+      "points": 4,
+      "drafted": false
+    },
+    {
+      "id": 120,
+      "name": "Chris Long",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DLs/chris_long.jpg",
+      "team": "PHI",
+      "position": "DL",
+      "points": 4,
+      "drafted": false
+    },
+    {
+      "id": 121,
+      "name": "CJ Mosley",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/cj_mosley.jpg",
+      "team": "BAL",
+      "position": "LB",
+      "points": 10.5,
+      "drafted": false
+    },
+    {
+      "id": 122,
+      "name": "Bobby Wagner",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/bobby_wagner.jpg",
+      "team": "SEA",
+      "position": "LB",
+      "points": 10.5,
+      "drafted": false
+    },
+    {
+      "id": 123,
+      "name": "Demario Davis",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/demario_davis.jpg",
+      "team": "NYJ",
+      "position": "LB",
+      "points": 10,
+      "drafted": false
+    },
+    {
+      "id": 124,
+      "name": "Blake Martinez",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/blake_martinez.jpg",
+      "team": "GB",
+      "position": "LB",
+      "points": 10,
+      "drafted": false
+    },
+    {
+      "id": 125,
+      "name": "Luke Kuechly",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/luke_kuechly.jpg",
+      "team": "CAR",
+      "position": "LB",
+      "points": 10,
+      "drafted": false
+    },
+    {
+      "id": 126,
       "name": "Wesley Woodyard",
       "image": "https://s3.amazonaws.com/nfl-api-images/LBs/wesley_woodyard.jpg",
-      "Team": "TEN",
+      "team": "TEN",
       "position": "LB",
-      "points": 9.5
+      "points": 9.5,
+      "drafted": false
+    },
+    {
+      "id": 127,
+      "name": "Deion Jones",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/deion_jones.jpg",
+      "team": "ATL",
+      "position": "LB",
+      "points": 9.5,
+      "drafted": false
+    },
+    {
+      "id": 128,
+      "name": "NaVorro Bowman",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/naVorro_bowman.jpg",
+      "team": "OAK",
+      "position": "LB",
+      "points": 9,
+      "drafted": false
+    },
+    {
+      "id": 129,
+      "name": "Ryan Shazier",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/ryan_shazier.jpg",
+      "team": "PIT",
+      "position": "LB",
+      "points": 9,
+      "drafted": false
+    },
+    {
+      "id": 130,
+      "name": "Jadeveon Clowney",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/jadeveon_clowney.jpg",
+      "team": "HOU",
+      "position": "LB",
+      "points": 8.5,
+      "drafted": false
+    },
+    {
+      "id": 131,
+      "name": "Danny Trevathan",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/danny_trevathan.jpg",
+      "team": "CHI",
+      "position": "LB",
+      "points": 8.5,
+      "drafted": false
+    },
+    {
+      "id": 132,
+      "name": "Von Miller",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/von_miller.jpg",
+      "team": "DEN",
+      "position": "LB",
+      "points": 8,
+      "drafted": false
+    },
+    {
+      "id": 133,
+      "name": "Brandon Marshall",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/brandon_marshall.jpg",
+      "team": "DEN",
+      "position": "LB",
+      "points": 8,
+      "drafted": false
+    },
+    {
+      "id": 134,
+      "name": "Justin Houston",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/justin_houston.jpg",
+      "team": "KC",
+      "position": "LB",
+      "points": 8,
+      "drafted": false
+    },
+    {
+      "id": 135,
+      "name": "Ryan Kerrigan",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/ryan_kerrigan.jpg",
+      "team": "WAS",
+      "position": "LB",
+      "points": 7.5,
+      "drafted": false
+    },
+    {
+      "id": 136,
+      "name": "Kiko Alonso",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/kiko_alonso.jpg",
+      "team": "MIA",
+      "position": "LB",
+      "points": 7.5,
+      "drafted": false
+    },
+    {
+      "id": 137,
+      "name": "Bruce Irvin",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/bruce_irvin.jpg",
+      "team": "OAK",
+      "position": "LB",
+      "points": 7,
+      "drafted": false
+    },
+    {
+      "id": 138,
+      "name": "Karlos Dansby",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/karlos_dansby.jpg",
+      "team": "ARI",
+      "position": "LB",
+      "points": 7,
+      "drafted": false
+    },
+    {
+      "id": 139,
+      "name": "Myles Jack",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/myles_jack.jpg",
+      "team": "JAX",
+      "position": "LB",
+      "points": 6.5,
+      "drafted": false
+    },
+    {
+      "id": 140,
+      "name": "TJ Watt",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/tj_watt.jpg",
+      "team": "PIT",
+      "position": "LB",
+      "points": 6.5,
+      "drafted": false
+    },
+    {
+      "id": 141,
+      "name": "Avery Williamson",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/avery_williamson.jpeg",
+      "team": "TEN",
+      "position": "LB",
+      "points": 6,
+      "drafted": false
+    },
+    {
+      "id": 142,
+      "name": "Clay Matthews",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/clay_matthews.jpg",
+      "team": "GB",
+      "position": "LB",
+      "points": 6,
+      "drafted": false
+    },
+    {
+      "id": 143,
+      "name": "Anthony Barr",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/anthony_barr.jpg",
+      "team": "MIN",
+      "position": "LB",
+      "points": 5.5,
+      "drafted": false
+    },
+    {
+      "id": 144,
+      "name": "Brian Orakpo",
+      "image": "https://s3.amazonaws.com/nfl-api-images/LBs/brian_orakpo.jpg",
+      "team": "TEN",
+      "position": "LB",
+      "points": 5,
+      "drafted": false
+    },
+    {
+      "id": 145,
+      "name": "Reshad Jones",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/reshad_jones.jpeg",
+      "team": "MIA",
+      "position": "DB",
+      "points": 9.5,
+      "drafted": false
+    },
+    {
+      "id": 146,
+      "name": "Jordan Poyer",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/jordan_poyer.jpg",
+      "team": "BUF",
+      "position": "DB",
+      "points": 8.5,
+      "drafted": false
+    },
+    {
+      "id": 147,
+      "name": "Keanu Neal",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/keanu_neal.jpg",
+      "team": "ATL",
+      "position": "DB",
+      "points": 8,
+      "drafted": false
+    },
+    {
+      "id": 148,
+      "name": "Kevin Byard",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/kevin_byard.jpg",
+      "team": "TEN",
+      "position": "DB",
+      "points": 8,
+      "drafted": false
+    },
+    {
+      "id": 149,
+      "name": "Landon Collins",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/landon_collins.jpg",
+      "team": "NYG",
+      "position": "DB",
+      "points": 8,
+      "drafted": false
+    },
+    {
+      "id": 150,
+      "name": "Kenny Vaccaro",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/kenny_vaccaro.jpg",
+      "team": "NO",
+      "position": "DB",
+      "points": 7.5,
+      "drafted": false
+    },
+    {
+      "id": 151,
+      "name": "Glover Quin",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/glover_quin.jpg",
+      "team": "DET",
+      "position": "DB",
+      "points": 7,
+      "drafted": false
+    },
+    {
+      "id": 152,
+      "name": "Darius Slay",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/darius_slay.jpg",
+      "team": "DET",
+      "position": "DB",
+      "points": 7,
+      "drafted": false
+    },
+    {
+      "id": 153,
+      "name": "Jason McCourty",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/jason_mccourty.jpg",
+      "team": "CLE",
+      "position": "DB",
+      "points": 7,
+      "drafted": false
+    },
+    {
+      "id": 154,
+      "name": "Marcus Peters",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/marcus_peters.jpg",
+      "team": "KC",
+      "position": "DB",
+      "points": 7,
+      "drafted": false
+    },
+    {
+      "id": 155,
+      "name": "Patrick Chung",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/patrick_chung.jpg",
+      "team": "NE",
+      "position": "DB",
+      "points": 6.5,
+      "drafted": false
+    },
+    {
+      "id": 156,
+      "name": "Devin McCourty",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/devin_mccourty.jpg",
+      "team": "NE",
+      "position": "DB",
+      "points": 6.5,
+      "drafted": false
+    },
+    {
+      "id": 157,
+      "name": "Eric Weddle",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/eric_weddle.jpg",
+      "team": "BAL",
+      "position": "DB",
+      "points": 6.5,
+      "drafted": false
+    },
+    {
+      "id": 158,
+      "name": "Jamal Adams",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/jamal_adams.jpg",
+      "team": "NYJ",
+      "position": "DB",
+      "points": 6.5,
+      "drafted": false
+    },
+    {
+      "id": 159,
+      "name": "Jahleel Addae",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/jahleel_adde.jpg",
+      "team": "LAC",
+      "position": "DB",
+      "points": 6,
+      "drafted": false
+    },
+    {
+      "id": 160,
+      "name": "Adoree` Jackson",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/adoree_jackson.jpg",
+      "team": "TEN",
+      "position": "DB",
+      "points": 6,
+      "drafted": false
+    },
+    {
+      "id": 161,
+      "name": "AJ Bouye",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/aj_bouye.jpg",
+      "team": "JAX",
+      "position": "DB",
+      "points": 6,
+      "drafted": false
+    },
+    {
+      "id": 162,
+      "name": "Jalen Ramsey",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/jalen_ramsey.jpg",
+      "team": "JAX",
+      "position": "DB",
+      "points": 5.5,
+      "drafted": false
+    },
+    {
+      "id": 163,
+      "name": "Malcolm Butler",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/malcolm_butler.jpg",
+      "team": "NE",
+      "position": "DB",
+      "points": 5.5,
+      "drafted": false
+    },
+    {
+      "id": 164,
+      "name": "Tashaun Gipson",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/tashaun_gipson.jpg",
+      "team": "JAX",
+      "position": "DB",
+      "points": 5.5,
+      "drafted": false
+    },
+    {
+      "id": 165,
+      "name": "Dre Kirkpatrick",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/dre_kirkpatrick.jpg",
+      "team": "CIN",
+      "position": "DB",
+      "points": 5.5,
+      "drafted": false
+    },
+    {
+      "id": 166,
+      "name": "Josh Jones",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/josh_jones.jpg",
+      "team": "GB",
+      "position": "DB",
+      "points": 5,
+      "drafted": false
+    },
+    {
+      "id": 167,
+      "name": "Xavien Howard",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/xavien_howard.jpg",
+      "team": "MIA",
+      "position": "DB",
+      "points": 5,
+      "drafted": false
+    },
+    {
+      "id": 168,
+      "name": "Casey Hayward",
+      "image": "https://s3.amazonaws.com/nfl-api-images/DBs/casey_hayward.jpg",
+      "team": "LAC",
+      "position": "DB",
+      "points": 5,
+      "drafted": false
+    },
+    {
+      "id": 169,
+      "name": "Greg Zuerlein",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/greg_zuerlein.jpg",
+      "team": "LAR",
+      "position": "K",
+      "points": 12,
+      "drafted": false
+    },
+    {
+      "id": 170,
+      "name": "Harrison Butker",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/harrison_butker.jpg",
+      "team": "KC",
+      "position": "K",
+      "points": 11.5,
+      "drafted": false
+    },
+    {
+      "id": 171,
+      "name": "Stephen Gostkowski",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/stephen_gostkowski.jpg",
+      "team": "NE",
+      "position": "K",
+      "points": 10,
+      "drafted": false
+    },
+    {
+      "id": 172,
+      "name": "Robbie Gould",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/robbie_gould.jpg",
+      "team": "SF",
+      "position": "K",
+      "points": 9.5,
+      "drafted": false
+    },
+    {
+      "id": 173,
+      "name": "Matt Bryant",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/matt_bryant.jpg",
+      "team": "ATL",
+      "position": "K",
+      "points": 9.5,
+      "drafted": false
+    },
+    {
+      "id": 174,
+      "name": "Justin Tucker",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/justin_tucker.jpg",
+      "team": "BAL",
+      "position": "K",
+      "points": 9.5,
+      "drafted": false
+    },
+    {
+      "id": 175,
+      "name": "Matt Prater",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/matt_prater.jpg",
+      "team": "DET",
+      "position": "K",
+      "points": 9,
+      "drafted": false
+    },
+    {
+      "id": 176,
+      "name": "Kai Forbath",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/kai_forbath.jpg",
+      "team": "MIN",
+      "position": "K",
+      "points": 9,
+      "drafted": false
+    },
+    {
+      "id": 177,
+      "name": "Ryan Succop",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/ryan_succop.jpg",
+      "team": "TEN",
+      "position": "K",
+      "points": 9,
+      "drafted": false
+    },
+    {
+      "id": 178,
+      "name": "Jake Elliott",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/jake_elliot.jpg",
+      "team": "PHI",
+      "position": "K",
+      "points": 8.5,
+      "drafted": false
+    },
+    {
+      "id": 179,
+      "name": "Josh Lambo",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/josh_lambo.jpg",
+      "team": "JAX",
+      "position": "K",
+      "points": 8.5,
+      "drafted": false
+    },
+    {
+      "id": 180,
+      "name": "Steven Hauschka",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/steven_hauschka.jpeg",
+      "team": "BUF",
+      "position": "K",
+      "points": 8,
+      "drafted": false
+    },
+    {
+      "id": 181,
+      "name": "Phil Dawson",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/phil_dawson.jpg",
+      "team": "ARI",
+      "position": "K",
+      "points": 8,
+      "drafted": false
+    },
+    {
+      "id": 182,
+      "name": "Adam Vinatieri",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/adam_vinatieri.jpg",
+      "team": "IND",
+      "position": "K",
+      "points": 8,
+      "drafted": false
+    },
+    {
+      "id": 183,
+      "name": "Graham Gano",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/graham_gano.jpg",
+      "team": "CAR",
+      "position": "K",
+      "points": 7.5,
+      "drafted": false
+    },
+    {
+      "id": 184,
+      "name": "Dustin Hopkins",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/dustin_hopkins.jpg",
+      "team": "WAS",
+      "position": "K",
+      "points": 7.5,
+      "drafted": false
+    },
+    {
+      "id": 185,
+      "name": "Patrick Murray",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/patrick_murray.jpg",
+      "team": "TB",
+      "position": "K",
+      "points": 7,
+      "drafted": false
+    },
+    {
+      "id": 186,
+      "name": "Nick Folk",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/nick_folk.jpg",
+      "team": "TB",
+      "position": "K",
+      "points": 7,
+      "drafted": false
+    },
+    {
+      "id": 187,
+      "name": "Dan Bailey",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/dan_bailey.jpeg",
+      "team": "DAL",
+      "position": "K",
+      "points": 6.5,
+      "drafted": false
+    },
+    {
+      "id": 188,
+      "name": "Nick Novak",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/nick_novak.jpg",
+      "team": "LAC",
+      "position": "K",
+      "points": 6.5,
+      "drafted": false
+    },
+    {
+      "id": 189,
+      "name": "Blair Walsh",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/blair_walsh.jpg",
+      "team": "SEA",
+      "position": "K",
+      "points": 6,
+      "drafted": false
+    },
+    {
+      "id": 190,
+      "name": "Cody Parkey",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/cody_parkey.jpg",
+      "team": "MIA",
+      "position": "K",
+      "points": 6,
+      "drafted": false
+    },
+    {
+      "id": 191,
+      "name": "Giorgio Tavecchio",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/giorgio_tavecchio.jpg",
+      "team": "OAK",
+      "position": "K",
+      "points": 5.5,
+      "drafted": false
+    },
+    {
+      "id": 192,
+      "name": "Mason Crosby",
+      "image": "https://s3.amazonaws.com/nfl-api-images/Ks/mason_crosby.jpg",
+      "team": "GB",
+      "position": "K",
+      "points": 5,
+      "drafted": false
     }
   ]
 }

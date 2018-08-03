@@ -3,6 +3,14 @@ import 'bulma/css/bulma.css';
 import "./Standings.css";
 
 export default class Standings extends Component {
+  state = {
+    count: {
+      win: [],
+      loss: [],
+      tie: []
+    }
+  }
+
   render() {
     return (
       <React.Fragment>

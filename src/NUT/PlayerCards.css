@@ -1,14 +1,27 @@
-/* User */
-
-#userCardsContainer, #computerCardsContainer {
-  margin: 20px 3px;
-  /*   border: 1px solid black; */
+#userCardsContainer,
+#computerCardsContainer,
+#userPlayerPointsContainer,
+#computerPlayerPointsContainer,
+#positionsContainer {
+  margin: 0 4px;
 }
 
-#userContainer, #computerContainer {
+/*  user and computer containers  */
+
+#userContainer,
+#computerContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /* border: 1px solid black; */
+}
+
+#userName,
+#computerName {
+  font-size: 17px;
+  font-weight: bold;
 }
 
 /* Cards for Players */
@@ -20,7 +33,7 @@
   border: 1px solid lightgray;
   width: 130px;
   height: auto;
-  margin: 0 5px;
+  margin: 0 3px;
   text-align: center;
 }
 
@@ -32,24 +45,35 @@ img {
 
 /* Positions */
 
+#positionsContainer {
+  border-radius: 12px;
+  background-color: hsl(204, 86%, 53%);
+}
+
 .position {
   text-align: center;
   font-weight: bold;
+  color: white;
 }
 
 /* Points */
 
-#userPlayerPointsContainer, #computerPlayerPointsContainer {
+#userPlayerPointsContainer,
+#computerPlayerPointsContainer {
   text-align: center;
 }
 
 .points {
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
+/* Button */
+
 #simulateBtnContainer {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  /* display: flex;
+  justify-content: center; */
+  /* margin-top: 10px; */
+  margin: 15px auto 0 auto;
+  max-width: 500px;
 }
