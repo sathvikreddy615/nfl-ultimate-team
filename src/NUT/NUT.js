@@ -10,31 +10,32 @@ import 'bulma/css/bulma.css';
 export default class NUT extends Component {
     state = {
         userTeam: this.props.userPlayers,
-        computerTeam: [],
+        computerTeam: this.props.computerPlayers,
         userSum: 0,
         computerSum: 0,
         gameResult: "",
         open: false
     };
 
-    positionsArray = ["QB", "RB", "WR", "TE", "DL", "LB", "DB", "K"];
+    // positionsArray = ["QB", "RB", "WR", "TE", "DL", "LB", "DB", "K"];
 
-    generateComputerPlayers = () => {
-        this.positionsArray.forEach(position => {
-            APIManager.getPlayersByPosition(position)
-            .then(playerArray => {
-                let random = playerArray[Math.floor(Math.random() * playerArray.length)];
-                let newArray = this.state.computerTeam;
-                newArray.push(random);
-                console.log(newArray);
-                this.setState({computerTeam: newArray})
-            })
-        })
-    }
+    // generateComputerPlayers = () => {
+    //     this.positionsArray.forEach(position => {
+    //         APIManager.getPlayersByPosition(position)
+    //         .then(playerArray => {
+    //             let random = playerArray[Math.floor(Math.random() * playerArray.length)];
+    //             let newArray = this.state.computerTeam;
+    //             newArray.push(random);
+    //             console.log(newArray);
+    //             this.setState({computerTeam: newArray})
+    //         })
+    //     })
+    // }
 
-    componentDidMount = () => {
-        return this.generateComputerPlayers();
-    }
+    // componentDidMount = () => {
+    //     return this.props.generateComputerPlayers();
+    //     // console.log(this.state.computerTeam);
+    // }
 
     sum = (a, b) => {
         return a + b;
@@ -55,7 +56,6 @@ export default class NUT extends Component {
             userArray.push(playerObjects.points);
         })
         let sumOfUserArray = userArray.reduce(this.sum);
-        console.log(sumOfUserArray);
         this.setState({userSum: sumOfUserArray});
 
         // calculates total computer points
@@ -64,24 +64,18 @@ export default class NUT extends Component {
             computerArray.push(playerObjects.points);
         })
         let sumOfComputerArray = computerArray.reduce(this.sum);
-        console.log(sumOfComputerArray);
         this.setState({computerSum: sumOfComputerArray})
 
-
+        // checks if user won, lost or tied
         if (sumOfUserArray > sumOfComputerArray) {
             this.setState({gameResult: "You Won!"});
-            console.log("You Won!")
         } else if (sumOfUserArray < sumOfComputerArray) {
             this.setState({gameResult: "You Lost!"});
-            console.log("You Lost!");
         } else if (sumOfUserArray === sumOfComputerArray) {
             this.setState({gameResult: "You Tied!"});
-            console.log("You Tied!");
-        } else {
-            console.log("This did not work");
         }
 
-        this.onOpenModal();
+        this.onOpenModal(); // modal pops up with results
     }
 
   render() {
@@ -93,7 +87,7 @@ export default class NUT extends Component {
                     <button
                         onClick={this.simulation}
                         id="simulateBtn"
-                        className="bd-tw-button button is-danger is-small is-focused is-rounded"
+                        className="bd-tw-button button is-danger is-focused is-rounded is-fullwidth is-outlined"
                         type="button">
                         Run Simulation
                     </button>
@@ -102,8 +96,7 @@ export default class NUT extends Component {
         {/* Containers for the User */}
 
         <div id="userContainer">
-            <div id="userName">Sathvik Reddy</div>
-            <div id="userPoints">{this.state.userSum}</div>
+            <div id="userName"><i>Sathvik Reddy</i>: {this.state.userSum} pts.</div>
         </div>
         <div id="userCardsContainer" className="columns">
         {this.state.userTeam.map(player => (
@@ -123,7 +116,7 @@ export default class NUT extends Component {
         {/* Lists all Position Names */}
 
         <div id="positionsContainer" className="columns">
-          {this.positionsArray.map((position, index) => (
+          {this.props.positionsArray.map((position, index) => (
             <div
                 key={index}
                 className="column position">
@@ -149,8 +142,7 @@ export default class NUT extends Component {
           ))}
         </div>
         <div id="computerContainer">
-            <div id="computerName">Computer</div>
-            <div id="computerPoints">{this.state.computerSum}</div>
+            <div id="computerName"><i>Computer</i>: {this.state.computerSum} pts.</div>
         </div>
 
         {/* ------------------ */}
@@ -163,8 +155,8 @@ export default class NUT extends Component {
             <Modal open={open} onClose={this.onCloseModal} center>
                 <h1>{this.state.gameResult}</h1>
                 <br/>
-                <h2>{this.state.userSum}</h2>
-                <h2>{this.state.computerSum}</h2>
+                <h2>{this.state.userSum} - {this.state.computerSum}</h2>
+                {/* <h2>{this.state.computerSum}</h2> */}
                 <div id="modalBtnContainer">
                    <Link to="/buildteam">
                     <button className="button is-success is-rounded is-fullwidth">Play Again</button>
