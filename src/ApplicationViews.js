@@ -14,7 +14,10 @@ export default class ApplicationViews extends Component {
   state = {
     userPlayers: [],
     computerPlayers: [],
-    positionsArray: ["QB", "RB", "WR", "TE", "DL", "LB", "DB", "K"]
+    positionsArray: ["QB", "RB", "WR", "TE", "DL", "LB", "DB", "K"],
+    userSum: 0,
+    computerSum: 0,
+    gameResult: "",
   }
 
   userSelectedPlayers = team => {
@@ -34,9 +37,42 @@ export default class ApplicationViews extends Component {
     })
 }
 
-componentDidMount = () => {
-  return this.generateComputerPlayers();
-}
+  componentDidMount = () => {
+    return this.generateComputerPlayers();
+  }
+
+  sum = (a, b) => {
+        return a + b;
+    };
+
+    simulation = () => {
+        // calculates total user points
+        let userArray = [];
+        this.state.userPlayers.forEach(playerObjects => {
+            userArray.push(playerObjects.points);
+        })
+        let sumOfUserArray = userArray.reduce(this.sum);
+        this.setState({userSum: sumOfUserArray});
+
+        // calculates total computer points
+        let computerArray = [];
+        this.state.computerPlayers.forEach(playerObjects => {
+            computerArray.push(playerObjects.points);
+        })
+        let sumOfComputerArray = computerArray.reduce(this.sum);
+        this.setState({computerSum: sumOfComputerArray})
+
+        // checks if user won, lost or tied
+        if (sumOfUserArray > sumOfComputerArray) {
+            this.setState({gameResult: "You Won!"});
+        } else if (sumOfUserArray < sumOfComputerArray) {
+            this.setState({gameResult: "You Lost!"});
+        } else if (sumOfUserArray === sumOfComputerArray) {
+            this.setState({gameResult: "You Tied!"});
+        }
+
+        // this.onOpenModal(); // modal pops up with results
+    }
 
   isAuthenticated = () =>
     localStorage.getItem("credentials") !== null ||
@@ -50,6 +86,10 @@ componentDidMount = () => {
           <Route exact path="/nfl-ultimate-team" render={props => <NUT
             userPlayers={this.state.userPlayers} computerPlayers={this.state.computerPlayers} generateComputerPlayers={this.generateComputerPlayers}
             positionsArray={this.state.positionsArray}
+            simulation={this.simulation}
+            gameResult={this.state.gameResult}
+            userSum={this.state.userSum}
+            computerSum={this.state.computerSum}
           />}
           />
 
