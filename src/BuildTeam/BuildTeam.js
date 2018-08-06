@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import APIManager from "../APIManager";
 import PlayerSelection from "../BuildTeam/PlayerSelection";
 // import "./BuildTeam.css";
@@ -29,46 +30,41 @@ export default class BuildTeam extends Component {
     }
   };
 
+  shuffleArray = arr => {
+    let size = arr.length;
+    let shuffled = arr.slice(0),
+      i = arr.length,
+      temp,
+      index;
+    while (i--) {
+      index = Math.floor((i + 1) * Math.random());
+      temp = shuffled[index];
+      shuffled[index] = shuffled[i];
+      shuffled[i] = temp;
+    }
+    return shuffled.slice(0, size);
+  };
+
   componentDidMount = () => {
     APIManager.getData("players").then(players => {
       let newObject = this.state.selectPositions;
 
-      players.forEach(player => {
-        switch (player.position) {
-          case "QB":
-            newObject.qb.push(player);
-            break;
-          case "RB":
-            newObject.rb.push(player);
-            break;
-          case "WR":
-            newObject.wr.push(player);
-            break;
-          case "TE":
-            newObject.te.push(player);
-            break;
-          case "DL":
-            newObject.dl.push(player);
-            break;
-          case "LB":
-            newObject.lb.push(player);
-            break;
-          case "DB":
-            newObject.db.push(player);
-            break;
-          case "K":
-            newObject.k.push(player);
-            break;
-          default:
-            console.log("No position returned");
-        }
+      this.shuffleArray(players).forEach(player => {
+        let position = player.position;
+        let positionKey = position.toLowerCase();
+        newObject[positionKey];
+
+        // if first condition true, then and only then will player get pushed into array
+        newObject[positionKey].length < 3 &&
+          newObject[positionKey].push(player);
       });
       this.setState({ selectPositions: newObject });
+      console.log(this.state.selectPositions);
     });
   };
 
   handleSelectionChange = e => {
-    let newObject = this.state.selectPlayer
+    let newObject = this.state.selectPlayer;
 
     switch (e.target.id) {
       case "0":
@@ -98,27 +94,23 @@ export default class BuildTeam extends Component {
       default:
         console.log("No position returned");
     }
-    this.setState(
-      {selectPlayer: newObject}
-    )
+    this.setState({ selectPlayer: newObject });
   };
 
-  handleSubmit = e => {
+  createTeam = e => {
     e.preventDefault();
 
     for (let i in this.state.selectPlayer) {
-      APIManager.getPlayersByName(this.state.selectPlayer[i])
-      .then(arrayOfOnePlayer => {
-        // console.log(arrayOfOnePlayer);
-        arrayOfOnePlayer.forEach(playerData => {
-          // console.log(playerData.name);
-          // console.log(playerData.image);
-          let newArray = this.state.chosenTeam;
-          newArray.push(playerData);
-          console.log(newArray);
-          this.setState({chosenTeam: newArray})
-        })
-      })
+      APIManager.getPlayersByName(this.state.selectPlayer[i]).then(
+        arrayOfOnePlayer => {
+          arrayOfOnePlayer.forEach(playerData => {
+            let newArray = this.state.chosenTeam;
+            newArray.push(playerData);
+            newArray.sort((a, b) => a.id - b.id);
+            this.setState({ chosenTeam: newArray });
+          });
+        }
+      );
     }
     this.props.userSelectedPlayers(this.state.chosenTeam);
     // window.location = 'http://localhost:3000/nfl-ultimate-team';
@@ -128,7 +120,7 @@ export default class BuildTeam extends Component {
     return (
       <React.Fragment>
         <div id="buildTeamContainer">
-          <form onSubmit={this.handleSubmit}>
+          <form>
             {Object.keys(this.state.selectPositions).map((position, index) => (
               <PlayerSelection
                 key={index}
@@ -139,14 +131,19 @@ export default class BuildTeam extends Component {
               />
             ))}
 
-            <input
-              id="createTeamBtn"
-              className="bd-tw-button button is-danger is-focused is-rounded"
-              type="submit"
-              value="Create Team"
-            />
+            {
+              <Link to="/nfl-ultimate-team">
+                <button
+                  id="createTeamBtn"
+                  className="bd-tw-button button is-danger is-focused is-rounded"
+                  type="button"
+                  onClick={this.createTeam}
+                >
+                  Create Team
+                </button>
+              </Link>
+            }
           </form>
-
         </div>
       </React.Fragment>
     );

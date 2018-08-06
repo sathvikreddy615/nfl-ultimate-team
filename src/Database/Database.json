@@ -29,6 +29,21 @@
       "username": "delaniewalker82",
       "password": "123",
       "id": 5
+    },
+    {
+      "name": "Michael King",
+      "username": "michaelisajew",
+      "password": "123",
+      "id": 6
+    }
+  ],
+  "standings": [
+    {
+      "winCount": 1,
+      "loseCount": 1,
+      "tieCount": 0,
+      "id": 1,
+      "userId": 1
     }
   ],
   "players": [
