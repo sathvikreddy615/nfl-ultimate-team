@@ -27,6 +27,10 @@ export default class NUT extends Component {
         this.onOpenModal();
     }
 
+    reloadPage = () => {
+        window.location.reload(true);
+    }
+
   render() {
     const { open } = this.state;
     return (
@@ -108,10 +112,10 @@ export default class NUT extends Component {
                 {/* <h2>{this.state.computerSum}</h2> */}
                 <div id="modalBtnContainer">
                    <Link to="/buildteam">
-                    <button className="button is-success is-rounded is-fullwidth">Play Again</button>
+                    <button onClick={this.reloadPage} className="button is-success is-rounded is-fullwidth">Play Again</button>
                    </Link>
                    <Link to="/standings">
-                        <button className="button is-danger is-rounded is-fullwidth">View Standings</button>
+                        <button onClick={this.reloadPage} className="button is-danger is-rounded is-fullwidth">View Standings</button>
                     </Link>
                 </div>
             </Modal>
