@@ -2,7 +2,7 @@
   "users": [
     {
       "name": "Sathvik Reddy",
-      "username": "sathvikreddy",
+      "username": "sathvikreddy94",
       "password": "123",
       "id": 1
     },
@@ -14,36 +14,45 @@
     },
     {
       "name": "Sreyas Reddy",
-      "username": "sreyasreddy93",
+      "username": "sreyasreddy90",
       "password": "123",
       "id": 3
     },
     {
-      "name": "",
-      "username": "",
-      "password": "",
-      "id": 4
-    },
-    {
       "name": "Delanie Walker",
-      "username": "delaniewalker82",
+      "username": "delaniewalker",
       "password": "123",
-      "id": 5
-    },
-    {
-      "name": "Michael King",
-      "username": "michaelisajew",
-      "password": "123",
-      "id": 6
+      "id": 4
     }
   ],
   "standings": [
     {
-      "winCount": 1,
-      "loseCount": 1,
+      "winCount": 6,
+      "loseCount": 5,
       "tieCount": 0,
-      "id": 1,
-      "userId": 1
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "winCount": 4,
+      "loseCount": 2,
+      "tieCount": 0,
+      "userId": 2,
+      "id": 2
+    },
+    {
+      "winCount": 10,
+      "loseCount": 12,
+      "tieCount": 0,
+      "userId": 3,
+      "id": 3
+    },
+    {
+      "winCount": 1,
+      "loseCount": 0,
+      "tieCount": 0,
+      "userId": 4,
+      "id": 4
     }
   ],
   "players": [

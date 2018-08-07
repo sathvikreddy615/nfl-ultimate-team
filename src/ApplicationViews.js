@@ -20,6 +20,19 @@ export default class ApplicationViews extends Component {
     gameResult: "",
   };
 
+  getUserId = () => {
+    let sessionUser = JSON.parse(sessionStorage.getItem("credentials"));
+    let localUser = JSON.parse(localStorage.getItem("credentials"));
+
+    if (sessionUser !== null) {
+      console.log(sessionUser.userId)
+      return sessionUser.userId;
+    } else if (localUser !== null) {
+      console.log(localUser.userId);
+      return localUser.userId;
+    }
+  };
+
   userSelectedPlayers = team => {
     this.setState({ userPlayers: team });
   };
@@ -30,7 +43,6 @@ export default class ApplicationViews extends Component {
         let random = playerArray[Math.floor(Math.random() * playerArray.length)];
         let newArray = this.state.computerPlayers;
         newArray.push(random);
-        console.log(newArray);
         this.setState({ computerPlayers: newArray });
       });
     });
@@ -63,7 +75,7 @@ export default class ApplicationViews extends Component {
 
     // checks if user won, lost or tied, and produces a message
 
-    APIManager.getData("standings").then(results => {
+    APIManager.getStandingsByUserId(this.getUserId()).then(results => {
       let wins = results[0].winCount;
       let losses = results[0].loseCount;
       let ties = results[0].tieCount;
@@ -75,21 +87,28 @@ export default class ApplicationViews extends Component {
 
       if (sumOfUserArray > sumOfComputerArray) {
         wins += 1;
-        winOb = {winCount: wins};
-        APIManager.updateStandings(1, winOb);
-        resultMsg = "You Won!";
+        winOb = {
+          winCount: wins,
+        };
+        let delta = sumOfUserArray - sumOfComputerArray;
+        APIManager.updateStandings(this.getUserId(), winOb);
+        resultMsg = `Congrats, you WON by ${delta} points!`;
 
       } else if (sumOfUserArray < sumOfComputerArray) {
         losses += 1;
-        loseOb = {loseCount: losses};
-        APIManager.updateStandings(1, loseOb);
-        resultMsg = "You Lost!";
+        loseOb = {
+          loseCount: losses,
+        };
+        let delta = sumOfUserArray - sumOfComputerArray;
+        delta *= -1;
+        APIManager.updateStandings(this.getUserId(), loseOb);
+        resultMsg = `Sorry, you LOST by ${delta} points!`;
 
       } else if (sumOfUserArray === sumOfComputerArray) {
         ties += 1;
         tieOb = {tieCount: ties};
-        APIManager.updateStandings(1, tieOb);
-        resultMsg = "You Tied!";
+        APIManager.updateStandings(this.getUserId(), tieOb);
+        resultMsg = "You TIED!";
       }
       this.setState({ gameResult: resultMsg })
     })

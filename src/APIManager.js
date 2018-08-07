@@ -12,7 +12,7 @@ export default class APIManager {
                 "Content-Type": "application/json; charset=utf-8"
             },
             body: JSON.stringify(data)
-        });
+        }).then(e => e.json())
     };
     static updatedData = (table, key, data) => {
         return fetch(`http://localhost:5002/${table}/${key}`,{
@@ -42,6 +42,16 @@ export default class APIManager {
             body: JSON.stringify(body)
         });
     };
+    static getStandingsByUserId = idNumber => {
+        return fetch(
+          `http://localhost:5002/standings?userId=${idNumber}`
+        ).then(e => e.json());
+      };
+      static getUsersById = idNumber => {
+        return fetch(
+          `http://localhost:5002/users?id=${idNumber}`
+        ).then(e => e.json());
+      };
 }
 
 // exports to various files

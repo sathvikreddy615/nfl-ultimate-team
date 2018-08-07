@@ -5,8 +5,10 @@
   "dependencies": {
     "bloomer": "^0.6.3",
     "bulma": "^0.7.1",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "chart.js": "^2.7.2",
+    "react": "^16.4.2",
+    "react-chartjs-2": "^2.7.4",
+    "react-dom": "^16.4.2",
     "react-responsive-modal": "^3.2.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4"

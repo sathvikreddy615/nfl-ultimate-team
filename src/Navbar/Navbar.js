@@ -24,9 +24,9 @@ export default class Navbar extends Component {
       <React.Fragment>
         <nav id="navbar" className="navbar is-info">
           <div className="navbar-brand">
-               <Link className="navbar-item" to="/nfl-ultimate-team">
+               <div className="navbar-item">
                   <img src="http://content.sportslogos.net/logos/7/1007/full/dwuw5lojnwsj12vfe0hfa6z47.gif" alt="NFL Logo" width="25" height="23" />
-               </Link>
+               </div>
           </div>
 
           <div id="navbarExampleTransparentExample" className="navbar-menu">
