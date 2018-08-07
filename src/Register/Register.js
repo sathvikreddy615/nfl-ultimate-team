@@ -27,9 +27,21 @@ export default class Register extends Component {
     };
 
     APIManager.addData("users", registerData)
+    .then(user => {
+      console.log(user);
+      // APIManager.getUsersById(users.id).then(user => {
+        let standingsTable = {
+          winCount: 0,
+          loseCount: 0,
+          tieCount: 0,
+          userId: user.id
+        };
+        APIManager.addData("standings", standingsTable);
+      // })
+    })
     .then(() => {
       this.props.history.push("/login");
-    });
+    })
   };
 
   render() {

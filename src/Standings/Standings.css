@@ -1,9 +1,3 @@
-#standingsContainer {
-    display: flex;
-    flex-direction: column;
+#standingsTable {
+    margin: 0 auto;
 }
-
-/* #rowOne, #rowTwo {
-    display: flex;
-    flex-direction: row;
-} */

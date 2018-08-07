@@ -98,7 +98,7 @@ export default class BuildTeam extends Component {
   };
 
   createTeam = e => {
-    e.preventDefault();
+    // e.preventDefault();
 
     for (let i in this.state.selectPlayer) {
       APIManager.getPlayersByName(this.state.selectPlayer[i]).then(
@@ -113,7 +113,6 @@ export default class BuildTeam extends Component {
       );
     }
     this.props.userSelectedPlayers(this.state.chosenTeam);
-    // window.location = 'http://localhost:3000/nfl-ultimate-team';
   };
 
   render() {
