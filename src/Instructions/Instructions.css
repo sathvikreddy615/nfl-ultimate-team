@@ -1,0 +1,33 @@
+#parentContainer {
+    margin: 20px auto;
+    text-align: center;
+    /* border: 1px solid black; */
+    max-width: 1000px;
+}
+
+
+#welcomeTitle {
+    font-size: 35px;
+    /* border: 1px solid black; */
+    margin-top: 10px;
+}
+
+#getStartedTitle {
+    font-size: 20px;
+}
+
+.listPosition {
+    font-size: 12px;
+    font-style: italic;
+}
+
+#instructionsContainer {
+    margin: 0 auto;
+    list-style-position: inside;
+    text-align: left;
+}
+
+.instructions {
+    margin: 5px 0;
+    font-size: 15px;
+}

@@ -118,12 +118,12 @@ export default class NUT extends Component {
                 <ModalBackground />
                 <ModalCard>
                     <ModalCardHeader>
-                        <ModalCardTitle>Game Result</ModalCardTitle>
+                        <ModalCardTitle>{this.props.gameResultMsg}</ModalCardTitle>
                     </ModalCardHeader>
                     <ModalCardBody>
                       <h1><b>{this.props.userSum} - {this.props.computerSum}</b></h1>
                       <br/>
-                      <h2><i>{this.props.gameResult}</i></h2>
+                      <h2><i>{this.props.gameResultSentence}</i></h2>
                     </ModalCardBody>
                     <ModalCardFooter>
                       <div id="modalBtnContainer" className="columns">

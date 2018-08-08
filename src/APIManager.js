@@ -2,9 +2,6 @@ export default class APIManager {
     static getData = table => {
         return fetch(`http://localhost:5002/${table}`).then(e => e.json());
     };
-    static getThreePlayers = table => {
-        return fetch(`http://localhost:5002/players?start=1&_`).then(e => e.json());
-    };
     static addData = (table, data) => {
         return fetch(`http://localhost:5002/${table}`,{
             method: "POST",

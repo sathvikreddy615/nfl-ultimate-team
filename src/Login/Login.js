@@ -79,7 +79,6 @@ export default class Login extends Component {
               type="text"
               id="username"
               name="username"
-              // placeholder="marcusmariota8"
             />
 
             <br/>
