@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
 import APIManager from "../APIManager";
 import PlayerSelection from "../BuildTeam/PlayerSelection";
 // import "./BuildTeam.css";
@@ -97,8 +98,7 @@ export default class BuildTeam extends Component {
     this.setState({ selectPlayer: newObject });
   };
 
-  createTeam = e => {
-    // e.preventDefault();
+  createTeam = () => {
 
     for (let i in this.state.selectPlayer) {
       APIManager.getPlayersByName(this.state.selectPlayer[i]).then(
@@ -118,6 +118,7 @@ export default class BuildTeam extends Component {
   render() {
     return (
       <React.Fragment>
+        <Route path="/" component={Navbar} />
         <div id="buildTeamContainer">
           <form>
             {Object.keys(this.state.selectPositions).map((position, index) => (

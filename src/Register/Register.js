@@ -28,8 +28,6 @@ export default class Register extends Component {
 
     APIManager.addData("users", registerData)
     .then(user => {
-      console.log(user);
-      // APIManager.getUsersById(users.id).then(user => {
         let standingsTable = {
           winCount: 0,
           loseCount: 0,
@@ -37,7 +35,6 @@ export default class Register extends Component {
           userId: user.id
         };
         APIManager.addData("standings", standingsTable);
-      // })
     })
     .then(() => {
       this.props.history.push("/login");
@@ -67,7 +64,6 @@ export default class Register extends Component {
               type="text"
               id="name"
               name="name"
-              // placeholder="Marcus Mariota"
             />
 
             <br/>
@@ -82,7 +78,6 @@ export default class Register extends Component {
               type="text"
               id="username"
               name="username"
-              // placeholder="marcusmariota8"
             />
 
             <br/>

@@ -28,15 +28,15 @@
   "standings": [
     {
       "winCount": 6,
-      "loseCount": 5,
+      "loseCount": 8,
       "tieCount": 0,
       "userId": 1,
       "id": 1
     },
     {
-      "winCount": 4,
-      "loseCount": 2,
-      "tieCount": 0,
+      "winCount": 10,
+      "loseCount": 4,
+      "tieCount": 1,
       "userId": 2,
       "id": 2
     },
@@ -53,6 +53,32 @@
       "tieCount": 0,
       "userId": 4,
       "id": 4
+    }
+  ],
+  "games": [
+    {
+      "resultNumb": 2,
+      "resultName": "Loss",
+      "userPoints": 86.5,
+      "computerPoints": 87,
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "resultNumb": 2,
+      "resultName": "Loss",
+      "userPoints": 81.5,
+      "computerPoints": 86.5,
+      "userId": 2,
+      "id": 2
+    },
+    {
+      "resultNumb": 3,
+      "resultName": "Win",
+      "userPoints": 77,
+      "computerPoints": 73,
+      "userId": 2,
+      "id": 3
     }
   ],
   "players": [

@@ -25,7 +25,7 @@ export default class Navbar extends Component {
         <nav id="navbar" className="navbar is-info">
           <div className="navbar-brand">
                <div className="navbar-item">
-                  <img src="http://content.sportslogos.net/logos/7/1007/full/dwuw5lojnwsj12vfe0hfa6z47.gif" alt="NFL Logo" width="25" height="23" />
+                  <img src="https://cdn0.iconfinder.com/data/icons/sports-american-football/64/514_american-football-helmet-512.png" alt="NFL Logo" width="30" height="24" />
                </div>
           </div>
 

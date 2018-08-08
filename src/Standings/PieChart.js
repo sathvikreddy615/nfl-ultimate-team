@@ -26,7 +26,7 @@ export default class PieChart extends Component {
   render() {
     return (
       <div className="chart">
-        <Pie data={this.chartData} width={110} height={30} options={{}} />
+        <Pie data={this.chartData} width={120} height={50} options={{}} />
       </div>
     );
   }

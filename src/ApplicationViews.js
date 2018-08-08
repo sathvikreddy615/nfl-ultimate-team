@@ -17,7 +17,8 @@ export default class ApplicationViews extends Component {
     positionsArray: ["QB", "RB", "WR", "TE", "DL", "LB", "DB", "K"],
     userSum: 0,
     computerSum: 0,
-    gameResult: "",
+    gameResultMsg: "",
+    gameResultSentence: ""
   };
 
   getUserId = () => {
@@ -84,33 +85,64 @@ export default class ApplicationViews extends Component {
       let tieOb = {};
 
       let resultMsg = "";
+      let resultSentence = "";
 
       if (sumOfUserArray > sumOfComputerArray) {
         wins += 1;
-        winOb = {
-          winCount: wins,
-        };
+        winOb = { winCount: wins };
+
+        let winResultOb = {
+          resultNumb: 3,
+          resultName: "Win",
+          userPoints: sumOfUserArray,
+          computerPoints: sumOfComputerArray,
+          userId: this.getUserId()
+        }
+
         let delta = sumOfUserArray - sumOfComputerArray;
         APIManager.updateStandings(this.getUserId(), winOb);
-        resultMsg = `Congrats, you WON by ${delta} points!`;
+        APIManager.addData("games", winResultOb);
+        resultMsg = "You WON"
+        resultSentence = `Congrats, you defeated the computer by ${delta} points!`;
 
       } else if (sumOfUserArray < sumOfComputerArray) {
         losses += 1;
-        loseOb = {
-          loseCount: losses,
+        loseOb = { loseCount: losses };
+
+        let loseResultOb = {
+          resultNumb: 2,
+          resultName: "Loss",
+          userPoints: sumOfUserArray,
+          computerPoints: sumOfComputerArray,
+          userId: this.getUserId()
         };
+
         let delta = sumOfUserArray - sumOfComputerArray;
         delta *= -1;
         APIManager.updateStandings(this.getUserId(), loseOb);
-        resultMsg = `Sorry, you LOST by ${delta} points!`;
+        APIManager.addData("games", loseResultOb);
+        resultMsg = "You LOST"
+        resultSentence = `Sorry, the computer defeated you by ${delta} points!`;
 
       } else if (sumOfUserArray === sumOfComputerArray) {
         ties += 1;
-        tieOb = {tieCount: ties};
+        tieOb = { tieCount: ties };
+
+        let tieResultOb = {
+          resultNumb: 1,
+          resultName: "Tie",
+          userPoints: sumOfUserArray,
+          computerPoints: sumOfComputerArray,
+          userId: this.getUserId()
+        };
+
         APIManager.updateStandings(this.getUserId(), tieOb);
-        resultMsg = "You TIED!";
+        APIManager.addData("games", tieResultOb);
+        resultMsg = "You TIED"
+        resultSentence = "Not bad, you tied with the computer!";
       }
-      this.setState({ gameResult: resultMsg })
+      this.setState({ gameResultMsg: resultMsg })
+      this.setState({ gameResultSentence: resultSentence })
     })
   };
 
@@ -122,7 +154,7 @@ export default class ApplicationViews extends Component {
     if (this.isAuthenticated()) {
       return (
         <React.Fragment>
-          <Route path="/" component={Navbar} />
+          {/* <Route path="/" component={Navbar} /> */}
           <Route
             exact
             path="/nfl-ultimate-team"
@@ -133,7 +165,8 @@ export default class ApplicationViews extends Component {
                 generateComputerPlayers={this.generateComputerPlayers}
                 positionsArray={this.state.positionsArray}
                 simulation={this.simulation}
-                gameResult={this.state.gameResult}
+                gameResultMsg={this.state.gameResultMsg}
+                gameResultSentence={this.state.gameResultSentence}
                 userSum={this.state.userSum}
                 computerSum={this.state.computerSum}
               />
