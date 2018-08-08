@@ -123,19 +123,24 @@ export default class BuildTeam extends Component {
     console.log(this.state.selectPlayer);
   };
 
-  createTeam = () => {
-
+  createTeam = e => {
     for (let i in this.state.selectPlayer) {
-      APIManager.getPlayersByName(this.state.selectPlayer[i]).then(
-        arrayOfOnePlayer => {
-          arrayOfOnePlayer.forEach(playerData => {
-            let newArray = this.state.chosenTeam;
-            newArray.push(playerData);
-            newArray.sort((a, b) => a.id - b.id);
-            this.setState({ chosenTeam: newArray });
-          });
-        }
-      );
+      if (this.state.selectPlayer[i] === "Draft a Player" || this.state.selectPlayer[i].length == 0) {
+        alert(`You have not drafted a player for some positions. Please draft a player for each position before creating a team.`)
+        e.preventDefault();
+        window.location.reload(true);
+      } else {
+        APIManager.getPlayersByName(this.state.selectPlayer[i]).then(
+          arrayOfOnePlayer => {
+            arrayOfOnePlayer.forEach(playerData => {
+              let newArray = this.state.chosenTeam;
+              newArray.push(playerData);
+              newArray.sort((a, b) => a.id - b.id);
+              this.setState({ chosenTeam: newArray });
+            });
+          }
+        );
+      }
     }
     this.props.userSelectedPlayers(this.state.chosenTeam);
   };

@@ -7,23 +7,23 @@
       "id": 1
     },
     {
-      "name": "Jordan Finley",
-      "username": "jordanfinley95",
-      "password": "123",
+      "name": "Austin",
+      "username": "nutboi",
+      "password": "password",
       "id": 2
     }
   ],
   "standings": [
     {
-      "winCount": 5,
-      "loseCount": 3,
+      "winCount": 4,
+      "loseCount": 2,
       "tieCount": 0,
       "userId": 1,
       "id": 1
     },
     {
-      "winCount": 0,
-      "loseCount": 1,
+      "winCount": 4,
+      "loseCount": 8,
       "tieCount": 0,
       "userId": 2,
       "id": 2
@@ -31,76 +31,148 @@
   ],
   "games": [
     {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 95.5,
-      "computerPoints": 71,
+      "resultNumb": 1,
+      "resultName": "Loss",
+      "userPoints": 69,
+      "computerPoints": 83.5,
       "userId": 1,
       "id": 1
     },
     {
       "resultNumb": 3,
       "resultName": "Win",
-      "userPoints": 99,
-      "computerPoints": 68,
+      "userPoints": 100,
+      "computerPoints": 84,
       "userId": 1,
       "id": 2
     },
     {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 85.5,
-      "computerPoints": 78,
+      "resultNumb": 1,
+      "resultName": "Loss",
+      "userPoints": 80,
+      "computerPoints": 85.5,
       "userId": 1,
       "id": 3
     },
     {
       "resultNumb": 3,
       "resultName": "Win",
-      "userPoints": 82.5,
-      "computerPoints": 82,
+      "userPoints": 86,
+      "computerPoints": 77,
       "userId": 1,
       "id": 4
     },
     {
-      "resultNumb": 1,
-      "resultName": "Loss",
-      "userPoints": 72.5,
-      "computerPoints": 74,
+      "resultNumb": 3,
+      "resultName": "Win",
+      "userPoints": 72,
+      "computerPoints": 70,
       "userId": 1,
       "id": 5
     },
     {
-      "resultNumb": 1,
-      "resultName": "Loss",
-      "userPoints": 73.5,
-      "computerPoints": 81,
+      "resultNumb": 3,
+      "resultName": "Win",
+      "userPoints": 88.5,
+      "computerPoints": 74,
       "userId": 1,
       "id": 6
     },
     {
       "resultNumb": 1,
       "resultName": "Loss",
-      "userPoints": 82.5,
-      "computerPoints": 92,
-      "userId": 1,
+      "userPoints": 67.5,
+      "computerPoints": 82.5,
+      "userId": 2,
       "id": 7
     },
     {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 97.5,
-      "computerPoints": 85,
-      "userId": 1,
+      "resultNumb": 1,
+      "resultName": "Loss",
+      "userPoints": 75,
+      "computerPoints": 93.5,
+      "userId": 2,
       "id": 8
     },
     {
       "resultNumb": 1,
       "resultName": "Loss",
-      "userPoints": 79.5,
-      "computerPoints": 80,
+      "userPoints": 75.5,
+      "computerPoints": 79,
       "userId": 2,
       "id": 9
+    },
+    {
+      "resultNumb": 3,
+      "resultName": "Win",
+      "userPoints": 81,
+      "computerPoints": 75,
+      "userId": 2,
+      "id": 10
+    },
+    {
+      "resultNumb": 1,
+      "resultName": "Loss",
+      "userPoints": 75.5,
+      "computerPoints": 79,
+      "userId": 2,
+      "id": 11
+    },
+    {
+      "resultNumb": 3,
+      "resultName": "Win",
+      "userPoints": 85.5,
+      "computerPoints": 71.5,
+      "userId": 2,
+      "id": 12
+    },
+    {
+      "resultNumb": 3,
+      "resultName": "Win",
+      "userPoints": 97.5,
+      "computerPoints": 87,
+      "userId": 2,
+      "id": 13
+    },
+    {
+      "resultNumb": 1,
+      "resultName": "Loss",
+      "userPoints": 72,
+      "computerPoints": 89.5,
+      "userId": 2,
+      "id": 14
+    },
+    {
+      "resultNumb": 1,
+      "resultName": "Loss",
+      "userPoints": 74,
+      "computerPoints": 77.5,
+      "userId": 2,
+      "id": 15
+    },
+    {
+      "resultNumb": 3,
+      "resultName": "Win",
+      "userPoints": 80,
+      "computerPoints": 78.5,
+      "userId": 2,
+      "id": 16
+    },
+    {
+      "resultNumb": 1,
+      "resultName": "Loss",
+      "userPoints": 71.5,
+      "computerPoints": 79.5,
+      "userId": 2,
+      "id": 17
+    },
+    {
+      "resultNumb": 1,
+      "resultName": "Loss",
+      "userPoints": 80,
+      "computerPoints": 86.5,
+      "userId": 2,
+      "id": 18
     }
   ],
   "players": [
