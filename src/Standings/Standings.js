@@ -4,7 +4,7 @@ import { Route } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import { Table } from "bloomer";
 import PieChart from "./PieChart";
-import LineChart from "./LineChart"
+import LineChart from "./LineChart";
 import "bulma/css/bulma.css";
 import "./Standings.css";
 
@@ -13,7 +13,11 @@ export default class Standings extends Component {
     winTotal: 0,
     loseTotal: 0,
     tieTotal: 0,
-    name: ""
+    name: "",
+    resultNumb: [],
+    numbOfGames: [],
+    userPointsArr: [],
+    computerPointsArr: []
   };
 
   getData = () => {
@@ -24,9 +28,41 @@ export default class Standings extends Component {
     return newArray;
   };
 
+  getGamesByUser = () => {
+    let sessionUser = JSON.parse(sessionStorage.getItem("credentials"));
+    let localUser = JSON.parse(localStorage.getItem("credentials"));
+
+    let resultNumbArr = this.state.resultNumb;
+    let numbOfGamesArr = this.state.numbOfGames;
+
+    if (sessionUser !== null) {
+      APIManager.getGamesByUserId(sessionUser.userId).then(gamesArr => {
+        gamesArr.forEach(game => {
+          resultNumbArr.push(game.resultNumb);
+          numbOfGamesArr.push(game.id);
+          this.setState({
+            resultNumb: resultNumbArr,
+            numbOfGames: numbOfGamesArr
+          });
+        });
+      });
+    } else if (localUser !== null) {
+      APIManager.getGamesByUserId(sessionUser.userId).then(gamesArr => {
+        gamesArr.forEach(game => {
+          resultNumbArr.push(game.resultNumb);
+          numbOfGamesArr.push(game.id);
+          this.setState({
+            resultNumb: resultNumbArr,
+            numbOfGames: numbOfGamesArr
+          });
+        });
+      });
+    }
+  };
+
   getStandingsByUser = () => {
-    let sessionUser = JSON.parse(sessionStorage.getItem("credentials")); // gets sessionStorage
-    let localUser = JSON.parse(localStorage.getItem("credentials")); // gets localStorage
+    let sessionUser = JSON.parse(sessionStorage.getItem("credentials"));
+    let localUser = JSON.parse(localStorage.getItem("credentials"));
 
     if (sessionUser !== null) {
       APIManager.getStandingsByUserId(sessionUser.userId).then(results => {
@@ -50,7 +86,8 @@ export default class Standings extends Component {
   };
 
   componentDidMount = () => {
-    return this.getStandingsByUser();
+    this.getGamesByUser();
+    this.getStandingsByUser();
   };
 
   render() {
@@ -58,7 +95,10 @@ export default class Standings extends Component {
       <React.Fragment>
         <Route path="/" component={Navbar} />
         <div id="standingsContainer">
-          <div id="pieChartContainer" className="columns is-mobile is-variable is-1">
+          <div
+            id="pieChartContainer"
+            className="columns is-mobile is-variable is-1"
+          >
             <div className="column is-half">
               <Table id="standingsTable" isBordered>
                 <thead>
@@ -86,7 +126,7 @@ export default class Standings extends Component {
           </div>
         </div>
 
-        <LineChart />
+        <LineChart resultNumb={this.state.resultNumb} numbOfGames={this.state.numbOfGames} />
       </React.Fragment>
     );
   }

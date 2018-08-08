@@ -1,6 +1,46 @@
 import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
 
+// export default class LineChart extends Component {
+//   chartData = {}
+
+//   componentDidMount = () => {
+//     console.log(this.props.resultNumb);
+//     console.log(this.props.numbOfGames);
+//   }
+
+//   componentDidUpdate = (prevProps) => {
+//     if ((this.props.resultNumb !== prevProps.resultNumb) && (this.props.numbOfGames !== prevProps.numbOfGames)) {
+//       this.chartData = {
+//         labels: this.props.numbOfGames,
+//         datasets: [
+//           {
+//             label: "Game History",
+//             data: this.props.resultNumb,
+//             backgroundColor: "hsl(204, 86%, 53%)",
+//             borderColor: "hsl(0, 100%, 70%)",
+//             // fill: false,
+//             pointBackgroundColor: "hsl(227, 100%, 20%)",
+//             // pointBorderWidth: 2,
+//             pointRadius: 5,
+//             // gridlines: "white"
+//           }
+//         ]
+//       }
+//     }
+//   }
+
+//   render() {
+//     return (
+//       <div className="chart">
+//         <Line data={this.chartData} height={60} options={{}} />
+//       </div>
+//     );
+//   }
+// }
+
+
+
 export default class LineChart extends Component {
 
   constructor(props) {
@@ -8,26 +48,15 @@ export default class LineChart extends Component {
 
     this.state = {
       chartData: {
-        labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        labels: this.props.numbOfGames,
         datasets: [
           {
             label: "Game History",
-            data: [
-                3,
-                2,
-                1,
-                2,
-                2,
-                3,
-                1,
-                3,
-                3,
-                1
-              ],
-              backgroundColor: "hsl(0, 100%, 70%)",
-              borderColor: "hsl(227, 100%, 20%)",
-              fill: false,
-              pointBackgroundColor: "hsl(0, 100%, 70%)",
+            data: this.props.resultNumb,
+              backgroundColor: "hsl(204, 86%, 53%)",
+              borderColor: "hsl(0, 100%, 70%)",
+              // fill: false,
+              pointBackgroundColor: "hsl(227, 100%, 20%)",
               // pointBorderWidth: 2,
               pointRadius: 5,
               gridlines: "white"
@@ -40,7 +69,20 @@ export default class LineChart extends Component {
   render() {
     return (
       <div className="chart">
-        <Line data={this.state.chartData} height={60} options={{datasetFill: false}} />
+        <Line data={this.state.chartData} height={60} options={{scales: {
+    yAxes: [{
+      scaleLabel: {
+        display: true,
+        labelString: 'Results'
+      }
+    }],
+    xAxes: [{
+      scaleLabel: {
+        display: true,
+        labelString: 'Games'
+      }
+    }],
+  }     }} />
       </div>
     );
   }
