@@ -5,6 +5,7 @@ import Navbar from "../Navbar/Navbar";
 import { Table } from "bloomer";
 import PieChart from "./PieChart";
 import LineChart from "./LineChart";
+import BarChart from "./BarChart";
 import "bulma/css/bulma.css";
 import "./Standings.css";
 
@@ -16,8 +17,8 @@ export default class Standings extends Component {
     name: "",
     resultNumb: [],
     numbOfGames: [],
-    userPointsArr: [],
-    computerPointsArr: []
+    userPoints: 0,
+    computerPoints: 0
   };
 
   getData = () => {
@@ -28,21 +29,44 @@ export default class Standings extends Component {
     return newArray;
   };
 
+  getPoints = () => {
+    let newArray = [];
+    newArray.push(this.state.userPoints);
+    newArray.push(this.state.computerPoints);
+    return newArray;
+  };
+
+  sum = (a, b) => {
+    return a + b;
+  };
+
   getGamesByUser = () => {
     let sessionUser = JSON.parse(sessionStorage.getItem("credentials"));
     let localUser = JSON.parse(localStorage.getItem("credentials"));
 
     let resultNumbArr = this.state.resultNumb;
     let numbOfGamesArr = this.state.numbOfGames;
+    let userPointsArr = [];
+    let computerPointsArr = [];
 
     if (sessionUser !== null) {
       APIManager.getGamesByUserId(sessionUser.userId).then(gamesArr => {
         gamesArr.forEach(game => {
           resultNumbArr.push(game.resultNumb);
+
           numbOfGamesArr.push(game.id);
+
+          userPointsArr.push(game.userPoints);
+          let sumOfUserPointsArr = userPointsArr.reduce(this.sum);
+
+          computerPointsArr.push(game.computerPoints);
+          let sumOfComputerPointsArr = computerPointsArr.reduce(this.sum);
+
           this.setState({
             resultNumb: resultNumbArr,
-            numbOfGames: numbOfGamesArr
+            numbOfGames: numbOfGamesArr,
+            userPoints: sumOfUserPointsArr,
+            computerPoints: sumOfComputerPointsArr
           });
         });
       });
@@ -94,7 +118,12 @@ export default class Standings extends Component {
     return (
       <React.Fragment>
         <Route path="/" component={Navbar} />
+
+        {/* Parent Container */}
+
         <div id="standingsContainer">
+          {/* Sub-Container 1 */}
+
           <div
             id="pieChartContainer"
             className="columns is-mobile is-variable is-1"
@@ -124,9 +153,48 @@ export default class Standings extends Component {
               <PieChart data={this.getData()} />
             </div>
           </div>
-        </div>
 
-        <LineChart resultNumb={this.state.resultNumb} numbOfGames={this.state.numbOfGames} />
+          {/* Sub-Container 2 */}
+
+          <div id="lineChartContainer">
+            <div className="lineChart">
+              <LineChart
+                resultNumb={this.state.resultNumb}
+                numbOfGames={this.state.numbOfGames}
+                name={this.state.name}
+              />
+            </div>
+          </div>
+
+          {/* Sub-Container 3 */}
+
+          <div id="barChartContainer" className="columns">
+            <div className="barChart column is-half">
+              <BarChart points={this.getPoints()} />
+            </div>
+
+            <div className="column is-half">
+              <Table id="standingsTable" isBordered>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                    <th>Ties</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{this.state.name}</td>
+                    <td>{this.state.winTotal}</td>
+                    <td>{this.state.loseTotal}</td>
+                    <td>{this.state.tieTotal}</td>
+                  </tr>
+                </tbody>
+              </Table>
+            </div>
+          </div>
+        </div>
       </React.Fragment>
     );
   }

@@ -15,7 +15,7 @@ export default class PieChart extends Component {
               backgroundColor: [
                 "hsl(204, 86%, 53%)",
                 "hsl(0, 100%, 70%)",
-                "hsl(227, 100%, 20%)"
+                "hsl(227, 100%, 35%)"
               ]
             }
           ]

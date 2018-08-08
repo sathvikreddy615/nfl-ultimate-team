@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import APIManager from "../APIManager";
 import PlayerCards from "./PlayerCards";
-import { Modal, ModalBackground, ModalCard, ModalCardHeader, ModalCardTitle, Delete, ModalCardBody, ModalCardFooter, Button } from "bloomer";
+import { Modal, ModalBackground, ModalCard, ModalCardHeader, ModalCardTitle, ModalCardBody, ModalCardFooter, Button } from "bloomer";
 import "./ResultsModal.css";
 import "bulma/css/bulma.css";
 
@@ -117,18 +117,19 @@ export default class NUT extends Component {
         <Modal id="resultsModal">
                 <ModalBackground />
                 <ModalCard>
-                    <ModalCardHeader>
-                        <ModalCardTitle>{this.props.gameResultMsg}</ModalCardTitle>
+                    <ModalCardHeader id="modalCardHeader">
+                        <ModalCardTitle id="modalCardTitle">{this.props.gameResultMsg}</ModalCardTitle>
                     </ModalCardHeader>
-                    <ModalCardBody>
-                      <h1><b>{this.props.userSum} - {this.props.computerSum}</b></h1>
+                    <ModalCardBody id="modalCardBody">
+                      <h1 id="score">{this.props.userSum} - {this.props.computerSum}</h1>
                       <br/>
                       <h2><i>{this.props.gameResultSentence}</i></h2>
                     </ModalCardBody>
-                    <ModalCardFooter>
+                    <ModalCardFooter id="modalCardFooter">
                       <div id="modalBtnContainer" className="columns">
                         <div className="column"><Link to="/buildteam">
                             <button
+                            id="playAgainBtn"
                             onClick={this.reloadPage}
                             className="button is-success is-rounded is-fullwidth"
                             >

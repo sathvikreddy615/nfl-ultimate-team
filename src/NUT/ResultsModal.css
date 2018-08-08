@@ -1,3 +1,25 @@
+#modalCardHeader, #modalCardFooter {
+    background-color: hsl(204, 86%, 53%);
+}
+
 #modalBtnContainer {
     width: 100%;
+}
+
+#modalCardTitle {
+    text-align: center;
+}
+
+#modalCardBody {
+    text-align: center;
+    background-color: hsl(204, 86%, 53%);
+}
+
+#score {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#playAgainBtn {
+    background-color: hsl(227, 100%, 35%);
 }
