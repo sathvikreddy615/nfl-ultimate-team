@@ -49,6 +49,11 @@ export default class APIManager {
           `http://localhost:5002/users?id=${idNumber}`
         ).then(e => e.json());
       };
+      static getGamesByUserId = idNumber => {
+        return fetch(
+          `http://localhost:5002/games?userId=${idNumber}`
+        ).then(e => e.json());
+      };
 }
 
 // exports to various files

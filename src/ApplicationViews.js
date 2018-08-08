@@ -110,7 +110,7 @@ export default class ApplicationViews extends Component {
         loseOb = { loseCount: losses };
 
         let loseResultOb = {
-          resultNumb: 2,
+          resultNumb: 1,
           resultName: "Loss",
           userPoints: sumOfUserArray,
           computerPoints: sumOfComputerArray,
@@ -129,7 +129,7 @@ export default class ApplicationViews extends Component {
         tieOb = { tieCount: ties };
 
         let tieResultOb = {
-          resultNumb: 1,
+          resultNumb: 2,
           resultName: "Tie",
           userPoints: sumOfUserArray,
           computerPoints: sumOfComputerArray,

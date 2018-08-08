@@ -70,32 +70,57 @@ export default class BuildTeam extends Component {
     switch (e.target.id) {
       case "0":
         newObject.qb.push(e.target.value);
+        if (newObject.qb.length > 1) {
+          newObject.qb.shift();
+        }
         break;
       case "1":
         newObject.rb.push(e.target.value);
+        if (newObject.rb.length > 1) {
+          newObject.rb.shift();
+        }
         break;
       case "2":
         newObject.wr.push(e.target.value);
+        if (newObject.wr.length > 1) {
+          newObject.wr.shift();
+        }
         break;
       case "3":
         newObject.te.push(e.target.value);
+        if (newObject.te.length > 1) {
+          newObject.te.shift();
+        }
         break;
       case "4":
         newObject.dl.push(e.target.value);
+        if (newObject.dl.length > 1) {
+          newObject.dl.shift();
+        }
         break;
       case "5":
         newObject.lb.push(e.target.value);
+        if (newObject.lb.length > 1) {
+          newObject.lb.shift();
+        }
         break;
       case "6":
         newObject.db.push(e.target.value);
+        if (newObject.db.length > 1) {
+          newObject.db.shift();
+        }
         break;
       case "7":
         newObject.k.push(e.target.value);
+        if (newObject.k.length > 1) {
+          newObject.k.shift();
+        }
         break;
       default:
         console.log("No position returned");
     }
     this.setState({ selectPlayer: newObject });
+    console.log(this.state.selectPlayer);
   };
 
   createTeam = () => {
