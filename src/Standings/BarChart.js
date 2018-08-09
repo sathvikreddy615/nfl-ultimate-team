@@ -41,7 +41,10 @@ export default class BarChart extends Component {
                     beginAtZero: true
                   }
                 }
-              ]
+              ],
+              xAxes: {
+                barThickness: 10
+              }
             }
           }}
         />

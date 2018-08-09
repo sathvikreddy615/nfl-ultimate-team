@@ -5,17 +5,11 @@
       "username": "sathvikreddy94",
       "password": "123",
       "id": 1
-    },
-    {
-      "name": "Austin",
-      "username": "nutboi",
-      "password": "password",
-      "id": 2
     }
   ],
   "standings": [
     {
-      "winCount": 4,
+      "winCount": 6,
       "loseCount": 2,
       "tieCount": 0,
       "userId": 1,
@@ -27,6 +21,13 @@
       "tieCount": 0,
       "userId": 2,
       "id": 2
+    },
+    {
+      "winCount": 0,
+      "loseCount": 0,
+      "tieCount": 0,
+      "userId": 3,
+      "id": 3
     }
   ],
   "games": [
@@ -173,6 +174,22 @@
       "computerPoints": 86.5,
       "userId": 2,
       "id": 18
+    },
+    {
+      "resultNumb": 3,
+      "resultName": "Win",
+      "userPoints": 86.5,
+      "computerPoints": 73.5,
+      "userId": 1,
+      "id": 19
+    },
+    {
+      "resultNumb": 3,
+      "resultName": "Win",
+      "userPoints": 78.5,
+      "computerPoints": 73,
+      "userId": 1,
+      "id": 20
     }
   ],
   "players": [
