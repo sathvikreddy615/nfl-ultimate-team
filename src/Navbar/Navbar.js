@@ -31,9 +31,9 @@ export default class Navbar extends Component {
 
           <div id="navbarExampleTransparentExample" className="navbar-menu">
             <div className="navbar-start">
+              <Link className="navbar-item" to="/">Home</Link>
               <Link className="navbar-item" to="/buildteam">Build a Team</Link>
               <Link className="navbar-item" to="/standings">Standings</Link>
-              <Link className="navbar-item" to="/">How to Play</Link>
             </div>
           </div>
 

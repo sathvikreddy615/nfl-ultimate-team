@@ -1,81 +1,68 @@
-Main Container
+#buildTeamTitle {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Main Container */
 
 #buildTeamContainer {
     display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 /* Sub-Container 1 */
+
+#playerPicturesContainer {
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+    margin-right: 30px;
+}
+
+#btPositionsContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
 
 #selectPositionsContainer {
     display: flex;
     flex-direction: column;
     width: 200px;
-    margin-left: 30px;
-    /* border: 1px solid black; */
+    margin-right: 120px;
 }
 
-.selectPositions {
-    margin: 115px 10px;
+#playerPicturesContainer {
+    margin-left: 70px;
 }
 
-/* Sub-Container 2 */
+.btPositions {
+    margin: 94px 0;
+}
 
-#playerPictureContainer {
+select {
+    width: 150px;
+    border: 1px solid hsl(227, 100%, 35%);
+    background-color: hsl(0, 100%, 70%);
+    margin: 97px 0;
+}
+
+.playerPictures {
     display: flex;
     flex-direction: column;
-    width: 230px;
-    margin-right: 30px;
-    /* border: 1px solid black; */
+    margin: 40px 0;
 }
 
-#playerPictureContainer > img {
+.playerImage {
     width: 225px;
     height: 200px;
     border-radius: 10px;
+    border: 1px solid hsl(227, 100%, 35%);
 }
 
-.playerPicture {
-    margin: 50px 10px;
+#createTeamBtnContainer {
+    margin: 15px auto;
+    width: 300px;
 }
 
-#selectQB {
-    position: relative;
-    top: -61px;
-}
-
-#selectRB {
-    position: relative;
-    top: -10px;
-}
-
-#selectWR {
-    position: relative;
-    top: 43px;
-}
-
-#selectTE {
-    position: relative;
-    top: 95px;
-}
-
-#selectDL {
-    position: relative;
-    top: 147px;
-}
-
-#selectLB {
-    position: relative;
-    top: 198px;
-}
-
-#selectDB {
-    position: relative;
-    top: 252px;
-}
-
-#selectK {
-    position: relative;
-    top: 302px;
-}

@@ -1,44 +1,6 @@
 import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
 
-// export default class LineChart extends Component {
-//   chartData = {}
-
-//   componentDidMount = () => {
-//     console.log(this.props.resultNumb);
-//     console.log(this.props.numbOfGames);
-//   }
-
-//   componentDidUpdate = (prevProps) => {
-//     if ((this.props.resultNumb !== prevProps.resultNumb) && (this.props.numbOfGames !== prevProps.numbOfGames)) {
-//       this.chartData = {
-//         labels: this.props.numbOfGames,
-//         datasets: [
-//           {
-//             label: "Game History",
-//             data: this.props.resultNumb,
-//             backgroundColor: "hsl(204, 86%, 53%)",
-//             borderColor: "hsl(0, 100%, 70%)",
-//             // fill: false,
-//             pointBackgroundColor: "hsl(227, 100%, 20%)",
-//             // pointBorderWidth: 2,
-//             pointRadius: 5,
-//             // gridlines: "white"
-//           }
-//         ]
-//       }
-//     }
-//   }
-
-//   render() {
-//     return (
-//       <div className="chart">
-//         <Line data={this.chartData} height={60} options={{}} />
-//       </div>
-//     );
-//   }
-// }
-
 export default class LineChart extends Component {
   constructor(props) {
     super(props);
@@ -50,10 +12,10 @@ export default class LineChart extends Component {
           {
             label: "3 = Win | 2 = Tie | 1 = Loss",
             data: this.props.resultNumb,
-            backgroundColor: "hsl(204, 86%, 53%)",
-            borderColor: "hsl(0, 100%, 70%)",
+            backgroundColor: "hsl(0, 100%, 70%)",
+            borderColor: "hsl(227, 100%, 35%)",
             // fill: false,
-            pointBackgroundColor: "hsl(227, 100%, 35%)",
+            pointBackgroundColor: "hsl(48, 100%, 65%)",
             // pointBorderWidth: 2,
             pointRadius: 6
           }
@@ -67,7 +29,7 @@ export default class LineChart extends Component {
       <div className="chart">
         <Line
           data={this.state.chartData}
-          height={60}
+          height={65}
           options={{
             layout: {
               padding: {
@@ -78,12 +40,20 @@ export default class LineChart extends Component {
             title: {
               display: true,
               text: "Timeline of Game Results",
-              fontSize: 25
+              fontSize: 25,
+              fontColor: "white",
+              padding: 10
+            },
+            legend: {
+             labels: {
+               fontColor: "white"
+             }
             },
             scales: {
               yAxes: [
                 {
                   ticks: {
+                    fontColor: "white",
                     beginAtZero: true,
                     userCallback: function(label, index, labels) {
                       // when the floored value is the same as the value we have a whole number
@@ -94,18 +64,28 @@ export default class LineChart extends Component {
                   },
                   scaleLabel: {
                     display: true,
-                    labelString: "Results"
-                  }
+                    labelString: "Results",
+                    fontColor: "white"
+                  },
+                  gridLines: {
+                    // display: false
+                    color: "white"
+                  },
                 }
               ],
               xAxes: [
                 {
                   scaleLabel: {
                     display: true,
-                    labelString: "Games"
+                    labelString: "Games",
+                    fontColor: "white"
                   },
                   ticks: {
                     display: false
+                  },
+                  gridLines: {
+                    display: false
+                    // color: "white"
                   }
                 }
               ]

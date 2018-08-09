@@ -8,7 +8,7 @@
 
 .content {
     position: fixed;
-    bottom: 300px;
+    bottom: 290px;
     left: 640px;
     background: rgba(0, 0, 0, 0.5);
     color: #f1f1f1;
@@ -19,4 +19,17 @@
 
 #registerBtn {
     margin-bottom: 15px;
+}
+
+@media screen and (min-width: 1000px) {
+    .content {
+        position: fixed;
+        bottom: 315px;
+        left: 630px;
+        background: rgba(0, 0, 0, 0.5);
+        color: #f1f1f1;
+        padding: 20px;
+        text-align: center;
+        border-radius: 20px;
+    }
 }
