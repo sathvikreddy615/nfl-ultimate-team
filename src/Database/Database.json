@@ -5,12 +5,18 @@
       "username": "sathvikreddy94",
       "password": "123",
       "id": 1
+    },
+    {
+      "name": "Adelaide",
+      "username": "adelaide",
+      "password": "123",
+      "id": 2
     }
   ],
   "standings": [
     {
-      "winCount": 6,
-      "loseCount": 2,
+      "winCount": 11,
+      "loseCount": 4,
       "tieCount": 0,
       "userId": 1,
       "id": 1
@@ -28,6 +34,13 @@
       "tieCount": 0,
       "userId": 3,
       "id": 3
+    },
+    {
+      "winCount": 0,
+      "loseCount": 0,
+      "tieCount": 0,
+      "userId": 2,
+      "id": 4
     }
   ],
   "games": [
@@ -190,6 +203,62 @@
       "computerPoints": 73,
       "userId": 1,
       "id": 20
+    },
+    {
+      "resultNumb": 1,
+      "resultName": "Loss",
+      "userPoints": 76,
+      "computerPoints": 86.5,
+      "userId": 1,
+      "id": 21
+    },
+    {
+      "resultNumb": 3,
+      "resultName": "Win",
+      "userPoints": 77.5,
+      "computerPoints": 75.5,
+      "userId": 1,
+      "id": 22
+    },
+    {
+      "resultNumb": 3,
+      "resultName": "Win",
+      "userPoints": 84,
+      "computerPoints": 80.5,
+      "userId": 1,
+      "id": 23
+    },
+    {
+      "resultNumb": 3,
+      "resultName": "Win",
+      "userPoints": 78.5,
+      "computerPoints": 76.5,
+      "userId": 1,
+      "id": 24
+    },
+    {
+      "resultNumb": 3,
+      "resultName": "Win",
+      "userPoints": 82.5,
+      "computerPoints": 71.5,
+      "userId": 1,
+      "id": 25
+    },
+    {
+      "resultNumb": 1,
+      "resultName": "Loss",
+      "userPoints": 61,
+      "computerPoints": 72.5,
+      "userId": 1,
+      "id": 26
+    },
+    {
+      "resultNumb": 3,
+      "resultName": "Win",
+      "userPoints": 76,
+      "computerPoints": 68.5,
+      "userId": 1,
+      "id": 27
     }
   ],
   "players": [

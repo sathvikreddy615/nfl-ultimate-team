@@ -13,9 +13,9 @@ export default class PieChart extends Component {
               label: "Results",
               data: this.props.data,
               backgroundColor: [
-                "hsl(204, 86%, 53%)",
+                "hsl(227, 100%, 35%)",
                 "hsl(0, 100%, 70%)",
-                "hsl(227, 100%, 35%)"
+                "hsl(48, 100%, 65%)"
               ]
             }
           ]
@@ -26,7 +26,13 @@ export default class PieChart extends Component {
   render() {
     return (
       <div className="chart">
-        <Pie data={this.chartData} width={120} height={50} options={{}} />
+        <Pie data={this.chartData} width={120} height={50} options={{
+          legend: {
+            labels: {
+              fontColor: "white"
+            }
+          }
+        }} />
       </div>
     );
   }

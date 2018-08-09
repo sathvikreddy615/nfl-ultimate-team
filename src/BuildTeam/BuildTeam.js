@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Link, Route } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
+import { Hero, HeroBody, Title } from "bloomer";
 import APIManager from "../APIManager";
 import PlayerSelection from "../BuildTeam/PlayerSelection";
-// import "./BuildTeam.css";
+import PlayerPicture from "../BuildTeam/PlayerPicture";
+import "./BuildTeam.css";
 import "bulma/css/bulma.css";
 
 export default class BuildTeam extends Component {
@@ -28,7 +30,27 @@ export default class BuildTeam extends Component {
       lb: [],
       db: [],
       k: []
-    }
+    },
+    playerImages: {
+      qb: [],
+      rb: [],
+      wr: [],
+      te: [],
+      dl: [],
+      lb: [],
+      db: [],
+      k: []
+    },
+    pickAPosition: [
+      "Quarterback",
+      "Running Back",
+      "Wide Receiver",
+      "Tight End",
+      "Defensive Lineman",
+      "Linebacker",
+      "Defensive Back",
+      "Kicker"
+    ]
   };
 
   shuffleArray = arr => {
@@ -60,7 +82,6 @@ export default class BuildTeam extends Component {
           newObject[positionKey].push(player);
       });
       this.setState({ selectPositions: newObject });
-      console.log(this.state.selectPositions);
     });
   };
 
@@ -120,13 +141,90 @@ export default class BuildTeam extends Component {
         console.log("No position returned");
     }
     this.setState({ selectPlayer: newObject });
-    console.log(this.state.selectPlayer);
+    // console.log(this.state.selectPlayer);
+
+    let playerImagesOb = this.state.playerImages;
+
+    for (let player in this.state.selectPlayer) {
+      APIManager.getPlayersByName(this.state.selectPlayer[player]).then(
+        names => {
+          names.forEach(name => {
+            switch (name.position) {
+              case "QB":
+                playerImagesOb.qb.push(name.image);
+                if (playerImagesOb.qb.length > 1) {
+                  playerImagesOb.qb.shift();
+                }
+                // console.log(playerImagesOb.qb);
+                break;
+              case "RB":
+                playerImagesOb.rb.push(name.image);
+                if (playerImagesOb.rb.length > 1) {
+                  playerImagesOb.rb.shift();
+                }
+                // console.log(playerImagesOb.rb);
+                break;
+              case "WR":
+                playerImagesOb.wr.push(name.image);
+                if (playerImagesOb.wr.length > 1) {
+                  playerImagesOb.wr.shift();
+                }
+                // console.log(playerImagesOb.wr);
+                break;
+              case "TE":
+                playerImagesOb.te.push(name.image);
+                if (playerImagesOb.te.length > 1) {
+                  playerImagesOb.te.shift();
+                }
+                // console.log(playerImagesOb.te);
+                break;
+              case "DL":
+                playerImagesOb.dl.push(name.image);
+                if (playerImagesOb.dl.length > 1) {
+                  playerImagesOb.dl.shift();
+                }
+                // console.log(playerImagesOb.dl);
+                break;
+              case "LB":
+                playerImagesOb.lb.push(name.image);
+                if (playerImagesOb.lb.length > 1) {
+                  playerImagesOb.lb.shift();
+                }
+                // console.log(playerImagesOb.lb);
+                break;
+              case "DB":
+                playerImagesOb.db.push(name.image);
+                if (playerImagesOb.db.length > 1) {
+                  playerImagesOb.db.shift();
+                }
+                // console.log(playerImagesOb.db);
+                break;
+              case "K":
+                playerImagesOb.k.push(name.image);
+                if (playerImagesOb.k.length > 1) {
+                  playerImagesOb.k.shift();
+                }
+                // console.log(playerImagesOb.k);
+                break;
+              default:
+                console.log("this shit did not work");
+            }
+            this.setState({ playerImages: playerImagesOb });
+          });
+        }
+      );
+    }
   };
 
   createTeam = e => {
     for (let i in this.state.selectPlayer) {
-      if (this.state.selectPlayer[i] === "Draft a Player" || this.state.selectPlayer[i].length == 0) {
-        alert(`You have not drafted a player for some positions. Please draft a player for each position before creating a team.`)
+      if (
+        this.state.selectPlayer[i] === "Draft a Player" ||
+        this.state.selectPlayer[i].length == 0
+      ) {
+        alert(
+          `You have not drafted a player for some positions. Please draft a player for each position before creating a team.`
+        );
         e.preventDefault();
         window.location.reload(true);
       } else {
@@ -149,23 +247,46 @@ export default class BuildTeam extends Component {
     return (
       <React.Fragment>
         <Route path="/" component={Navbar} />
-        <div id="buildTeamContainer">
-          <form>
-            {Object.keys(this.state.selectPositions).map((position, index) => (
-              <PlayerSelection
-                key={index}
-                unique={index}
-                position={this.state.selectPositions[position]}
-                selectNames={this.selectNames}
-                handleSelectionChange={this.handleSelectionChange}
-              />
-            ))}
+        <Hero isColor="info" isSize="large">
+          <Title id="buildTeamTitle">Draft a Player</Title>
+          <div id="buildTeamContainer">
+            <div id="playerPicturesContainer">
+              <div className="playerPictures">
+                <PlayerPicture playerImages={this.state.playerImages} />
+              </div>
+            </div>
 
+            <div id="btPositionsContainer">
+              {this.state.pickAPosition.map((position, index) => (
+                <div key={index} className="btPositions">
+                  {position}
+                </div>
+              ))}
+            </div>
+
+            <div id="selectPositionsContainer">
+              <div className="selectPositions">
+                {Object.keys(this.state.selectPositions).map(
+                  (position, index) => (
+                    <PlayerSelection
+                      key={index}
+                      unique={index}
+                      position={this.state.selectPositions[position]}
+                      handleSelectionChange={this.handleSelectionChange}
+                      playerImages={this.state.playerImages}
+                    />
+                  )
+                )}
+              </div>
+            </div>
+          </div>
+
+          <div id="createTeamBtnContainer">
             {
               <Link to="/nfl-ultimate-team">
                 <button
                   id="createTeamBtn"
-                  className="bd-tw-button button is-danger is-focused is-rounded"
+                  className="bd-tw-button button is-danger is-focused is-rounded is-fullwidth"
                   type="button"
                   onClick={this.createTeam}
                 >
@@ -173,8 +294,8 @@ export default class BuildTeam extends Component {
                 </button>
               </Link>
             }
-          </form>
-        </div>
+          </div>
+        </Hero>
       </React.Fragment>
     );
   }

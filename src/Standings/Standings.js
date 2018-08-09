@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import APIManager from "../APIManager";
 import { Route } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import { Table } from "bloomer";
+import { Hero, HeroBody, Title, Table } from "bloomer";
 import PieChart from "./PieChart";
 import LineChart from "./LineChart";
 import BarChart from "./BarChart";
@@ -118,46 +118,16 @@ export default class Standings extends Component {
     return (
       <React.Fragment>
         <Route path="/" component={Navbar} />
+        <Hero isColor="info">
 
         {/* Parent Container */}
 
         <div id="standingsContainer">
-          {/* Sub-Container 1 */}
-
-          <div
-            id="pieChartContainer"
-            className="columns is-mobile is-variable is-1"
-          >
-            <div className="column is-half">
-              <Table id="standingsTable" isBordered>
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Wins</th>
-                    <th>Losses</th>
-                    <th>Ties</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>{this.state.name}</td>
-                    <td>{this.state.winTotal}</td>
-                    <td>{this.state.loseTotal}</td>
-                    <td>{this.state.tieTotal}</td>
-                  </tr>
-                </tbody>
-              </Table>
-            </div>
-
-            <div className="pieChart column is-half">
-              <PieChart data={this.getData()} />
-            </div>
-          </div>
 
           {/* Sub-Container 2 */}
 
           <div id="lineChartContainer">
-            <div className="lineChart">
+            <div id="lineChart">
               <LineChart
                 resultNumb={this.state.resultNumb}
                 numbOfGames={this.state.numbOfGames}
@@ -166,21 +136,20 @@ export default class Standings extends Component {
             </div>
           </div>
 
-          {/* Sub-Container 3 */}
+          {/* Sub-Container 1 */}
 
-          <div id="barChartContainer" className="columns">
-            <div className="barChart column is-half">
-              <BarChart points={this.getPoints()} />
-            </div>
-
+          <div
+            id="pieChartContainer"
+            className="columns is-mobile is-variable is-1"
+          >
             <div className="column is-half">
-              <Table id="standingsTable" isBordered>
+              <Table id="standingsTable">
                 <thead>
                   <tr>
-                    <th>Name</th>
-                    <th>Wins</th>
-                    <th>Losses</th>
-                    <th>Ties</th>
+                    <th id="tableHeaderOne">Name</th>
+                    <th id="tableHeaderTwo">Wins</th>
+                    <th id="tableHeaderThree">Losses</th>
+                    <th id="tableHeaderFour">Ties</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -193,8 +162,20 @@ export default class Standings extends Component {
                 </tbody>
               </Table>
             </div>
+
+            <div id="pieChart" className="column is-half">
+              <PieChart data={this.getData()} />
+            </div>
           </div>
+
+          {/* Sub-Container 3 */}
+
+            <div id="barChart">
+              <BarChart points={this.getPoints()} />
+            </div>
+
         </div>
+        </Hero>
       </React.Fragment>
     );
   }

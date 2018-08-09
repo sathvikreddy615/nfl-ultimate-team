@@ -12,7 +12,7 @@ export default class BarChart extends Component {
           {
             label: "Points",
             data: this.props.points,
-            backgroundColor: ["hsl(204, 86%, 53%)", "hsl(0, 100%, 70%)"]
+            backgroundColor: ["hsl(227, 100%, 35%)", "hsl(0, 100%, 70%)"]
           }
         ]
       };
@@ -24,12 +24,20 @@ export default class BarChart extends Component {
       <div className="chart">
         <Bar
           data={this.chartData}
-          height={50}
+          height={70}
           options={{
+            layout: {
+              padding: {
+                left: 75,
+                right: 75
+              }
+            },
             title: {
               display: true,
               text: "Total Fantasy Points Accrued",
-              fontSize: 15
+              fontSize: 25,
+              fontColor: "white",
+              padding: 10
             },
             legend: {
               display: false
@@ -38,13 +46,30 @@ export default class BarChart extends Component {
               yAxes: [
                 {
                   ticks: {
-                    beginAtZero: true
-                  }
+                    beginAtZero: true,
+                    fontColor: "white"
+                  },
+                  gridLines: {
+                    // display: false
+                    color: "white"
+                  },
                 }
               ],
-              xAxes: {
-                barThickness: 10
-              }
+              xAxes: [
+                {
+                  ticks: {
+                    fontColor: "white"
+                  },
+                  scaleLabel: {
+                    display: true,
+                    fontColor: "white"
+                  },
+                  gridLines: {
+                    display: false
+                    // color: "white"
+                  },
+                }
+              ]
             }
           }}
         />

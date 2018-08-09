@@ -6,6 +6,7 @@
   margin: 0 4px;
 }
 
+
 /*  user and computer containers  */
 
 #userContainer,
@@ -15,7 +16,10 @@
   justify-content: space-evenly;
   margin-top: 20px;
   margin-bottom: 20px;
-  /* border: 1px solid black; */
+}
+
+#computerContainer {
+  margin-bottom: 70px;
 }
 
 #userName,
@@ -35,6 +39,7 @@
   height: auto;
   margin: 0 3px;
   text-align: center;
+  background-color: hsl(0, 100%, 70%)
 }
 
 img {
@@ -52,7 +57,7 @@ img {
 
 #positionsContainer {
   border-radius: 12px;
-  background-color: hsl(204, 86%, 53%);
+  background-color: hsl(227, 100%, 35%);
 }
 
 .position {
@@ -68,6 +73,7 @@ img {
   text-align: center;
 }
 
+
 .points {
   font-size: 12px;
   font-weight: bold;
@@ -77,5 +83,10 @@ img {
 
 #simulateBtnContainer {
   margin: 15px auto 0 auto;
-  max-width: 800px;
+  width: 700px;
+}
+
+#simulateBtn {
+  /* background-color: hsl(227, 100%, 35%);
+  color: white; */
 }
