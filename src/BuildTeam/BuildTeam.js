@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link, Route } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import { Hero, HeroBody, Title } from "bloomer";
+import { Hero, Title } from "bloomer";
 import APIManager from "../APIManager";
 import PlayerSelection from "../BuildTeam/PlayerSelection";
 import PlayerPicture from "../BuildTeam/PlayerPicture";
@@ -219,8 +219,8 @@ export default class BuildTeam extends Component {
   createTeam = e => {
     for (let i in this.state.selectPlayer) {
       if (
-        this.state.selectPlayer[i] === "Draft a Player" ||
-        this.state.selectPlayer[i].length == 0
+        this.state.selectPlayer[i] === "-----" ||
+        this.state.selectPlayer[i].length === 0
       ) {
         alert(
           `You have not drafted a player for some positions. Please draft a player for each position before creating a team.`
@@ -248,7 +248,7 @@ export default class BuildTeam extends Component {
       <React.Fragment>
         <Route path="/" component={Navbar} />
         <Hero isColor="info" isSize="large">
-          <Title id="buildTeamTitle">Draft a Player</Title>
+          <Title id="buildTeamTitle">Draft a...</Title>
           <div id="buildTeamContainer">
             <div id="playerPicturesContainer">
               <div className="playerPictures">

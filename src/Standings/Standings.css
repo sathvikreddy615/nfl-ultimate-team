@@ -26,3 +26,19 @@
 #barChart {
     margin-bottom: 20px;
 }
+
+#resetProgressContainer {
+    width: 350px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+}
+
+.resetMessage {
+    font-weight: bold;
+}
+
+#confirmResetBtn {
+    color: white;
+    background-color: hsl(227, 100%, 35%);
+}

@@ -10,9 +10,7 @@ import {
   ModalCardTitle,
   ModalCardBody,
   ModalCardFooter,
-  Button,
-  Hero,
-  HeroBody
+  Hero
 } from "bloomer";
 import "./ResultsModal.css";
 import "bulma/css/bulma.css";
@@ -71,55 +69,56 @@ export default class NUT extends Component {
               Run Simulation
             </button>
           </div>
-
-          {/* Containers for the User */}
-          <div id="userContainer">
-            <div id="userName">
-              {this.state.name}: {this.props.userSum} pts.
+          <div id="boardContainer">
+            {/* Containers for the User */}
+            <div id="userContainer">
+              <div id="userName">
+                {this.state.name}: {this.props.userSum} pts.
+              </div>
             </div>
-          </div>
-          <div id="userCardsContainer" className="columns">
-            {this.state.userTeam.map(player => (
-              <PlayerCards key={player.id} player={player} />
-            ))}
-          </div>
+            <div id="userCardsContainer" className="columns">
+              {this.state.userTeam.map(player => (
+                <PlayerCards key={player.id} player={player} />
+              ))}
+            </div>
 
-          <div id="userPlayerPointsContainer" className="columns">
-            {this.state.userTeam.map((player, index) => (
-              <div key={index} className="column points">
-                {player.points}
+            <div id="userPlayerPointsContainer" className="columns">
+              {this.state.userTeam.map((player, index) => (
+                <div key={index} className="column points">
+                  {player.points}
+                </div>
+              ))}
+            </div>
+
+            {/* Lists all Position Names */}
+
+            <div id="positionsContainer" className="columns">
+              {this.props.positionsArray.map((position, index) => (
+                <div key={index} className="column position">
+                  {position}
+                </div>
+              ))}
+            </div>
+
+            {/* Containers for the Computer */}
+
+            <div id="computerPlayerPointsContainer" className="columns">
+              {this.state.computerTeam.map((player, index) => (
+                <div key={index} className="column points">
+                  {player.points}
+                </div>
+              ))}
+            </div>
+
+            <div id="computerCardsContainer" className="columns">
+              {this.state.computerTeam.map(player => (
+                <PlayerCards key={player.id} player={player} />
+              ))}
+            </div>
+            <div id="computerContainer">
+              <div id="computerName">
+                Computer: {this.props.computerSum} pts.
               </div>
-            ))}
-          </div>
-
-          {/* Lists all Position Names */}
-
-          <div id="positionsContainer" className="columns">
-            {this.props.positionsArray.map((position, index) => (
-              <div key={index} className="column position">
-                {position}
-              </div>
-            ))}
-          </div>
-
-          {/* Containers for the Computer */}
-
-          <div id="computerPlayerPointsContainer" className="columns">
-            {this.state.computerTeam.map((player, index) => (
-              <div key={index} className="column points">
-                {player.points}
-              </div>
-            ))}
-          </div>
-
-          <div id="computerCardsContainer" className="columns">
-            {this.state.computerTeam.map(player => (
-              <PlayerCards key={player.id} player={player} />
-            ))}
-          </div>
-          <div id="computerContainer">
-            <div id="computerName">
-              Computer: {this.props.computerSum} pts.
             </div>
           </div>
         </Hero>
@@ -139,8 +138,8 @@ export default class NUT extends Component {
                 {this.props.userSum} - {this.props.computerSum}
               </h1>
               <br />
-              <h2>
-                <i>{this.props.gameResultSentence}</i>
+              <h2 id="gameResultSentence">
+                {this.props.gameResultSentence}
               </h2>
             </ModalCardBody>
             <ModalCardFooter id="modalCardFooter">

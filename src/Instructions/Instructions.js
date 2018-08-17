@@ -9,7 +9,6 @@ import {
   ModalCardHeader,
   ModalCardTitle,
   ModalCardBody,
-  ModalCardFooter,
   Delete,
   Hero,
   HeroBody,
@@ -117,7 +116,7 @@ export default class Instructions extends Component {
                 </ModalCardTitle>
                 <Delete id="deleteAboutModal" onClick={this.closeAboutModal} />
               </ModalCardHeader>
-              <ModalCardBody>
+              <ModalCardBody className="has-background-info has-text-white">
                 <h6>
                   <b>NFL Ultimate Team</b> is a fantasy football application
                   that gives you the freedom of building your own team from
@@ -125,28 +124,16 @@ export default class Instructions extends Component {
                   competing your team against an AI's.
                 </h6>
 
+                <br/>
+
                 <h6>
                   Each NFL player has their own point value, which is based off
-                  of 2017's season ending fantasy statistics. There are 8
-                  positions that you will need to draft a player for in order to
-                  fulfill your team's roster:
-                </h6>
-
-                <h6>
-                  In the building phase for each round, you will be given the
+                  of 2017's season ending fantasy statistics. In the building phase for each round, you will be given the
                   option of selecting from <b>3</b> random players for each
-                  position. This means that having a solid knowledege of last
-                  year's NFL stats will greatly benefit you! However, it will
-                  also involve a fair amount of luck, since the players you are
-                  dealt will be randomly generated.
+                  position. There are 8 positions that you will need to draft a player for in order to fulfill your team's roster:
                 </h6>
 
-                <br />
-
-                <h6>
-                  The ultimate goal for each game is to have the higher total
-                  fantasy points!
-                </h6>
+                <br/>
 
                 <div id="positionContainer" className="columns">
                   <div className="column listPosition">Quarterback</div>
@@ -158,6 +145,21 @@ export default class Instructions extends Component {
                   <div className="column listPosition">Defensive Back</div>
                   <div className="column listPosition">Kicker</div>
                 </div>
+
+                <h6>
+                  This means that having a solid knowledege of last
+                  year's NFL stats will greatly benefit you! However, it will
+                  also involve a fair amount of luck, since the players you are
+                  dealt will be randomly generated.
+                </h6>
+
+                <br />
+
+                <h6>
+                  The ultimate goal of this game is to have the higher total
+                  fantasy points!
+                </h6>
+
               </ModalCardBody>
             </ModalCard>
           </Modal>
@@ -171,32 +173,19 @@ export default class Instructions extends Component {
                 </ModalCardTitle>
                 <Delete onClick={this.closeInstructionsModal} />
               </ModalCardHeader>
-              <ModalCardBody>
+              <ModalCardBody className="has-background-info has-text-white">
                 <ol id="instructionsContainer">
                   <li className="instructions">
-                    Begin by clicking <i>Build a Team</i> in the navigation bar.
+                    Get started by clicking <a id="buildTeamTag" href="http://localhost:3000/buildteam"><b><u>Build a Team</u></b></a> in the navigation bar.
                   </li>
                   <li className="instructions">
-                    Next, you will see 8 dropdown boxes. Select a player for
-                    each dropdown.
+                    Select a player for all 8 positions and click <b><u>Create Team</u></b> towards the bottom of the page.
                   </li>
                   <li className="instructions">
-                    Once you've selected all 8 of your players, click{" "}
-                    <i>Create Team</i>.
+                    Examine the player cards for your team and the computer's, if you wish. When you are ready, click <b><u>Run Simulation</u></b> towards the top of the page.
                   </li>
                   <li className="instructions">
-                    Now, you will see all 8 of your players including the AI's
-                    team. Analyze the players on both teams then click
-                    <i>Run Simulation</i>.
-                  </li>
-                  <li className="instructions">
-                    A notification will popup letting you know whether you've{" "}
-                    <i>won</i>, <i>lost</i>, or <i>tied</i> the game.
-                  </li>
-                  <li className="instructions">
-                    Click <i>Play Again</i> if you want a rematch or{" "}
-                    <i>View Standings</i> if you want to see your current
-                    record.
+                    View your results and click <b><u>Play Again</u></b> if you want a rematch. Otherwise, click <b><u>View Standings</u></b> if you want to analyze your stats, view your current record or reset your progress.
                   </li>
                   <li className="instructions">Good Luck!</li>
                 </ol>

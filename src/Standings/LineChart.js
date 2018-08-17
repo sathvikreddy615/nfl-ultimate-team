@@ -34,7 +34,7 @@ export default class LineChart extends Component {
             layout: {
               padding: {
                 left: 10,
-                right: 15
+                right: 25
               }
             },
             title: {

@@ -1,264 +1,117 @@
 {
   "users": [
     {
-      "name": "Sathvik Reddy",
+      "name": "Sathvik",
       "username": "sathvikreddy94",
       "password": "123",
       "id": 1
-    },
-    {
-      "name": "Adelaide",
-      "username": "adelaide",
-      "password": "123",
-      "id": 2
     }
   ],
   "standings": [
     {
-      "winCount": 11,
-      "loseCount": 4,
-      "tieCount": 0,
+      "winCount": 7,
+      "loseCount": 5,
+      "tieCount": 1,
       "userId": 1,
       "id": 1
-    },
-    {
-      "winCount": 4,
-      "loseCount": 8,
-      "tieCount": 0,
-      "userId": 2,
-      "id": 2
-    },
-    {
-      "winCount": 0,
-      "loseCount": 0,
-      "tieCount": 0,
-      "userId": 3,
-      "id": 3
-    },
-    {
-      "winCount": 0,
-      "loseCount": 0,
-      "tieCount": 0,
-      "userId": 2,
-      "id": 4
     }
   ],
   "games": [
     {
       "resultNumb": 1,
       "resultName": "Loss",
-      "userPoints": 69,
-      "computerPoints": 83.5,
+      "userPoints": 89.5,
+      "computerPoints": 95.5,
       "userId": 1,
       "id": 1
     },
     {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 100,
-      "computerPoints": 84,
-      "userId": 1,
-      "id": 2
-    },
-    {
       "resultNumb": 1,
       "resultName": "Loss",
-      "userPoints": 80,
-      "computerPoints": 85.5,
+      "userPoints": 78,
+      "computerPoints": 87,
       "userId": 1,
       "id": 3
     },
     {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 86,
-      "computerPoints": 77,
+      "resultNumb": 1,
+      "resultName": "Loss",
+      "userPoints": 88.5,
+      "computerPoints": 92,
       "userId": 1,
       "id": 4
     },
     {
       "resultNumb": 3,
       "resultName": "Win",
-      "userPoints": 72,
-      "computerPoints": 70,
+      "userPoints": 80.5,
+      "computerPoints": 78.5,
       "userId": 1,
       "id": 5
     },
     {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 88.5,
-      "computerPoints": 74,
+      "resultNumb": 2,
+      "resultName": "Loss",
+      "userPoints": 83,
+      "computerPoints": 85.5,
       "userId": 1,
       "id": 6
     },
     {
-      "resultNumb": 1,
-      "resultName": "Loss",
-      "userPoints": 67.5,
-      "computerPoints": 82.5,
-      "userId": 2,
+      "resultNumb": 3,
+      "resultName": "Win",
+      "userPoints": 76.5,
+      "computerPoints": 65.5,
+      "userId": 1,
       "id": 7
     },
     {
-      "resultNumb": 1,
-      "resultName": "Loss",
-      "userPoints": 75,
-      "computerPoints": 93.5,
-      "userId": 2,
+      "resultNumb": 3,
+      "resultName": "Win",
+      "userPoints": 88,
+      "computerPoints": 82,
+      "userId": 1,
       "id": 8
     },
     {
       "resultNumb": 1,
       "resultName": "Loss",
-      "userPoints": 75.5,
-      "computerPoints": 79,
-      "userId": 2,
-      "id": 9
-    },
-    {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 81,
-      "computerPoints": 75,
-      "userId": 2,
-      "id": 10
-    },
-    {
-      "resultNumb": 1,
-      "resultName": "Loss",
-      "userPoints": 75.5,
-      "computerPoints": 79,
-      "userId": 2,
+      "userPoints": 78.5,
+      "computerPoints": 84.5,
+      "userId": 1,
       "id": 11
     },
     {
       "resultNumb": 3,
       "resultName": "Win",
-      "userPoints": 85.5,
-      "computerPoints": 71.5,
-      "userId": 2,
+      "userPoints": 86,
+      "computerPoints": 76.5,
+      "userId": 1,
       "id": 12
     },
     {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 97.5,
-      "computerPoints": 87,
-      "userId": 2,
+      "resultNumb": 1,
+      "resultName": "Loss",
+      "userPoints": 82,
+      "computerPoints": 82.5,
+      "userId": 1,
       "id": 13
     },
     {
-      "resultNumb": 1,
-      "resultName": "Loss",
-      "userPoints": 72,
-      "computerPoints": 89.5,
-      "userId": 2,
+      "resultNumb": 3,
+      "resultName": "Win",
+      "userPoints": 94,
+      "computerPoints": 86,
+      "userId": 1,
       "id": 14
     },
     {
-      "resultNumb": 1,
-      "resultName": "Loss",
-      "userPoints": 74,
-      "computerPoints": 77.5,
-      "userId": 2,
+      "resultNumb": 3,
+      "resultName": "Win",
+      "userPoints": 89,
+      "computerPoints": 77,
+      "userId": 1,
       "id": 15
-    },
-    {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 80,
-      "computerPoints": 78.5,
-      "userId": 2,
-      "id": 16
-    },
-    {
-      "resultNumb": 1,
-      "resultName": "Loss",
-      "userPoints": 71.5,
-      "computerPoints": 79.5,
-      "userId": 2,
-      "id": 17
-    },
-    {
-      "resultNumb": 1,
-      "resultName": "Loss",
-      "userPoints": 80,
-      "computerPoints": 86.5,
-      "userId": 2,
-      "id": 18
-    },
-    {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 86.5,
-      "computerPoints": 73.5,
-      "userId": 1,
-      "id": 19
-    },
-    {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 78.5,
-      "computerPoints": 73,
-      "userId": 1,
-      "id": 20
-    },
-    {
-      "resultNumb": 1,
-      "resultName": "Loss",
-      "userPoints": 76,
-      "computerPoints": 86.5,
-      "userId": 1,
-      "id": 21
-    },
-    {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 77.5,
-      "computerPoints": 75.5,
-      "userId": 1,
-      "id": 22
-    },
-    {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 84,
-      "computerPoints": 80.5,
-      "userId": 1,
-      "id": 23
-    },
-    {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 78.5,
-      "computerPoints": 76.5,
-      "userId": 1,
-      "id": 24
-    },
-    {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 82.5,
-      "computerPoints": 71.5,
-      "userId": 1,
-      "id": 25
-    },
-    {
-      "resultNumb": 1,
-      "resultName": "Loss",
-      "userPoints": 61,
-      "computerPoints": 72.5,
-      "userId": 1,
-      "id": 26
-    },
-    {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 76,
-      "computerPoints": 68.5,
-      "userId": 1,
-      "id": 27
     }
   ],
   "players": [

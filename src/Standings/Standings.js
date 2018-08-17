@@ -2,10 +2,18 @@ import React, { Component } from "react";
 import APIManager from "../APIManager";
 import { Route } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import { Hero, HeroBody, Title, Table } from "bloomer";
 import PieChart from "./PieChart";
 import LineChart from "./LineChart";
 import BarChart from "./BarChart";
+import {
+  Modal,
+  ModalBackground,
+  ModalCard,
+  ModalCardBody,
+  ModalCardFooter,
+  Hero,
+  Table
+} from "bloomer";
 import "bulma/css/bulma.css";
 import "./Standings.css";
 
@@ -114,6 +122,49 @@ export default class Standings extends Component {
     this.getStandingsByUser();
   };
 
+  openResetModal = () => {
+    let resetModal = document.getElementById("resetModal");
+    resetModal.classList.add("is-active");
+  };
+
+  closeResetModal = () => {
+    let resetModal = document.getElementById("resetModal");
+    resetModal.classList.remove("is-active");
+  };
+
+  resetProgress = () => {
+    alert("Your stats have successfully been reset!");
+
+    let sessionUser = JSON.parse(sessionStorage.getItem("credentials"));
+    let localUser = JSON.parse(localStorage.getItem("credentials"));
+
+    let resetStandingsData = {
+      winCount: 0,
+      loseCount: 0,
+      tieCount: 0,
+      userId: sessionUser.userId,
+      id: sessionUser.userId
+    };
+
+    if (sessionUser !== null) {
+      APIManager.getGamesByUserId(sessionUser.userId).then(games => {
+        games.forEach(game => {
+          APIManager.deleteGamesByUserId(game.id);
+        })
+      });
+      APIManager.updateStandings(sessionUser.userId, resetStandingsData);
+      window.location.reload(true);
+    } else if (localUser !== null) {
+      APIManager.getGamesByUserId(sessionUser.userId).then(games => {
+        games.forEach(game => {
+          APIManager.deleteGamesByUserId(game.id);
+        })
+      })
+      APIManager.updateStandings(sessionUser.userId, resetStandingsData);
+      window.location.reload(true);
+    }
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -174,8 +225,60 @@ export default class Standings extends Component {
               <BarChart points={this.getPoints()} />
             </div>
 
+            <div id="resetProgressContainer">
+              <button
+                onClick={this.openResetModal}
+                className="bd-tw-button button is-warning is-small is-focused is-rounded is-fullwidth"
+                type="button"
+                id="restBtn"
+              >
+                Reset Progress
+              </button>
+            </div>
         </div>
         </Hero>
+
+        <Modal id="resetModal">
+          <ModalBackground />
+          <ModalCard>
+            <ModalCardBody className="has-text-white" id="modalCardBody">
+              <h1 className="resetMessage">
+                Are you sure you want to reset your progress?
+              </h1>
+              <br/>
+              <h1 className="resetMessage">
+              This will erase all of your current data, including any wins, losses, ties and fantasy points accrued.
+              </h1>
+              <br />
+              <h2 id="gameResultSentence">
+                {this.props.gameResultSentence}
+              </h2>
+            </ModalCardBody>
+            <ModalCardFooter id="modalCardFooter">
+              <div id="modalBtnContainer" className="columns">
+                <div className="column">
+                    <button
+                      id="confirmResetBtn"
+                      onClick={this.resetProgress}
+                      className="button is-success is-rounded is-fullwidth"
+                    >
+                      Yes, please
+                    </button>
+
+                </div>
+                <div className="column">
+                    <button
+                      id="denyResetBtn"
+                      onClick={this.closeResetModal}
+                      className="button is-danger is-rounded is-fullwidth"
+                    >
+                      Nevermind
+                    </button>
+                </div>
+              </div>
+            </ModalCardFooter>
+          </ModalCard>
+        </Modal>
       </React.Fragment>
     );
   }

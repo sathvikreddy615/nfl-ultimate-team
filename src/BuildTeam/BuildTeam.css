@@ -1,5 +1,7 @@
 #buildTeamTitle {
+    font-size: 40px;
     margin-top: 30px;
+    margin-bottom: 10px;
     text-align: center;
 }
 
@@ -39,6 +41,7 @@
 
 .btPositions {
     margin: 94px 0;
+    font-weight: bold;
 }
 
 select {

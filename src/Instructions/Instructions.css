@@ -9,22 +9,31 @@
 
 #titleLineOne {
     font-size: 60px;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+    letter-spacing: 10px;
 }
 
 #titleLineTwo {
-    font-size: 70px;
-    font-style: italic;
-    margin-bottom: 40px;
+    font-size: 80px;
+    font-weight: bold;
+    margin-bottom: 60px;
+    letter-spacing: 7px;
+    word-spacing: 10px;
 }
 
 #titleLineThree {
     font-size: 55px;
-    margin-bottom: 60px;
+    font-style: italic;
+    margin-bottom: 70px;
+    letter-spacing: 5px;
+}
+
+#titleLineOne, #titleLineTwo, #titleLineThree {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .listPosition {
-    font-size: 10px;
+    font-size: 12px;
     font-style: italic;
 }
 
@@ -35,7 +44,7 @@
 }
 
 .instructions {
-    margin: 5px 0;
+    margin: 20px 0;
     font-size: 15px;
 }
 
@@ -47,4 +56,20 @@
 #aboutBtn {
     color: white;
     background-color: hsl(227, 100%, 35%);
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: hsl(348, 100%, 61%);
+}
+
+@media screen and (min-width: 1500px) {
+    #btnContainer {
+        text-align: center;
+        background-color:hsl(204, 86%, 53%);
+        margin-bottom: 180px;
+    }
 }
