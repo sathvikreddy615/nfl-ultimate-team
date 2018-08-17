@@ -8,6 +8,8 @@
 
 #modalCardTitle {
     text-align: center;
+    color: white;
+    font-weight: bold;
 }
 
 #modalCardBody {
@@ -16,10 +18,18 @@
 }
 
 #score {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
+    color: white;
 }
 
 #playAgainBtn {
     background-color: hsl(227, 100%, 35%);
 }
+
+#gameResultSentence {
+    font-style: italic;
+    font-weight: bold;
+    color: white;
+}
+

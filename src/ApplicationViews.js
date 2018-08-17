@@ -4,7 +4,6 @@ import { Route } from "react-router-dom";
 import APIManager from "./APIManager";
 import Register from "./Register/Register";
 import Login from "./Login/Login";
-import Navbar from "./Navbar/Navbar";
 import NUT from "./NUT/NUT";
 import BuildTeam from "./BuildTeam/BuildTeam";
 import Standings from "./Standings/Standings";
@@ -44,6 +43,7 @@ export default class ApplicationViews extends Component {
         let random = playerArray[Math.floor(Math.random() * playerArray.length)];
         let newArray = this.state.computerPlayers;
         newArray.push(random);
+        newArray.sort((a, b) => a.id - b.id);
         this.setState({ computerPlayers: newArray });
       });
     });
@@ -102,7 +102,7 @@ export default class ApplicationViews extends Component {
         let delta = sumOfUserArray - sumOfComputerArray;
         APIManager.updateStandings(this.getUserId(), winOb);
         APIManager.addData("games", winResultOb);
-        resultMsg = "You WON"
+        resultMsg = "YOU WON"
         resultSentence = `Congrats, you defeated the computer by ${delta} points!`;
 
       } else if (sumOfUserArray < sumOfComputerArray) {
@@ -121,7 +121,7 @@ export default class ApplicationViews extends Component {
         delta *= -1;
         APIManager.updateStandings(this.getUserId(), loseOb);
         APIManager.addData("games", loseResultOb);
-        resultMsg = "You LOST"
+        resultMsg = "YOU LOST"
         resultSentence = `Sorry, the computer defeated you by ${delta} points!`;
 
       } else if (sumOfUserArray === sumOfComputerArray) {
@@ -138,7 +138,7 @@ export default class ApplicationViews extends Component {
 
         APIManager.updateStandings(this.getUserId(), tieOb);
         APIManager.addData("games", tieResultOb);
-        resultMsg = "You TIED"
+        resultMsg = "YOU TIED"
         resultSentence = "Not bad, you tied with the computer!";
       }
       this.setState({ gameResultMsg: resultMsg })
