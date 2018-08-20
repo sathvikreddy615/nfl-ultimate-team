@@ -246,9 +246,9 @@ export default class Standings extends Component {
                 Are you sure you want to reset your progress?
               </h1>
               <br/>
-              <h1 className="resetMessage">
+              <h2 className="resetMessage">
               This will erase all of your current data, including any wins, losses, ties and fantasy points accrued.
-              </h1>
+              </h2>
               <br />
               <h2 id="gameResultSentence">
                 {this.props.gameResultSentence}
