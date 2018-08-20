@@ -4,10 +4,7 @@ import APIManager from "../APIManager";
 import "./Login.css";
 import 'bulma/css/bulma.css';
 import {
-  Hero,
-  HeroBody,
-  Container,
-  Title
+  Container
 } from "bloomer";
 
 export default class Login extends Component {
@@ -72,6 +69,7 @@ export default class Login extends Component {
           <source src="https://s3.amazonaws.com/nfl-api-images/videos/Titans+Login.mp4" type="video/mp4" />
         </video>
 
+        <Container>
         <div className="content">
           <form
               onSubmit={this.handleLogin}
@@ -130,6 +128,7 @@ export default class Login extends Component {
             </button>
           </div>
         </div>
+        </Container>
       </React.Fragment>
     );
   }

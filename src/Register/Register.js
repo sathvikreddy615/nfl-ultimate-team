@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import APIManager from "../APIManager";
 import "./Register.css";
+import 'bulma/css/bulma.css';
+import {
+  Container
+} from "bloomer";
 
 
 export default class Register extends Component {
@@ -49,6 +53,7 @@ export default class Register extends Component {
           <source src="https://s3.amazonaws.com/nfl-api-images/videos/Titans+Register.mp4" type="video/mp4" />
         </video>
 
+        <Container>
         <div className="content">
           <form
               onSubmit={this.handleRegister}
@@ -112,6 +117,7 @@ export default class Register extends Component {
             </button>
           </div>
         </div>
+        </Container>
       </React.Fragment>
     );
   }

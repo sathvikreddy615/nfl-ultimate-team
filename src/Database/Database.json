@@ -5,6 +5,12 @@
       "username": "sathvikreddy94",
       "password": "123",
       "id": 1
+    },
+    {
+      "name": "",
+      "username": "",
+      "password": "",
+      "id": 2
     }
   ],
   "standings": [
@@ -14,6 +20,13 @@
       "tieCount": 0,
       "userId": 1,
       "id": 1
+    },
+    {
+      "winCount": 0,
+      "loseCount": 0,
+      "tieCount": 0,
+      "userId": 2,
+      "id": 2
     }
   ],
   "games": [],
