@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 import APIManager from "../APIManager";
 import "./Login.css";
 import 'bulma/css/bulma.css';
+import {
+  Hero,
+  HeroBody,
+  Container,
+  Title
+} from "bloomer";
 
 export default class Login extends Component {
   state = {

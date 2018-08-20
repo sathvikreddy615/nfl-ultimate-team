@@ -9,111 +9,14 @@
   ],
   "standings": [
     {
-      "winCount": 7,
-      "loseCount": 5,
-      "tieCount": 1,
+      "winCount": 0,
+      "loseCount": 0,
+      "tieCount": 0,
       "userId": 1,
       "id": 1
     }
   ],
-  "games": [
-    {
-      "resultNumb": 1,
-      "resultName": "Loss",
-      "userPoints": 89.5,
-      "computerPoints": 95.5,
-      "userId": 1,
-      "id": 1
-    },
-    {
-      "resultNumb": 1,
-      "resultName": "Loss",
-      "userPoints": 78,
-      "computerPoints": 87,
-      "userId": 1,
-      "id": 3
-    },
-    {
-      "resultNumb": 1,
-      "resultName": "Loss",
-      "userPoints": 88.5,
-      "computerPoints": 92,
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 80.5,
-      "computerPoints": 78.5,
-      "userId": 1,
-      "id": 5
-    },
-    {
-      "resultNumb": 2,
-      "resultName": "Loss",
-      "userPoints": 83,
-      "computerPoints": 85.5,
-      "userId": 1,
-      "id": 6
-    },
-    {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 76.5,
-      "computerPoints": 65.5,
-      "userId": 1,
-      "id": 7
-    },
-    {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 88,
-      "computerPoints": 82,
-      "userId": 1,
-      "id": 8
-    },
-    {
-      "resultNumb": 1,
-      "resultName": "Loss",
-      "userPoints": 78.5,
-      "computerPoints": 84.5,
-      "userId": 1,
-      "id": 11
-    },
-    {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 86,
-      "computerPoints": 76.5,
-      "userId": 1,
-      "id": 12
-    },
-    {
-      "resultNumb": 1,
-      "resultName": "Loss",
-      "userPoints": 82,
-      "computerPoints": 82.5,
-      "userId": 1,
-      "id": 13
-    },
-    {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 94,
-      "computerPoints": 86,
-      "userId": 1,
-      "id": 14
-    },
-    {
-      "resultNumb": 3,
-      "resultName": "Win",
-      "userPoints": 89,
-      "computerPoints": 77,
-      "userId": 1,
-      "id": 15
-    }
-  ],
+  "games": [],
   "players": [
     {
       "id": 1,

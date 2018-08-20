@@ -25,10 +25,8 @@ export default class ApplicationViews extends Component {
     let localUser = JSON.parse(localStorage.getItem("credentials"));
 
     if (sessionUser !== null) {
-      console.log(sessionUser.userId)
       return sessionUser.userId;
     } else if (localUser !== null) {
-      console.log(localUser.userId);
       return localUser.userId;
     }
   };

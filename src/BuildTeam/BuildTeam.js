@@ -223,7 +223,7 @@ export default class BuildTeam extends Component {
         this.state.selectPlayer[i].length === 0
       ) {
         alert(
-          `You have not drafted a player for some positions. Please draft a player for each position before creating a team.`
+          `You have not drafted a player for some positions. Please draft a player for all 8 positions before creating a team.`
         );
         e.preventDefault();
         window.location.reload(true);
