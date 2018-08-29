@@ -152,7 +152,6 @@ export default class ApplicationViews extends Component {
     if (this.isAuthenticated()) {
       return (
         <React.Fragment>
-          {/* <Route path="/" component={Navbar} /> */}
           <Route
             exact
             path="/nfl-ultimate-team"
@@ -179,17 +178,6 @@ export default class ApplicationViews extends Component {
             )}
           />
 
-          {/* <Route
-            exact
-            path="/standings"
-            render={props => (
-              <Standings
-                userSum={this.state.userSum}
-                computerSum={this.state.computerSum}
-                sum={this.sum}
-              />
-            )}
-          /> */}
           <Route exact path="/standings" component={Standings} />
           <Route exact path="/" component={Instructions} />
         </React.Fragment>
@@ -197,6 +185,7 @@ export default class ApplicationViews extends Component {
     } else {
       return (
         <React.Fragment>
+          <Route exact path="/" component={Login} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
         </React.Fragment>

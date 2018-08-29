@@ -15,6 +15,12 @@ import {
 import "./ResultsModal.css";
 import "bulma/css/bulma.css";
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGamepad, faChartLine } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faGamepad, faChartLine)
+
 export default class NUT extends Component {
   state = {
     userTeam: this.props.userPlayers,
@@ -31,7 +37,7 @@ export default class NUT extends Component {
         this.setState({ name: user[0].name });
       });
     } else if (localUser !== null) {
-      APIManager.getUsersById(sessionUser.userId).then(user => {
+      APIManager.getUsersById(localUser.userId).then(user => {
         this.setState({ name: user[0].name });
       });
     }
@@ -150,7 +156,7 @@ export default class NUT extends Component {
                       id="playAgainBtn"
                       onClick={this.reloadPage}
                       className="button is-success is-rounded is-fullwidth"
-                    >
+                    ><FontAwesomeIcon className="resultsIcons" icon="gamepad" />
                       Play Again
                     </button>
                   </Link>
@@ -158,9 +164,10 @@ export default class NUT extends Component {
                 <div className="column">
                   <Link to="/standings">
                     <button
+                      id="viewStandingsBtn"
                       onClick={this.reloadPage}
                       className="button is-danger is-rounded is-fullwidth"
-                    >
+                    ><FontAwesomeIcon className="resultsIcons" icon={faChartLine } />
                       View Standings
                     </button>
                   </Link>

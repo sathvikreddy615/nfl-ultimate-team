@@ -28,7 +28,7 @@ export default class Login extends Component {
           this.setState({ userId: user[0].id });
         } else {
           alert("Uh oh, looks like you mistyped your username or password");
-          window.location = 'http://localhost:3000/login';
+          window.location = 'http://sr-ultimate-team.s3-website.us-east-2.amazonaws.com/login';
         }
       })
       .then(() => {

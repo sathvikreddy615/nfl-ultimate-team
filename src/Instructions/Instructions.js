@@ -19,6 +19,13 @@ import {
 import "bulma/css/bulma.css";
 import "./Instructions.css";
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import { faInfoCircle, faChalkboard } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faInfoCircle, faChalkboard)
+
 export default class Instructions extends Component {
   state = {
     name: ""
@@ -57,7 +64,7 @@ export default class Instructions extends Component {
         this.setState({ name: user[0].name });
       });
     } else if (localUser !== null) {
-      APIManager.getUsersById(sessionUser.userId).then(user => {
+      APIManager.getUsersById(localUser.userId).then(user => {
         this.setState({ name: user[0].name });
       });
     }
@@ -77,7 +84,7 @@ export default class Instructions extends Component {
               <Container id="titleContainer" hasTextAlign="centered">
                 <Title>
                   <div id="titleLineOne">Welcome to</div>
-                  <div id="titleLineTwo">NFL Ultimate Team,</div>
+                  <div id="titleLineTwo">Ultimate Team,</div>
                   <div id="titleLineThree">{this.state.name}</div>
 
                   <div id="btnContainer" className="columns">
@@ -87,17 +94,18 @@ export default class Instructions extends Component {
                         id="aboutBtn"
                         className="bd-tw-button button is-focused is-rounded is-fullwidth"
                         onClick={this.openAboutModal}
-                      >
+                      ><FontAwesomeIcon className="homeIcons" icon={faInfoCircle} />
                         About
                       </button>
                     </div>
 
                     <div className="column">
                       <button
+                        id="instructionsBtn"
                         type="button"
                         className="bd-tw-button button is-danger is-focused is-rounded is-fullwidth has-text-white"
                         onClick={this.openInstructionsModal}
-                      >
+                      ><FontAwesomeIcon className="homeIcons" icon={faChalkboard} />
                         Instructions
                       </button>
                     </div>

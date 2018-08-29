@@ -1,3 +1,13 @@
 .navbar-item {
     font-weight: bold;
 }
+
+.navbarIcons {
+    margin-right: 5px;
+    margin-bottom: 2px;
+}
+
+#navbarLogo {
+    filter: brightness(0) invert(1);
+}
+

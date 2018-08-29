@@ -17,6 +17,12 @@ import {
 import "bulma/css/bulma.css";
 import "./Standings.css";
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckCircle, faTimesCircle, faEraser } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faCheckCircle, faTimesCircle, faEraser)
+
 export default class Standings extends Component {
   state = {
     winTotal: 0,
@@ -79,13 +85,22 @@ export default class Standings extends Component {
         });
       });
     } else if (localUser !== null) {
-      APIManager.getGamesByUserId(sessionUser.userId).then(gamesArr => {
+      APIManager.getGamesByUserId(localUser.userId).then(gamesArr => {
         gamesArr.forEach(game => {
           resultNumbArr.push(game.resultNumb);
           numbOfGamesArr.push(game.id);
+
+          userPointsArr.push(game.userPoints);
+          let sumOfUserPointsArr = userPointsArr.reduce(this.sum);
+
+          computerPointsArr.push(game.computerPoints);
+          let sumOfComputerPointsArr = computerPointsArr.reduce(this.sum);
+
           this.setState({
             resultNumb: resultNumbArr,
-            numbOfGames: numbOfGamesArr
+            numbOfGames: numbOfGamesArr,
+            userPoints: sumOfUserPointsArr,
+            computerPoints: sumOfComputerPointsArr
           });
         });
       });
@@ -111,7 +126,7 @@ export default class Standings extends Component {
         this.setState({ loseTotal: results[0].loseCount });
         this.setState({ tieTotal: results[0].tieCount });
       });
-      APIManager.getUsersById(sessionUser.userId).then(user => {
+      APIManager.getUsersById(localUser.userId).then(user => {
         this.setState({ name: user[0].name });
       });
     }
@@ -138,31 +153,41 @@ export default class Standings extends Component {
     let sessionUser = JSON.parse(sessionStorage.getItem("credentials"));
     let localUser = JSON.parse(localStorage.getItem("credentials"));
 
-    let resetStandingsData = {
-      winCount: 0,
-      loseCount: 0,
-      tieCount: 0,
-      userId: sessionUser.userId,
-      id: sessionUser.userId
-    };
-
     if (sessionUser !== null) {
+      let resetStandingsDataSession = {
+        winCount: 0,
+        loseCount: 0,
+        tieCount: 0,
+        userId: sessionUser.userId,
+        id: sessionUser.userId
+      };
+
       APIManager.getGamesByUserId(sessionUser.userId).then(games => {
         games.forEach(game => {
+          console.log(game.id);
           APIManager.deleteGamesByUserId(game.id);
         })
       });
-      APIManager.updateStandings(sessionUser.userId, resetStandingsData);
-      window.location.reload(true);
+      APIManager.updateStandings(sessionUser.userId, resetStandingsDataSession);
+
     } else if (localUser !== null) {
-      APIManager.getGamesByUserId(sessionUser.userId).then(games => {
+      let resetStandingsDataLocal = {
+        winCount: 0,
+        loseCount: 0,
+        tieCount: 0,
+        userId: localUser.userId,
+        id: localUser.userId
+      };
+
+      APIManager.getGamesByUserId(localUser.userId).then(games => {
         games.forEach(game => {
+          console.log(game);
           APIManager.deleteGamesByUserId(game.id);
         })
       })
-      APIManager.updateStandings(sessionUser.userId, resetStandingsData);
-      window.location.reload(true);
+      APIManager.updateStandings(localUser.userId, resetStandingsDataLocal);
     }
+    window.location.reload(true);
   }
 
   render() {
@@ -231,7 +256,7 @@ export default class Standings extends Component {
                 className="bd-tw-button button is-warning is-small is-focused is-rounded is-fullwidth"
                 type="button"
                 id="restBtn"
-              >
+              ><FontAwesomeIcon className="resetProgressIcons" icon={faEraser} />
                 Reset Progress
               </button>
             </div>
@@ -261,7 +286,7 @@ export default class Standings extends Component {
                       id="confirmResetBtn"
                       onClick={this.resetProgress}
                       className="button is-success is-rounded is-fullwidth"
-                    >
+                    ><FontAwesomeIcon className="resetProgressIcons" icon={faCheckCircle} />
                       Yes, please
                     </button>
 
@@ -271,7 +296,7 @@ export default class Standings extends Component {
                       id="denyResetBtn"
                       onClick={this.closeResetModal}
                       className="button is-danger is-rounded is-fullwidth"
-                    >
+                    ><FontAwesomeIcon className="resetProgressIcons" icon={faTimesCircle} />
                       Nevermind
                     </button>
                 </div>
