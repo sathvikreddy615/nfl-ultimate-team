@@ -41,4 +41,13 @@
 #confirmResetBtn {
     color: white;
     background-color: hsl(227, 100%, 35%);
+    font-weight: bold;
+}
+
+#denyResetBtn {
+    font-weight: bold;
+}
+
+.resetProgressIcons {
+    margin-right: 10px;
 }

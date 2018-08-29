@@ -8,6 +8,12 @@ import PlayerPicture from "../BuildTeam/PlayerPicture";
 import "./BuildTeam.css";
 import "bulma/css/bulma.css";
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faPlus)
+
 export default class BuildTeam extends Component {
   state = {
     chosenTeam: [],
@@ -289,7 +295,7 @@ export default class BuildTeam extends Component {
                   className="bd-tw-button button is-danger is-focused is-rounded is-fullwidth"
                   type="button"
                   onClick={this.createTeam}
-                >
+                ><FontAwesomeIcon className="buildTeamIcons" icon={faPlus} />
                   Create Team
                 </button>
               </Link>

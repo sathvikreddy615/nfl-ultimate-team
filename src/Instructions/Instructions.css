@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC');
+
 #titleContainer {
     margin-bottom: 100px;
 }
@@ -11,14 +13,15 @@
     font-size: 60px;
     margin-bottom: 60px;
     letter-spacing: 10px;
+    word-spacing: 15px;
 }
 
 #titleLineTwo {
     font-size: 80px;
     font-weight: bold;
     margin-bottom: 60px;
-    letter-spacing: 7px;
-    word-spacing: 10px;
+    letter-spacing: 10px;
+    word-spacing: 15px;
 }
 
 #titleLineThree {
@@ -29,7 +32,7 @@
 }
 
 #titleLineOne, #titleLineTwo, #titleLineThree {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Alegreya Sans SC', sans-serif;
 }
 
 .listPosition {
@@ -48,6 +51,10 @@
     font-size: 15px;
 }
 
+#instructionsBtn {
+    font-weight: bold;
+}
+
 #btnContainer {
     width: 725px;
     margin: 0 auto;
@@ -56,6 +63,7 @@
 #aboutBtn {
     color: white;
     background-color: hsl(227, 100%, 35%);
+    font-weight: bold;
 }
 
 a {
@@ -64,6 +72,10 @@ a {
 
 a:hover {
     color: hsl(348, 100%, 61%);
+}
+
+.homeIcons {
+    margin-right: 10px;
 }
 
 @media screen and (min-width: 1500px) {

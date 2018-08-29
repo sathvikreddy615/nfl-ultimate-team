@@ -1,9 +1,9 @@
 export default class APIManager {
   static getData = table => {
-    return fetch(`http://localhost:5002/${table}`).then(e => e.json());
+    return fetch(`https://ultimate-team-api.herokuapp.com/${table}`).then(e => e.json());
   };
   static addData = (table, data) => {
-    return fetch(`http://localhost:5002/${table}`, {
+    return fetch(`https://ultimate-team-api.herokuapp.com/${table}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8"
@@ -12,7 +12,7 @@ export default class APIManager {
     }).then(e => e.json());
   };
   static updatedData = (table, key, data) => {
-    return fetch(`http://localhost:5002/${table}/${key}`, {
+    return fetch(`https://ultimate-team-api.herokuapp.com/${table}/${key}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json; charset=utf-8"
@@ -21,17 +21,17 @@ export default class APIManager {
     });
   };
   static getPlayersByName = playerName => {
-    return fetch(`http://localhost:5002/players?name=${playerName}`).then(e =>
+    return fetch(`https://ultimate-team-api.herokuapp.com/players?name=${playerName}`).then(e =>
       e.json()
     );
   };
   static getPlayersByPosition = playerPosition => {
     return fetch(
-      `http://localhost:5002/players?position=${playerPosition}`
+      `https://ultimate-team-api.herokuapp.com/players?position=${playerPosition}`
     ).then(e => e.json());
   };
   static updateStandings = (id, body) => {
-    return fetch(`http://localhost:5002/standings/${id}`, {
+    return fetch(`https://ultimate-team-api.herokuapp.com/standings/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -40,22 +40,22 @@ export default class APIManager {
     });
   };
   static getStandingsByUserId = idNumber => {
-    return fetch(`http://localhost:5002/standings?userId=${idNumber}`).then(e =>
+    return fetch(`https://ultimate-team-api.herokuapp.com/standings?userId=${idNumber}`).then(e =>
       e.json()
     );
   };
   static getUsersById = idNumber => {
-    return fetch(`http://localhost:5002/users?id=${idNumber}`).then(e =>
+    return fetch(`https://ultimate-team-api.herokuapp.com/users?id=${idNumber}`).then(e =>
       e.json()
     );
   };
   static getGamesByUserId = idNumber => {
-    return fetch(`http://localhost:5002/games?userId=${idNumber}`).then(e =>
+    return fetch(`https://ultimate-team-api.herokuapp.com/games?userId=${idNumber}`).then(e =>
       e.json()
     );
   };
   static deleteGamesByUserId = id => {
-    return fetch(`http://localhost:5002/games/${id}`, {
+    return fetch(`https://ultimate-team-api.herokuapp.com/games/${id}`, {
       method: "DELETE"
     });
   };

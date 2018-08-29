@@ -25,11 +25,20 @@
 
 #playAgainBtn {
     background-color: hsl(227, 100%, 35%);
+    font-weight: bold;
+}
+
+#viewStandingsBtn {
+    font-weight: bold;
 }
 
 #gameResultSentence {
     font-style: italic;
     font-weight: bold;
     color: white;
+}
+
+.resultsIcons {
+    margin-right: 10px;
 }
 
