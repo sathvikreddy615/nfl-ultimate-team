@@ -1,7 +1,7 @@
 ## NFL Ultimate Team
- is a fantasy football application that gives you the freedom of building your own team from scratch, by drafting from a variety of NFL players, and competing your team against an AI's.
+NFL is a fantasy football application built with React.js, JSON server, Bloomer and React-ChartJS-2, that gives the user the freedom of building their own team from scratch, by drafting from a variety of NFL players, and competing their team against an AI's.
 
-Each NFL player has their own point value, which is based off of 2017's season ending fantasy statistics. In the building phase for each round, you will be given the option of selecting from 3 random players for each position. There are 8 positions that you will need to draft a player for in order to fulfill your team's roster:
+Each NFL player has their own point value, which is based off of 2017's season ending fantasy statistics. In the building phase for each round, the user is given the option of selecting from 3 random players for each position. There are 8 positions that they will need to draft a player for in order to fulfill their team's roster:
 
 - Quarterback
 - Running Back
@@ -12,9 +12,7 @@ Each NFL player has their own point value, which is based off of 2017's season e
 - Defensive Back
 - Kicker
 
-This means that having a solid knowledege of last year's NFL stats will greatly benefit you! However, it will also involve a fair amount of luck, since the players you are dealt will be randomly generated.
-
-The ultimate goal of this game is to have the higher total fantasy points!
+This means that having a solid knowledege of last year's NFL stats will greatly benefit them! However, it will also involve a fair amount of luck, since the players you are dealt will be randomly generated.
 
 ## Getting Started
 
@@ -39,6 +37,5 @@ Import React-Chartjs-2:
 ## Technologies used:
 - [React](https://reactjs.org/docs/getting-started.html)
 - [JSON Server](https://github.com/typicode/json-server)
-- [Bulma](https://bulma.io/)
 - [Bloomer](https://bloomer.js.org/#/)
 - [React-Chartjs-2](https://github.com/jerairrest/react-chartjs-2)
